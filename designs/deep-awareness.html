@@ -12,7 +12,7 @@
 
   <meta
     name="description"
-    content="Deep Awareness — Web design and digital identity case study by Marta Vaz."
+    content="Deep Awareness — Web design, visual identity and development case study by Marta Vaz."
   >
 
   <title>Deep Awareness — Marta Vaz</title>
@@ -63,7 +63,6 @@
     body {
 
       background: var(--cream);
-
       color: var(--navy);
 
       font-family:
@@ -91,7 +90,6 @@
     ::selection {
 
       background: var(--gold);
-
       color: var(--navy);
 
     }
@@ -99,7 +97,7 @@
 
 
     /* =========================================================
-       CUSTOM CURSOR
+       CURSOR
     ========================================================= */
 
     .cursor {
@@ -134,8 +132,7 @@
         width 0.25s ease,
         height 0.25s ease,
         background 0.25s ease,
-        color 0.25s ease,
-        font-size 0.25s ease;
+        color 0.25s ease;
 
     }
 
@@ -146,11 +143,9 @@
       height: 90px;
 
       background: var(--cream);
-
       color: var(--navy);
 
       font-size: 9px;
-
       letter-spacing: 0.08em;
 
     }
@@ -231,7 +226,6 @@
     .header-center {
 
       display: flex;
-
       gap: 34px;
 
     }
@@ -264,7 +258,9 @@
       background: currentColor;
 
       transition:
-        width 0.3s ease;
+        width
+        0.3s
+        ease;
 
     }
 
@@ -284,13 +280,12 @@
       min-height: 100vh;
 
       background: var(--navy);
-
       color: var(--cream);
 
       padding:
         120px
         28px
-        40px;
+        38px;
 
       display: grid;
 
@@ -309,13 +304,17 @@
 
       position: absolute;
 
-      width: min(68vw, 900px);
+      width:
+        min(
+          68vw,
+          900px
+        );
 
       aspect-ratio: 1;
 
       border:
         1px solid
-        rgba(217,182,107,0.14);
+        rgba(217, 182, 107, 0.13);
 
       border-radius: 50%;
 
@@ -340,7 +339,7 @@
 
       border:
         1px solid
-        rgba(217,182,107,0.10);
+        rgba(217, 182, 107, 0.10);
 
       border-radius: 50%;
 
@@ -353,11 +352,11 @@
 
       position: absolute;
 
-      inset: 32%;
+      inset: 33%;
 
       border:
         1px solid
-        rgba(217,182,107,0.08);
+        rgba(217, 182, 107, 0.07);
 
       border-radius: 50%;
 
@@ -366,6 +365,8 @@
 
     .orbit-dot {
 
+      position: absolute;
+
       width: 10px;
       height: 10px;
 
@@ -373,14 +374,12 @@
 
       background: var(--gold);
 
-      position: absolute;
-
-      right: 18%;
-      top: 9%;
+      right: 17%;
+      top: 10%;
 
       box-shadow:
         0 0 20px
-        rgba(217,182,107,0.6);
+        rgba(217, 182, 107, 0.55);
 
     }
 
@@ -388,7 +387,6 @@
     .hero-content {
 
       position: relative;
-
       z-index: 3;
 
       display: flex;
@@ -396,7 +394,6 @@
       flex-direction: column;
 
       align-items: center;
-
       justify-content: center;
 
       text-align: center;
@@ -406,13 +403,12 @@
 
     .hero-label {
 
-      margin-bottom: 38px;
+      margin-bottom: 35px;
 
       color: var(--gold);
 
-      font-size: 10px;
-
-      letter-spacing: 0.4em;
+      font-size: 9px;
+      letter-spacing: 0.35em;
 
     }
 
@@ -426,7 +422,7 @@
 
       font-size:
         clamp(
-          90px,
+          88px,
           13vw,
           205px
         );
@@ -456,7 +452,7 @@
 
     .hero-subtitle {
 
-      margin-top: 60px;
+      margin-top: 56px;
 
       max-width: 760px;
 
@@ -475,7 +471,7 @@
       line-height: 1.35;
 
       color:
-        rgba(242,234,220,0.78);
+        rgba(242, 234, 220, 0.78);
 
     }
 
@@ -483,19 +479,15 @@
     .hero-bottom {
 
       position: relative;
-
       z-index: 3;
 
       display: flex;
 
       justify-content: space-between;
 
-      align-items: end;
-
       gap: 30px;
 
       font-size: 9px;
-
       letter-spacing: 0.08em;
 
     }
@@ -503,25 +495,25 @@
 
 
     /* =========================================================
-       INTRODUCTION
+       PROJECT DESCRIPTION
     ========================================================= */
 
-    .intro {
+    .overview {
 
       padding:
         130px
         28px;
 
+      background: var(--cream);
+
       display: grid;
 
       grid-template-columns:
         90px
-        1.15fr
-        0.75fr;
+        1.1fr
+        0.8fr;
 
       gap: 40px;
-
-      background: var(--cream);
 
     }
 
@@ -529,13 +521,12 @@
     .section-number {
 
       font-size: 9px;
-
       letter-spacing: 0.07em;
 
     }
 
 
-    .intro-title {
+    .overview-title {
 
       font-family:
         Georgia,
@@ -546,41 +537,38 @@
         clamp(
           58px,
           7vw,
-          115px
+          114px
         );
 
-      line-height: 0.93;
+      line-height: 0.92;
 
       letter-spacing: -0.055em;
 
       font-weight: 400;
 
-      max-width: 900px;
-
     }
 
 
-    .intro-title em {
+    .overview-title em {
 
       color: var(--gold);
-
       font-weight: 400;
 
     }
 
 
-    .intro-copy {
+    .overview-copy {
 
       align-self: end;
 
-      max-width: 470px;
+      max-width: 480px;
 
     }
 
 
-    .intro-copy p {
+    .overview-copy p {
 
-      margin-bottom: 23px;
+      margin-bottom: 22px;
 
       font-size:
         clamp(
@@ -589,7 +577,7 @@
           21px
         );
 
-      line-height: 1.4;
+      line-height: 1.42;
 
       letter-spacing: -0.02em;
 
@@ -598,7 +586,7 @@
 
 
     /* =========================================================
-       MAIN SCREENSHOT
+       HERO SCREENSHOT
     ========================================================= */
 
     .full-image {
@@ -626,8 +614,6 @@
 
     .image-frame img {
 
-      width: 100%;
-
       transition:
         transform
         0.8s
@@ -643,7 +629,7 @@
 
 
     /* =========================================================
-       PROJECT INFORMATION
+       PROJECT INFO
     ========================================================= */
 
     .project-info {
@@ -662,36 +648,33 @@
         1fr
         1fr;
 
-      gap: 100px;
+      gap: 90px;
 
     }
 
 
-    .info-left {
+    .project-info-left {
+
+      min-height: 500px;
 
       display: flex;
-
       flex-direction: column;
-
       justify-content: space-between;
-
-      min-height: 520px;
 
     }
 
 
-    .info-kicker {
+    .project-info-kicker {
 
       color: var(--gold);
 
       font-size: 9px;
-
       letter-spacing: 0.08em;
 
     }
 
 
-    .info-title {
+    .project-info-title {
 
       font-size:
         clamp(
@@ -700,32 +683,29 @@
           115px
         );
 
-      line-height: 0.85;
+      line-height: 0.84;
 
       letter-spacing: -0.07em;
 
       font-weight: 500;
 
-      color: var(--cream);
-
     }
 
 
-    .info-title em {
+    .project-info-title em {
 
       font-family:
         Georgia,
         "Times New Roman",
         serif;
 
-      font-weight: 400;
-
       color: var(--gold);
+      font-weight: 400;
 
     }
 
 
-    .info-right {
+    .project-info-right {
       align-self: end;
     }
 
@@ -738,7 +718,7 @@
 
       border-top:
         1px solid
-        rgba(242,234,220,0.20);
+        rgba(242,234,220,0.19);
 
       display: grid;
 
@@ -755,7 +735,7 @@
 
       border-bottom:
         1px solid
-        rgba(242,234,220,0.20);
+        rgba(242,234,220,0.19);
 
     }
 
@@ -765,7 +745,6 @@
       color: var(--gold);
 
       font-size: 9px;
-
       letter-spacing: 0.07em;
 
     }
@@ -774,10 +753,9 @@
     .info-value {
 
       color:
-        rgba(242,234,220,0.85);
+        rgba(242, 234, 220, 0.84);
 
       font-size: 17px;
-
       line-height: 1.35;
 
     }
@@ -785,53 +763,44 @@
 
 
     /* =========================================================
-       PROJECT GOAL
+       PROCESS INTRO
     ========================================================= */
 
-    .goal {
+    .process-intro {
 
-      min-height: 72vh;
-
-      background: var(--navy-light);
-
-      color: var(--cream);
+      min-height: 70vh;
 
       padding:
         100px
         28px;
 
+      background: var(--navy-light);
+      color: var(--cream);
+
       display: grid;
 
       grid-template-columns:
-        0.7fr
-        1.3fr;
+        0.55fr
+        1.45fr;
 
-      gap: 80px;
+      gap: 70px;
 
       align-items: center;
 
     }
 
 
-    .goal-label {
+    .process-label {
 
       color: var(--gold);
 
       font-size: 9px;
-
       letter-spacing: 0.08em;
 
     }
 
 
-    .goal-copy {
-
-      max-width: 1000px;
-
-    }
-
-
-    .goal-title {
+    .process-title {
 
       font-family:
         Georgia,
@@ -840,7 +809,7 @@
 
       font-size:
         clamp(
-          48px,
+          50px,
           6vw,
           98px
         );
@@ -854,22 +823,21 @@
     }
 
 
-    .goal-title em {
+    .process-title em {
       color: var(--gold);
     }
 
 
-    .goal-description {
+    .process-description {
 
-      margin-top: 45px;
+      margin-top: 40px;
 
-      max-width: 600px;
+      max-width: 620px;
 
       color:
-        rgba(242,234,220,0.7);
+        rgba(242,234,220,0.72);
 
       font-size: 17px;
-
       line-height: 1.5;
 
     }
@@ -877,17 +845,126 @@
 
 
     /* =========================================================
-       SECOND SCREENSHOT
+       PROCESS STEPS
     ========================================================= */
 
-    .split {
+    .process {
+
+      padding:
+        120px
+        28px;
+
+      background: var(--cream);
+
+    }
+
+
+    .process-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+
+    }
+
+
+    .process-card {
+
+      min-height: 360px;
+
+      padding: 24px;
+
+      border:
+        1px solid
+        rgba(7,20,39,0.18);
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+      transition:
+        background
+        0.35s ease,
+        color
+        0.35s ease;
+
+    }
+
+
+    .process-card:hover {
+
+      background: var(--navy);
+      color: var(--cream);
+
+    }
+
+
+    .process-card-number {
+
+      font-size: 9px;
+      letter-spacing: 0.07em;
+
+      color: var(--gold);
+
+    }
+
+
+    .process-card-title {
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        clamp(
+          34px,
+          3vw,
+          50px
+        );
+
+      line-height: 1;
+
+      font-weight: 400;
+
+    }
+
+
+    .process-card p {
+
+      max-width: 320px;
+
+      font-size: 15px;
+      line-height: 1.45;
+
+      color:
+        rgba(7,20,39,0.72);
+
+    }
+
+
+    .process-card:hover p {
+      color: rgba(242,234,220,0.76);
+    }
+
+
+
+    /* =========================================================
+       IMAGE + STORY
+    ========================================================= */
+
+    .story {
 
       padding:
         120px
         28px;
 
       background: var(--navy);
-
       color: var(--cream);
 
       display: grid;
@@ -896,63 +973,61 @@
         1.2fr
         0.8fr;
 
-      gap: 80px;
+      gap: 70px;
 
       align-items: center;
 
     }
 
 
-    .split-image {
+    .story-image {
 
       overflow: hidden;
 
       border:
         1px solid
-        rgba(217,182,107,0.35);
+        rgba(217,182,107,0.30);
 
     }
 
 
-    .split-image img {
-
-      width: 100%;
+    .story-image img {
 
       transition:
         transform
-        0.8s ease;
+        0.8s
+        ease;
 
     }
 
 
-    .split-image:hover img {
+    .story-image:hover img {
       transform: scale(1.02);
     }
 
 
-    .split-copy {
+    .story-copy {
 
       max-width: 540px;
 
     }
 
 
-    .split-label {
+    .story-label {
 
-      margin-bottom: 30px;
+      margin-bottom: 28px;
 
       color: var(--gold);
 
       font-size: 9px;
-
-      letter-spacing: 0.16em;
+      letter-spacing: 0.14em;
 
     }
 
 
-    .split-title {
+    .story-title {
 
-      margin-bottom: 35px;
+      margin-bottom: 32px;
 
       font-family:
         Georgia,
@@ -961,104 +1036,34 @@
 
       font-size:
         clamp(
-          48px,
+          46px,
           5vw,
-          80px
+          78px
         );
 
       line-height: 1;
 
-      font-weight: 400;
-
       letter-spacing: -0.05em;
+
+      font-weight: 400;
 
     }
 
 
-    .split-title em {
+    .story-title em {
       color: var(--gold);
     }
 
 
-    .split-copy p {
-
-      color:
-        rgba(242,234,220,0.7);
-
-      font-size: 17px;
-
-      line-height: 1.5;
+    .story-copy p {
 
       margin-bottom: 20px;
 
-    }
+      color:
+        rgba(242,234,220,0.70);
 
-
-
-    /* =========================================================
-       DESIGN DIRECTION
-    ========================================================= */
-
-    .statement {
-
-      min-height: 75vh;
-
-      padding:
-        100px
-        28px;
-
-      background: var(--cream);
-
-      color: var(--navy);
-
-      display: flex;
-
-      flex-direction: column;
-
-      justify-content: space-between;
-
-    }
-
-
-    .statement-label {
-
-      color: var(--gold);
-
-      font-size: 9px;
-
-      letter-spacing: 0.08em;
-
-    }
-
-
-    .statement-text {
-
-      max-width: 1300px;
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      font-size:
-        clamp(
-          48px,
-          7vw,
-          110px
-        );
-
-      line-height: 0.95;
-
-      letter-spacing: -0.055em;
-
-    }
-
-
-    .statement-text em {
-
-      color: var(--gold);
-
-      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.5;
 
     }
 
@@ -1075,7 +1080,6 @@
         28px;
 
       background: var(--navy-soft);
-
       color: var(--cream);
 
     }
@@ -1091,7 +1095,7 @@
 
       gap: 35px;
 
-      margin-bottom: 90px;
+      margin-bottom: 85px;
 
     }
 
@@ -1133,14 +1137,14 @@
       grid-template-columns:
         repeat(3, 1fr);
 
-      gap: 20px;
+      gap: 18px;
 
     }
 
 
     .identity-card {
 
-      min-height: 280px;
+      min-height: 290px;
 
       padding: 24px;
 
@@ -1166,7 +1170,6 @@
     .identity-card:hover {
 
       background: var(--gold);
-
       color: var(--navy);
 
     }
@@ -1175,7 +1178,6 @@
     .identity-card-number {
 
       font-size: 9px;
-
       letter-spacing: 0.07em;
 
     }
@@ -1205,7 +1207,6 @@
       max-width: 300px;
 
       font-size: 14px;
-
       line-height: 1.45;
 
       color:
@@ -1221,10 +1222,10 @@
 
 
     /* =========================================================
-       THIRD SCREENSHOT
+       THIRD IMAGE
     ========================================================= */
 
-    .third-image-section {
+    .visual-language {
 
       padding:
         120px
@@ -1245,29 +1246,28 @@
     }
 
 
-    .third-copy {
+    .visual-copy {
 
       max-width: 420px;
 
     }
 
 
-    .third-label {
+    .visual-label {
 
       margin-bottom: 28px;
 
       color: var(--gold);
 
       font-size: 9px;
-
       letter-spacing: 0.08em;
 
     }
 
 
-    .third-title {
+    .visual-title {
 
-      margin-bottom: 35px;
+      margin-bottom: 34px;
 
       font-family:
         Georgia,
@@ -1290,16 +1290,15 @@
     }
 
 
-    .third-copy p {
+    .visual-copy p {
 
       font-size: 17px;
-
       line-height: 1.45;
 
     }
 
 
-    .third-image {
+    .visual-image {
 
       overflow: hidden;
 
@@ -1308,26 +1307,27 @@
     }
 
 
-    .third-image img {
+    .visual-image img {
 
       transition:
         transform
-        0.8s ease;
+        0.8s
+        ease;
 
     }
 
 
-    .third-image:hover img {
+    .visual-image:hover img {
       transform: scale(1.02);
     }
 
 
 
     /* =========================================================
-       USER EXPERIENCE
+       RESULTS
     ========================================================= */
 
-    .experience {
+    .results {
 
       padding:
         120px
@@ -1342,14 +1342,14 @@
       grid-template-columns:
         90px
         1fr
-        0.7fr;
+        0.75fr;
 
       gap: 40px;
 
     }
 
 
-    .experience-title {
+    .results-title {
 
       font-family:
         Georgia,
@@ -1358,9 +1358,9 @@
 
       font-size:
         clamp(
-          55px,
+          56px,
           7vw,
-          110px
+          112px
         );
 
       line-height: 0.95;
@@ -1372,30 +1372,121 @@
     }
 
 
-    .experience-title em {
+    .results-title em {
       color: var(--gold);
     }
 
 
-    .experience-copy {
+    .results-copy {
 
       align-self: end;
 
-      max-width: 480px;
+      max-width: 500px;
 
     }
 
 
-    .experience-copy p {
+    .results-copy p {
+
+      margin-bottom: 20px;
 
       color:
         rgba(242,234,220,0.72);
 
       font-size: 17px;
-
       line-height: 1.5;
 
-      margin-bottom: 20px;
+    }
+
+
+
+    /* =========================================================
+       RESULT CARDS
+    ========================================================= */
+
+    .results-cards {
+
+      padding:
+        0
+        28px
+        120px;
+
+      background: var(--navy);
+
+      color: var(--cream);
+
+    }
+
+
+    .results-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+
+    }
+
+
+    .result-card {
+
+      min-height: 240px;
+
+      padding: 24px;
+
+      border:
+        1px solid
+        rgba(242,234,220,0.16);
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+    }
+
+
+    .result-card span {
+
+      color: var(--gold);
+
+      font-size: 9px;
+      letter-spacing: 0.07em;
+
+    }
+
+
+    .result-card h3 {
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        clamp(
+          30px,
+          3vw,
+          46px
+        );
+
+      font-weight: 400;
+
+    }
+
+
+    .result-card p {
+
+      max-width: 300px;
+
+      color:
+        rgba(242,234,220,0.68);
+
+      font-size: 14px;
+      line-height: 1.45;
 
     }
 
@@ -1407,14 +1498,13 @@
 
     .live {
 
-      min-height: 85vh;
+      min-height: 78vh;
 
       padding:
         35px
         28px;
 
-      background: var(--navy-soft);
-
+      background: var(--navy-light);
       color: var(--cream);
 
       display: flex;
@@ -1435,7 +1525,6 @@
       gap: 30px;
 
       font-size: 9px;
-
       letter-spacing: 0.08em;
 
     }
@@ -1459,8 +1548,6 @@
 
       letter-spacing: -0.065em;
 
-      color: var(--cream);
-
     }
 
 
@@ -1480,26 +1567,100 @@
 
 
     /* =========================================================
+       CONTACT CTA
+    ========================================================= */
+
+    .contact-cta {
+
+      min-height: 82vh;
+
+      padding:
+        35px
+        28px;
+
+      background: var(--cream);
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+    }
+
+
+    .contact-meta {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      font-size: 9px;
+      letter-spacing: 0.08em;
+
+    }
+
+
+    .contact-title {
+
+      font-size:
+        clamp(
+          70px,
+          11vw,
+          185px
+        );
+
+      line-height: 0.78;
+
+      letter-spacing: -0.075em;
+
+      font-weight: 500;
+
+    }
+
+
+    .contact-title em {
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--gold);
+
+      font-weight: 400;
+
+    }
+
+
+    .contact-title:hover em {
+      font-style: italic;
+    }
+
+
+
+    /* =========================================================
        NEXT PROJECT
     ========================================================= */
 
     .next-project {
 
       padding:
-        75px
+        70px
         28px;
 
       background: var(--gold);
-
       color: var(--navy);
 
       display: flex;
 
       justify-content: space-between;
 
-      align-items: center;
-
       gap: 30px;
+
+      align-items: center;
 
     }
 
@@ -1507,7 +1668,6 @@
     .next-small {
 
       font-size: 9px;
-
       letter-spacing: 0.08em;
 
     }
@@ -1529,11 +1689,8 @@
     }
 
 
-    .next-project:hover
-    .next-title {
-
+    .next-project:hover .next-title {
       font-style: italic;
-
     }
 
 
@@ -1549,7 +1706,6 @@
         28px;
 
       background: var(--navy);
-
       color: var(--cream);
 
       display: flex;
@@ -1559,7 +1715,6 @@
       gap: 25px;
 
       font-size: 9px;
-
       letter-spacing: 0.06em;
 
     }
@@ -1590,7 +1745,6 @@
     .reveal.visible {
 
       opacity: 1;
-
       transform: translateY(0);
 
     }
@@ -1604,7 +1758,7 @@
     @media (max-width: 1000px) {
 
 
-      .intro {
+      .overview {
 
         grid-template-columns:
           60px
@@ -1613,11 +1767,11 @@
       }
 
 
-      .intro-copy {
+      .overview-copy {
 
         grid-column: 2;
 
-        margin-top: 60px;
+        margin-top: 55px;
 
       }
 
@@ -1629,16 +1783,17 @@
       }
 
 
-      .goal {
+      .process-grid,
+      .identity-grid,
+      .results-grid {
 
         grid-template-columns:
-          0.5fr
-          1fr;
+          repeat(2, 1fr);
 
       }
 
 
-      .split {
+      .story {
 
         grid-template-columns:
           1fr
@@ -1649,22 +1804,7 @@
       }
 
 
-      .identity-grid {
-
-        grid-template-columns:
-          repeat(2, 1fr);
-
-      }
-
-
-      .third-image-section {
-
-        gap: 40px;
-
-      }
-
-
-      .experience {
+      .results {
 
         grid-template-columns:
           60px
@@ -1673,7 +1813,7 @@
       }
 
 
-      .experience-copy {
+      .results-copy {
 
         grid-column: 2;
 
@@ -1748,7 +1888,7 @@
       }
 
 
-      .intro {
+      .overview {
 
         padding:
           90px
@@ -1761,12 +1901,12 @@
       }
 
 
-      .intro-title {
+      .overview-title {
         font-size: 14vw;
       }
 
 
-      .intro-copy {
+      .overview-copy {
 
         grid-column: 2;
 
@@ -1798,16 +1938,15 @@
       }
 
 
-      .info-left {
+      .project-info-left {
 
         min-height: auto;
-
         gap: 50px;
 
       }
 
 
-      .info-title {
+      .project-info-title {
         font-size: 14vw;
       }
 
@@ -1821,7 +1960,7 @@
       }
 
 
-      .goal {
+      .process-intro {
 
         min-height: auto;
 
@@ -1836,12 +1975,35 @@
       }
 
 
-      .goal-title {
+      .process-title {
         font-size: 12vw;
       }
 
 
-      .split {
+      .process {
+
+        padding:
+          90px
+          16px;
+
+      }
+
+
+      .process-grid,
+      .identity-grid,
+      .results-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .process-card {
+        min-height: 250px;
+      }
+
+
+      .story {
 
         padding:
           90px
@@ -1851,22 +2013,6 @@
 
         gap: 55px;
 
-      }
-
-
-      .statement {
-
-        min-height: 65vh;
-
-        padding:
-          75px
-          16px;
-
-      }
-
-
-      .statement-text {
-        font-size: 11vw;
       }
 
 
@@ -1895,21 +2041,12 @@
       }
 
 
-      .identity-grid {
-
-        grid-template-columns: 1fr;
-
-      }
-
-
       .identity-card {
-
         min-height: 240px;
-
       }
 
 
-      .third-image-section {
+      .visual-language {
 
         padding:
           90px
@@ -1922,7 +2059,7 @@
       }
 
 
-      .experience {
+      .results {
 
         padding:
           90px
@@ -1935,12 +2072,12 @@
       }
 
 
-      .experience-title {
+      .results-title {
         font-size: 13vw;
       }
 
 
-      .experience-copy {
+      .results-copy {
 
         grid-column: 2;
 
@@ -1949,9 +2086,19 @@
       }
 
 
+      .results-cards {
+
+        padding:
+          0
+          16px
+          90px;
+
+      }
+
+
       .live {
 
-        min-height: 70vh;
+        min-height: 68vh;
 
         padding:
           28px
@@ -1965,15 +2112,31 @@
       }
 
 
+      .contact-cta {
+
+        min-height: 70vh;
+
+        padding:
+          28px
+          16px;
+
+      }
+
+
+      .contact-title {
+        font-size: 17vw;
+      }
+
+
       .next-project {
 
         padding:
           55px
           16px;
 
-        align-items: flex-start;
-
         flex-direction: column;
+
+        align-items: flex-start;
 
       }
 
@@ -2048,29 +2211,23 @@
 
 
     <a href="../index.html">
-
       MARTA VAZ
-
     </a>
 
 
     <nav class="header-center">
 
-
       <a href="../index.html#work">
         WORK
       </a>
-
 
       <a href="../about.html">
         ABOUT
       </a>
 
-
       <a href="../contact.html">
         CONTACT
       </a>
-
 
     </nav>
 
@@ -2079,9 +2236,7 @@
       href="../index.html"
       class="header-right"
     >
-
       BACK HOME ↗
-
     </a>
 
 
@@ -2101,42 +2256,29 @@
 
 
       <div class="hero-orbit">
-
         <span class="orbit-dot"></span>
-
       </div>
-
 
 
       <div class="hero-content">
 
 
         <p class="hero-label">
-
           PROJECT 01 / DEEP AWARENESS
-
         </p>
 
 
         <h1 class="hero-title">
 
           <span>
-
             Deep
-
           </span>
-
 
           <span>
-
             <em>
-
               Awareness.
-
             </em>
-
           </span>
-
 
         </h1>
 
@@ -2153,23 +2295,15 @@
       </div>
 
 
-
       <div class="hero-bottom">
 
-
         <span>
-
           WEB DESIGN / DEVELOPMENT / IDENTITY
-
         </span>
-
 
         <span>
-
           PORTUGAL / 2026
-
         </span>
-
 
       </div>
 
@@ -2179,42 +2313,37 @@
 
 
     <!-- ======================================================
-         INTRODUCTION
+         PROJECT OVERVIEW
     ======================================================= -->
 
-    <section class="intro reveal">
+    <section class="overview reveal">
 
 
       <span class="section-number">
-
         01
-
       </span>
 
 
-      <h2 class="intro-title">
+      <h2 class="overview-title">
 
         A digital space
-        designed to feel
+        built around
 
         <em>
-
-          calm, trustworthy
-          & human.
-
+          calm, trust
+          & connection.
         </em>
 
       </h2>
 
 
-
-      <div class="intro-copy">
+      <div class="overview-copy">
 
 
         <p>
 
           Deep Awareness is a digital identity
-          and website created for a therapist
+          and website designed for a therapist
           working across hypnotherapy and psychology.
 
         </p>
@@ -2222,20 +2351,20 @@
 
         <p>
 
-          The goal was to build a calm and trustworthy
-          online space where people could understand
-          the practice, explore the available services
-          and easily book consultations.
+          The goal was to create an online space
+          where visitors could understand the
+          therapeutic practice, discover the available
+          services and easily move toward booking
+          a consultation.
 
         </p>
 
 
         <p>
 
-          The experience was designed to feel
-          welcoming rather than clinical, creating
-          a sense of stillness from the very first
-          interaction.
+          The experience was intentionally designed
+          to feel welcoming and reflective rather
+          than clinical or overwhelming.
 
         </p>
 
@@ -2256,12 +2385,10 @@
 
       <div class="image-frame">
 
-
         <img
           src="../imagens/deep-awareness-01.png"
-          alt="Deep Awareness website homepage"
+          alt="Deep Awareness homepage"
         >
-
 
       </div>
 
@@ -2271,23 +2398,21 @@
 
 
     <!-- ======================================================
-         PROJECT DETAILS
+         PROJECT INFORMATION
     ======================================================= -->
 
     <section class="project-info reveal">
 
 
-      <div class="info-left">
+      <div class="project-info-left">
 
 
-        <p class="info-kicker">
-
+        <p class="project-info-kicker">
           PROJECT DETAILS / 2026
-
         </p>
 
 
-        <h2 class="info-title">
+        <h2 class="project-info-title">
 
           DIGITAL<br>
 
@@ -2296,9 +2421,7 @@
           WITH
 
           <em>
-
             presence.
-
           </em>
 
         </h2>
@@ -2307,23 +2430,17 @@
       </div>
 
 
-
-      <div class="info-right">
+      <div class="project-info-right">
 
 
         <div class="info-row">
 
           <span class="info-label">
-
             PROJECT
-
           </span>
 
-
           <span class="info-value">
-
             Deep Awareness
-
           </span>
 
         </div>
@@ -2332,16 +2449,11 @@
         <div class="info-row">
 
           <span class="info-label">
-
             FIELD
-
           </span>
 
-
           <span class="info-value">
-
             Hypnotherapy / Psychology
-
           </span>
 
         </div>
@@ -2350,17 +2462,12 @@
         <div class="info-row">
 
           <span class="info-label">
-
             SERVICES
-
           </span>
 
-
           <span class="info-value">
-
             Visual Identity / Web Design /
-            Development
-
+            Front-end Development
           </span>
 
         </div>
@@ -2369,17 +2476,12 @@
         <div class="info-row">
 
           <span class="info-label">
-
             GOAL
-
           </span>
 
-
           <span class="info-value">
-
             Build trust / Explain the practice /
-            Online booking
-
+            Support online consultation booking
           </span>
 
         </div>
@@ -2388,17 +2490,12 @@
         <div class="info-row">
 
           <span class="info-label">
-
             ROLE
-
           </span>
 
-
           <span class="info-value">
-
             Creative Direction / UX /
-            Visual Design / Front-end
-
+            Visual Design / Development
           </span>
 
         </div>
@@ -2407,16 +2504,11 @@
         <div class="info-row">
 
           <span class="info-label">
-
             YEAR
-
           </span>
 
-
           <span class="info-value">
-
             2026
-
           </span>
 
         </div>
@@ -2430,44 +2522,39 @@
 
 
     <!-- ======================================================
-         GOAL
+         PROCESS INTRO
     ======================================================= -->
 
-    <section class="goal reveal">
+    <section class="process-intro reveal">
 
 
-      <p class="goal-label">
-
-        02 / THE GOAL
-
+      <p class="process-label">
+        02 / PROCESS
       </p>
 
 
+      <div>
 
-      <div class="goal-copy">
 
+        <h2 class="process-title">
 
-        <h2 class="goal-title">
-
-          Creating
+          Designing from
+          feeling first,
 
           <em>
-
-            calm before action.
-
+            structure second.
           </em>
 
         </h2>
 
 
-        <p class="goal-description">
+        <p class="process-description">
 
-          The website needed to provide enough
-          information for someone to understand
-          the therapeutic approach without becoming
-          visually overwhelming. Every section was
-          designed to guide the visitor gently toward
-          making contact or booking a consultation.
+          The process started by defining how the
+          website should make someone feel before
+          deciding how it should look. Calm, clarity
+          and emotional safety became the foundation
+          for the entire visual and digital system.
 
         </p>
 
@@ -2480,13 +2567,108 @@
 
 
     <!-- ======================================================
-         SECOND SCREENSHOT
+         PROCESS STEPS
     ======================================================= -->
 
-    <section class="split reveal">
+    <section class="process reveal">
 
 
-      <div class="split-image">
+      <div class="process-grid">
+
+
+        <article class="process-card">
+
+
+          <span class="process-card-number">
+            01 / DISCOVERY
+          </span>
+
+
+          <h3 class="process-card-title">
+            Understand
+          </h3>
+
+
+          <p>
+
+            Define the therapist's approach,
+            audience and the information visitors
+            need before feeling comfortable enough
+            to make contact.
+
+          </p>
+
+
+        </article>
+
+
+        <article class="process-card">
+
+
+          <span class="process-card-number">
+            02 / DIRECTION
+          </span>
+
+
+          <h3 class="process-card-title">
+            Translate
+          </h3>
+
+
+          <p>
+
+            Transform ideas of introspection,
+            trust and calm into an astral visual
+            language built from deep colour,
+            circular forms and soft contrast.
+
+          </p>
+
+
+        </article>
+
+
+        <article class="process-card">
+
+
+          <span class="process-card-number">
+            03 / EXPERIENCE
+          </span>
+
+
+          <h3 class="process-card-title">
+            Guide
+          </h3>
+
+
+          <p>
+
+            Build a clear path through the website:
+            understand the practice, learn about
+            the therapist, explore services and
+            move naturally toward booking.
+
+          </p>
+
+
+        </article>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- ======================================================
+         STORY / SCREENSHOT 02
+    ======================================================= -->
+
+    <section class="story reveal">
+
+
+      <div class="story-image">
 
 
         <img
@@ -2498,26 +2680,21 @@
       </div>
 
 
+      <div class="story-copy">
 
-      <div class="split-copy">
 
-
-        <p class="split-label">
-
+        <p class="story-label">
           03 / STORYTELLING
-
         </p>
 
 
-        <h2 class="split-title">
+        <h2 class="story-title">
 
           Turning a biography
           into a
 
           <em>
-
             journey.
-
           </em>
 
         </h2>
@@ -2525,56 +2702,23 @@
 
         <p>
 
-          Instead of presenting the therapist's
-          background as a conventional block of text,
-          the website uses a visual timeline to make
-          her story easier and more engaging to explore.
+          Instead of using a conventional biography,
+          the therapist's background is presented as
+          a visual timeline.
 
         </p>
 
 
         <p>
 
-          The vertical structure creates a natural
-          rhythm and reinforces the feeling of movement,
-          growth and personal development.
+          This creates a more human way of showing
+          her path, education and development while
+          maintaining the quiet rhythm of the site.
 
         </p>
 
 
       </div>
-
-
-    </section>
-
-
-
-    <!-- ======================================================
-         DESIGN DIRECTION
-    ======================================================= -->
-
-    <section class="statement reveal">
-
-
-      <p class="statement-label">
-
-        DESIGN DIRECTION
-
-      </p>
-
-
-      <p class="statement-text">
-
-        The identity was designed around an
-        introspective and astral visual language —
-
-        <em>
-
-          deep, quiet and reassuring.
-
-        </em>
-
-      </p>
 
 
     </section>
@@ -2592,21 +2736,17 @@
 
 
         <span class="section-number">
-
           04
-
         </span>
 
 
         <h2 class="identity-title">
 
-          Building a visual language
-          around
+          An astral identity
+          designed around
 
           <em>
-
-            peace & reflection.
-
+            stillness.
           </em>
 
         </h2>
@@ -2615,99 +2755,82 @@
       </div>
 
 
-
       <div class="identity-grid">
 
 
-        <div class="identity-card">
+        <article class="identity-card">
 
 
           <span class="identity-card-number">
-
             01 / COLOUR
-
           </span>
 
 
           <h3 class="identity-card-title">
-
             Deep tones
-
           </h3>
 
 
           <p>
 
             Dark navy creates depth and stability,
-            while muted gold introduces warmth,
-            guidance and a subtle astral quality.
+            while soft gold introduces warmth,
+            guidance and an understated astral quality.
 
           </p>
 
 
-        </div>
+        </article>
 
 
-
-        <div class="identity-card">
+        <article class="identity-card">
 
 
           <span class="identity-card-number">
-
             02 / TYPOGRAPHY
-
           </span>
 
 
           <h3 class="identity-card-title">
-
             Soft contrast
-
           </h3>
 
 
           <p>
 
-            Large serif typography creates
-            emotional presence while restrained
-            supporting text keeps the experience
-            clear and readable.
+            Large serif typography creates emotional
+            presence while restrained supporting text
+            keeps information clear and easy to absorb.
 
           </p>
 
 
-        </div>
+        </article>
 
 
-
-        <div class="identity-card">
+        <article class="identity-card">
 
 
           <span class="identity-card-number">
-
             03 / MOTION
-
           </span>
 
 
           <h3 class="identity-card-title">
-
             Slow rhythm
-
           </h3>
 
 
           <p>
 
-            Subtle movement and generous spacing
-            encourage slower navigation and help
-            create a feeling of calm rather than
-            urgency.
+            Subtle motion, circular forms and generous
+            spacing encourage slower navigation and
+            support a feeling of reflection.
 
           </p>
 
 
-        </div>
+        </article>
 
 
       </div>
@@ -2718,23 +2841,21 @@
 
 
     <!-- ======================================================
-         THIRD SCREENSHOT
+         VISUAL LANGUAGE / SCREENSHOT 03
     ======================================================= -->
 
-    <section class="third-image-section reveal">
+    <section class="visual-language reveal">
 
 
-      <div class="third-copy">
+      <div class="visual-copy">
 
 
-        <p class="third-label">
-
+        <p class="visual-label">
           05 / VISUAL LANGUAGE
-
         </p>
 
 
-        <h2 class="third-title">
+        <h2 class="visual-title">
 
           Quiet,
           spacious
@@ -2745,11 +2866,11 @@
 
         <p>
 
-          Circular forms reference cycles,
+          Circular elements reference cycles,
           introspection and balance. Combined
-          with restrained colour and large areas
-          of negative space, they reinforce the
-          feeling of calm throughout the experience.
+          with large areas of negative space,
+          they reinforce the feeling of calm
+          throughout the interface.
 
         </p>
 
@@ -2757,8 +2878,7 @@
       </div>
 
 
-
-      <div class="third-image">
+      <div class="visual-image">
 
 
         <img
@@ -2775,56 +2895,142 @@
 
 
     <!-- ======================================================
-         USER EXPERIENCE
+         RESULTS
     ======================================================= -->
 
-    <section class="experience reveal">
+    <section class="results reveal">
 
 
       <span class="section-number">
-
         06
-
       </span>
 
 
-      <h2 class="experience-title">
+      <h2 class="results-title">
 
-        Designed to move
-        from understanding
-        to
+        A website designed
+        to turn understanding
+        into
 
         <em>
-
           connection.
-
         </em>
 
       </h2>
 
 
-
-      <div class="experience-copy">
+      <div class="results-copy">
 
 
         <p>
 
-          The website gives visitors a clear path:
-          understand the therapeutic approach,
-          explore the therapist's background,
-          learn about the services and eventually
-          make contact.
+          The final experience gives visitors
+          a clear and calm path through the
+          therapist's work without reducing the
+          service to a purely commercial journey.
 
         </p>
 
 
         <p>
 
-          Booking and consultation information
-          remain easy to reach without turning the
-          experience into something overly commercial.
+          Information, emotional tone and
+          consultation booking are integrated
+          into one coherent digital experience.
 
         </p>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- ======================================================
+         RESULT CARDS
+    ======================================================= -->
+
+    <section class="results-cards reveal">
+
+
+      <div class="results-grid">
+
+
+        <article class="result-card">
+
+
+          <span>
+            01 / TRUST
+          </span>
+
+
+          <h3>
+            Clearer presence
+          </h3>
+
+
+          <p>
+
+            A more intentional digital identity
+            that communicates professionalism
+            without feeling clinical.
+
+          </p>
+
+
+        </article>
+
+
+        <article class="result-card">
+
+
+          <span>
+            02 / CLARITY
+          </span>
+
+
+          <h3>
+            Easier navigation
+          </h3>
+
+
+          <p>
+
+            Services, background and therapeutic
+            approach are presented through a clear
+            visual hierarchy.
+
+          </p>
+
+
+        </article>
+
+
+        <article class="result-card">
+
+
+          <span>
+            03 / ACTION
+          </span>
+
+
+          <h3>
+            Simple booking path
+          </h3>
+
+
+          <p>
+
+            Visitors can move naturally from
+            learning about the practice to
+            making contact or booking a consultation.
+
+          </p>
+
+
+        </article>
 
 
       </div>
@@ -2843,23 +3049,15 @@
 
       <div class="live-meta">
 
-
         <span>
-
           PROJECT 01 / DEEP AWARENESS
-
         </span>
-
 
         <span>
-
           LIVE WEBSITE
-
         </span>
-
 
       </div>
-
 
 
       <a
@@ -2872,9 +3070,7 @@
         VIEW THE<br>
 
         <em>
-
           live site.
-
         </em>
 
         ↗
@@ -2882,24 +3078,71 @@
       </a>
 
 
-
       <div class="live-meta">
 
-
         <span>
-
           WEB DESIGN / DEVELOPMENT /
           VISUAL IDENTITY
-
         </span>
-
 
         <span>
-
           2026
-
         </span>
 
+      </div>
+
+
+    </section>
+
+
+
+    <!-- ======================================================
+         CONTACT
+    ======================================================= -->
+
+    <section class="contact-cta reveal">
+
+
+      <div class="contact-meta">
+
+        <span>
+          LIKE THE APPROACH?
+        </span>
+
+        <span>
+          AVAILABLE FOR SELECTED PROJECTS
+        </span>
+
+      </div>
+
+
+      <a
+        href="../contact.html"
+        class="contact-title external-link"
+      >
+
+        HAVE A PROJECT<br>
+
+        IN MIND?
+
+        <em>
+          Let's talk.
+        </em>
+
+        ↗
+
+      </a>
+
+
+      <div class="contact-meta">
+
+        <span>
+          MARTA VAZ
+        </span>
+
+        <span>
+          WEB / VISUAL / DIGITAL
+        </span>
 
       </div>
 
@@ -2917,20 +3160,13 @@
       class="next-project external-link"
     >
 
-
       <span class="next-small">
-
         NEXT PROJECT
-
       </span>
-
 
       <span class="next-title">
-
         MARTA OS ↗
-
       </span>
-
 
     </a>
 
@@ -2945,27 +3181,17 @@
 
   <footer>
 
-
     <span>
-
       MARTA VAZ © 2026
-
     </span>
-
 
     <a href="../index.html">
-
       BACK HOME ↗
-
     </a>
 
-
     <span>
-
       WEB / DESIGN / DIGITAL
-
     </span>
-
 
   </footer>
 
@@ -2981,9 +3207,7 @@
     /* SCROLL REVEAL */
 
     const revealElements =
-      document.querySelectorAll(
-        ".reveal"
-      );
+      document.querySelectorAll(".reveal");
 
 
     const observer =
@@ -2991,29 +3215,20 @@
 
         (entries) => {
 
-          entries.forEach(
+          entries.forEach((entry) => {
 
-            (entry) => {
+            if (entry.isIntersecting) {
 
-              if (
-                entry.isIntersecting
-              ) {
+              entry.target
+                .classList
+                .add("visible");
 
-                entry.target
-                  .classList
-                  .add("visible");
-
-
-                observer
-                  .unobserve(
-                    entry.target
-                  );
-
-              }
+              observer
+                .unobserve(entry.target);
 
             }
 
-          );
+          });
 
         },
 
@@ -3024,26 +3239,18 @@
       );
 
 
-    revealElements.forEach(
+    revealElements.forEach((element) => {
 
-      (element) => {
+      observer.observe(element);
 
-        observer.observe(
-          element
-        );
-
-      }
-
-    );
+    });
 
 
 
     /* CUSTOM CURSOR */
 
     const cursor =
-      document.querySelector(
-        ".cursor"
-      );
+      document.querySelector(".cursor");
 
 
     const finePointer =
@@ -3064,7 +3271,6 @@
           cursor.style.left =
             event.clientX + "px";
 
-
           cursor.style.top =
             event.clientY + "px";
 
@@ -3073,55 +3279,46 @@
       );
 
 
-
       const interactiveLinks =
         document.querySelectorAll(
           ".external-link"
         );
 
 
-      interactiveLinks.forEach(
-
-        (link) => {
+      interactiveLinks.forEach((link) => {
 
 
-          link.addEventListener(
+        link.addEventListener(
 
-            "mouseenter",
+          "mouseenter",
 
-            () => {
+          () => {
 
-              cursor
-                .classList
-                .add(
-                  "link-mode"
-                );
+            cursor
+              .classList
+              .add("link-mode");
 
-            }
+          }
 
-          );
+        );
 
 
-          link.addEventListener(
+        link.addEventListener(
 
-            "mouseleave",
+          "mouseleave",
 
-            () => {
+          () => {
 
-              cursor
-                .classList
-                .remove(
-                  "link-mode"
-                );
+            cursor
+              .classList
+              .remove("link-mode");
 
-            }
+          }
 
-          );
+        );
 
 
-        }
-
-      );
+      });
 
 
     }
