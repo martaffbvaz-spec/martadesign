@@ -1824,359 +1824,855 @@
     }
 
 
+/* =========================================================
+   MOBILE — STABLE VERSION
+========================================================= */
 
-    /* =========================================================
-       MOBILE
-    ========================================================= */
+@media (max-width: 700px) {
 
-    @media (max-width: 700px) {
 
+  /* -----------------------------------------
+     GLOBAL
+  ----------------------------------------- */
 
-      .header {
+  body {
+    overflow-x: hidden;
+  }
 
-        padding:
-          18px
-          16px;
 
-        grid-template-columns:
-          1fr
-          1fr;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 
-      }
 
+  /* -----------------------------------------
+     HEADER
+  ----------------------------------------- */
 
-      .header-center {
-        display: none;
-      }
+  .header {
+    position: absolute;
 
+    padding:
+      18px
+      16px;
 
-      .hero {
+    display: grid;
 
-        min-height: 100svh;
+    grid-template-columns:
+      1fr
+      auto;
 
-        padding:
-          110px
-          16px
-          28px;
+    align-items: center;
 
-      }
+    font-size: 8px;
+  }
 
 
-      .hero-orbit {
-        width: 115vw;
-      }
+  .header-center {
+    display: none;
+  }
 
 
-      .hero-title {
-        font-size: 23vw;
-      }
+  .header-right {
+    justify-self: end;
 
+    white-space: nowrap;
+  }
 
-      .hero-subtitle {
 
-        margin-top: 45px;
+  /* -----------------------------------------
+     HERO
+  ----------------------------------------- */
 
-        max-width: 310px;
+  .hero {
+    min-height: 100svh;
 
-        font-size: 18px;
+    padding:
+      100px
+      16px
+      30px;
 
-      }
+    display: flex;
 
+    flex-direction: column;
 
-      .hero-bottom {
-        font-size: 7px;
-      }
+    justify-content: space-between;
+  }
 
 
-      .overview {
+  .hero-orbit {
+    width: 125vw;
 
-        padding:
-          90px
-          16px;
+    max-width: none;
 
-        grid-template-columns:
-          35px
-          1fr;
+    opacity: 0.65;
+  }
 
-      }
 
+  .hero-content {
+    width: 100%;
 
-      .overview-title {
-        font-size: 14vw;
-      }
+    margin: auto 0;
 
+    padding:
+      60px
+      0;
 
-      .overview-copy {
+    display: flex;
 
-        grid-column: 2;
+    align-items: center;
+  }
 
-        margin-top: 40px;
 
-      }
+  .hero-label {
+    margin-bottom: 32px;
 
+    font-size: 7px;
 
-      .full-image {
+    letter-spacing: 0.22em;
+  }
 
-        padding:
-          0
-          16px
-          90px;
 
-      }
+  .hero-title {
+    width: 100%;
 
+    font-size: clamp(
+      74px,
+      22vw,
+      110px
+    );
 
-      .project-info {
+    line-height: 0.76;
+  }
 
-        padding:
-          85px
-          16px;
 
-        grid-template-columns: 1fr;
+  .hero-subtitle {
+    width: 100%;
 
-        gap: 60px;
+    max-width: 320px;
 
-      }
+    margin-top: 42px;
 
+    font-size: 18px;
 
-      .project-info-left {
+    line-height: 1.4;
+  }
 
-        min-height: auto;
-        gap: 50px;
 
-      }
+  .hero-bottom {
+    display: flex;
 
+    justify-content: space-between;
 
-      .project-info-title {
-        font-size: 14vw;
-      }
+    gap: 20px;
 
+    font-size: 7px;
 
-      .info-row {
+    line-height: 1.4;
+  }
 
-        grid-template-columns:
-          95px
-          1fr;
 
-      }
+  /* -----------------------------------------
+     OVERVIEW
+  ----------------------------------------- */
 
+  .overview {
+    padding:
+      90px
+      16px;
 
-      .process-intro {
+    display: block;
+  }
 
-        min-height: auto;
 
-        padding:
-          85px
-          16px;
+  .overview .section-number {
+    display: block;
 
-        grid-template-columns: 1fr;
+    margin-bottom: 35px;
+  }
 
-        gap: 45px;
 
-      }
+  .overview-title {
+    width: 100%;
 
+    font-size: clamp(
+      48px,
+      13vw,
+      76px
+    );
 
-      .process-title {
-        font-size: 12vw;
-      }
+    line-height: 0.98;
+  }
 
 
-      .process {
+  .overview-copy {
+    width: 100%;
 
-        padding:
-          90px
-          16px;
+    max-width: 440px;
 
-      }
+    margin-top: 55px;
+  }
 
 
-      .process-grid,
-      .identity-grid,
-      .results-grid {
+  .overview-copy p {
+    font-size: 17px;
 
-        grid-template-columns: 1fr;
+    line-height: 1.45;
+  }
 
-      }
 
+  /* -----------------------------------------
+     MAIN SCREENSHOT
+  ----------------------------------------- */
 
-      .process-card {
-        min-height: 250px;
-      }
+  .full-image {
+    padding:
+      0
+      16px
+      80px;
+  }
 
 
-      .story {
+  .image-frame {
+    width: 100%;
 
-        padding:
-          90px
-          16px;
+    overflow: hidden;
+  }
 
-        grid-template-columns: 1fr;
 
-        gap: 55px;
+  .image-frame img {
+    width: 100%;
 
-      }
+    height: auto;
 
+    transform: none;
+  }
 
-      .identity {
 
-        padding:
-          90px
-          16px;
+  /* -----------------------------------------
+     PROJECT DETAILS
+  ----------------------------------------- */
 
-      }
+  .project-info {
+    padding:
+      85px
+      16px;
 
+    display: block;
+  }
 
-      .identity-heading {
 
-        grid-template-columns:
-          35px
-          1fr;
+  .project-info-left {
+    min-height: auto;
 
-        margin-bottom: 60px;
+    display: block;
 
-      }
+    margin-bottom: 70px;
+  }
 
 
-      .identity-title {
-        font-size: 12vw;
-      }
+  .project-info-kicker {
+    display: block;
 
+    margin-bottom: 45px;
+  }
 
-      .identity-card {
-        min-height: 240px;
-      }
 
+  .project-info-title {
+    width: 100%;
 
-      .visual-language {
+    font-size: clamp(
+      48px,
+      13vw,
+      75px
+    );
 
-        padding:
-          90px
-          16px;
+    line-height: 0.9;
+  }
 
-        grid-template-columns: 1fr;
 
-        gap: 50px;
+  .project-info-right {
+    width: 100%;
+  }
 
-      }
 
+  .info-row {
+    padding:
+      16px
+      0;
 
-      .results {
+    display: grid;
 
-        padding:
-          90px
-          16px;
+    grid-template-columns:
+      82px
+      minmax(0, 1fr);
 
-        grid-template-columns:
-          35px
-          1fr;
+    gap: 18px;
+  }
 
-      }
 
+  .info-label {
+    font-size: 7px;
+  }
 
-      .results-title {
-        font-size: 13vw;
-      }
 
+  .info-value {
+    min-width: 0;
 
-      .results-copy {
+    font-size: 15px;
 
-        grid-column: 2;
+    line-height: 1.4;
 
-        margin-top: 40px;
+    overflow-wrap: anywhere;
+  }
 
-      }
 
+  /* -----------------------------------------
+     PROCESS INTRO
+  ----------------------------------------- */
 
-      .results-cards {
+  .process-intro {
+    min-height: auto;
 
-        padding:
-          0
-          16px
-          90px;
+    padding:
+      85px
+      16px;
 
-      }
+    display: block;
+  }
 
 
-      .live {
+  .process-label {
+    display: block;
 
-        min-height: 68vh;
+    margin-bottom: 45px;
+  }
 
-        padding:
-          28px
-          16px;
 
-      }
+  .process-title {
+    width: 100%;
 
+    font-size: clamp(
+      46px,
+      12vw,
+      72px
+    );
 
-      .live-link {
-        font-size: 18vw;
-      }
+    line-height: 1;
+  }
 
 
-      .contact-cta {
+  .process-description {
+    width: 100%;
 
-        min-height: 70vh;
+    max-width: 500px;
 
-        padding:
-          28px
-          16px;
+    margin-top: 40px;
 
-      }
+    font-size: 16px;
 
+    line-height: 1.5;
+  }
 
-      .contact-title {
-        font-size: 17vw;
-      }
 
+  /* -----------------------------------------
+     PROCESS CARDS
+  ----------------------------------------- */
 
-      .next-project {
+  .process {
+    padding:
+      80px
+      16px;
+  }
 
-        padding:
-          55px
-          16px;
 
-        flex-direction: column;
+  .process-grid {
+    display: flex;
 
-        align-items: flex-start;
+    flex-direction: column;
 
-      }
+    gap: 14px;
+  }
 
 
-      footer {
+  .process-card {
+    width: 100%;
 
-        padding:
-          18px
-          16px;
+    min-height: 250px;
 
-        flex-wrap: wrap;
+    padding: 22px;
+  }
 
-      }
 
-    }
+  .process-card-title {
+    font-size: 38px;
+  }
 
 
+  .process-card p {
+    font-size: 15px;
+  }
 
-    /* =========================================================
-       REDUCED MOTION
-    ========================================================= */
 
-    @media (prefers-reduced-motion: reduce) {
+  /* -----------------------------------------
+     STORY
+  ----------------------------------------- */
 
-      *,
-      *::before,
-      *::after {
+  .story {
+    padding:
+      85px
+      16px;
 
-        animation-duration:
-          0.01ms !important;
+    display: flex;
 
-        transition-duration:
-          0.01ms !important;
+    flex-direction: column;
 
-        scroll-behavior:
-          auto !important;
+    gap: 60px;
+  }
 
-      }
 
-    }
+  .story-image {
+    width: 100%;
+  }
+
+
+  .story-image img {
+    width: 100%;
+    height: auto;
+  }
+
+
+  .story-copy {
+    width: 100%;
+
+    max-width: 500px;
+  }
+
+
+  .story-title {
+    font-size: clamp(
+      44px,
+      12vw,
+      70px
+    );
+
+    line-height: 1;
+  }
+
+
+  .story-copy p {
+    font-size: 16px;
+
+    line-height: 1.5;
+  }
+
+
+  /* -----------------------------------------
+     VISUAL IDENTITY
+  ----------------------------------------- */
+
+  .identity {
+    padding:
+      85px
+      16px;
+  }
+
+
+  .identity-heading {
+    display: block;
+
+    margin-bottom: 60px;
+  }
+
+
+  .identity-heading .section-number {
+    display: block;
+
+    margin-bottom: 35px;
+  }
+
+
+  .identity-title {
+    width: 100%;
+
+    font-size: clamp(
+      46px,
+      12vw,
+      72px
+    );
+
+    line-height: 1;
+  }
+
+
+  .identity-grid {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+
+  .identity-card {
+    width: 100%;
+
+    min-height: 235px;
+
+    padding: 22px;
+  }
+
+
+  .identity-card-title {
+    font-size: 36px;
+  }
+
+
+  /* -----------------------------------------
+     VISUAL LANGUAGE
+  ----------------------------------------- */
+
+  .visual-language {
+    padding:
+      85px
+      16px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 55px;
+  }
+
+
+  .visual-copy {
+    width: 100%;
+
+    max-width: 470px;
+  }
+
+
+  .visual-title {
+    font-size: clamp(
+      42px,
+      11vw,
+      65px
+    );
+
+    line-height: 1;
+  }
+
+
+  .visual-copy p {
+    font-size: 16px;
+
+    line-height: 1.5;
+  }
+
+
+  .visual-image {
+    width: 100%;
+  }
+
+
+  .visual-image img {
+    width: 100%;
+
+    height: auto;
+  }
+
+
+  /* -----------------------------------------
+     RESULTS
+  ----------------------------------------- */
+
+  .results {
+    padding:
+      85px
+      16px;
+
+    display: block;
+  }
+
+
+  .results .section-number {
+    display: block;
+
+    margin-bottom: 35px;
+  }
+
+
+  .results-title {
+    width: 100%;
+
+    font-size: clamp(
+      46px,
+      12vw,
+      72px
+    );
+
+    line-height: 1;
+  }
+
+
+  .results-copy {
+    width: 100%;
+
+    max-width: 480px;
+
+    margin-top: 55px;
+  }
+
+
+  .results-copy p {
+    font-size: 16px;
+
+    line-height: 1.5;
+  }
+
+
+  /* -----------------------------------------
+     RESULT CARDS
+  ----------------------------------------- */
+
+  .results-cards {
+    padding:
+      0
+      16px
+      85px;
+  }
+
+
+  .results-grid {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+
+  .result-card {
+    width: 100%;
+
+    min-height: 220px;
+
+    padding: 22px;
+  }
+
+
+  .result-card h3 {
+    font-size: 34px;
+  }
+
+
+  /* -----------------------------------------
+     LIVE SITE
+  ----------------------------------------- */
+
+  .live {
+    min-height: auto;
+
+    padding:
+      28px
+      16px;
+  }
+
+
+  .live-meta {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    font-size: 7px;
+
+    line-height: 1.35;
+  }
+
+
+  .live-link {
+    display: block;
+
+    width: 100%;
+
+    margin:
+      130px
+      0;
+
+    font-size: clamp(
+      58px,
+      17vw,
+      95px
+    );
+
+    line-height: 0.82;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  /* -----------------------------------------
+     CONTACT
+  ----------------------------------------- */
+
+  .contact-cta {
+    min-height: auto;
+
+    padding:
+      28px
+      16px;
+  }
+
+
+  .contact-meta {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    font-size: 7px;
+
+    line-height: 1.35;
+  }
+
+
+  .contact-title {
+    display: block;
+
+    width: 100%;
+
+    margin:
+      130px
+      0;
+
+    font-size: clamp(
+      54px,
+      15vw,
+      90px
+    );
+
+    line-height: 0.84;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  /* -----------------------------------------
+     NEXT PROJECT
+  ----------------------------------------- */
+
+  .next-project {
+    padding:
+      55px
+      16px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 25px;
+  }
+
+
+  .next-title {
+    font-size: 38px;
+
+    line-height: 1;
+  }
+
+
+  /* -----------------------------------------
+     FOOTER
+  ----------------------------------------- */
+
+  footer {
+    padding:
+      20px
+      16px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    font-size: 8px;
+  }
+
+
+  /* -----------------------------------------
+     CURSOR
+  ----------------------------------------- */
+
+  .cursor {
+    display: none !important;
+  }
+
+}
+
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+
+  .hero-title {
+    font-size: 21vw;
+  }
+
+
+  .hero-subtitle {
+    font-size: 17px;
+  }
+
+
+  .overview-title,
+  .project-info-title {
+    font-size: 12.5vw;
+  }
+
+
+  .process-title,
+  .identity-title,
+  .results-title {
+    font-size: 11.5vw;
+  }
+
+
+  .story-title,
+  .visual-title {
+    font-size: 11vw;
+  }
+
+
+  .live-link {
+    font-size: 16vw;
+  }
+
+
+  .contact-title {
+    font-size: 14.5vw;
+  }
+
+
+  .info-row {
+    grid-template-columns:
+      70px
+      minmax(0, 1fr);
+  }
+
+}
 
   </style>
 
