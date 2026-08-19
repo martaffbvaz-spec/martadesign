@@ -16,7 +16,44 @@
 
 
   <style>
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
 
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+  z-index: 9999;
+
+  font-size: 22px;
+  color: var(--cacao);
+
+  transition:
+    transform 0.18s ease,
+    font-size 0.18s ease,
+    color 0.18s ease;
+}
+
+.custom-cursor.hover {
+  transform: translate(-50%, -50%) rotate(20deg) scale(1.5);
+  color: var(--grass);
+}
+
+/* Só usamos cursor personalizado em dispositivos com rato */
+@media (pointer: fine) {
+  body,
+  a,
+  button {
+    cursor: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none;
+  }
+}
     /* ==========================================================
        COLOUR PALETTE
     ========================================================== */
@@ -1821,7 +1858,28 @@
 
 </head>
 
+<div class="custom-cursor">✿</div>
 
+<script>
+  const cursor = document.querySelector(".custom-cursor");
+
+  document.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+  });
+
+  const interactiveElements = document.querySelectorAll("a, button");
+
+  interactiveElements.forEach((element) => {
+    element.addEventListener("mouseenter", () => {
+      cursor.classList.add("hover");
+    });
+
+    element.addEventListener("mouseleave", () => {
+      cursor.classList.remove("hover");
+    });
+  });
+</script>
 
 <body>
 
@@ -2567,7 +2625,7 @@
     </span>
 
 
-    <a href="#">
+    <a href="https://www.instagram.com/_.martavaz._/">
 
       INSTAGRAM ↗
 
