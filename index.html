@@ -2,16 +2,48 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Marta Vaz — Designer</title>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Marta Vaz — Web & Visual Designer
+  </title>
+
 
   <style>
 
-    /* =========================================================
+    /* ==========================================================
+       COLOUR PALETTE
+    ========================================================== */
+
+    :root {
+
+      --peony: #F7DDD5;
+      --rose: #D8A4AF;
+      --cacao: #6B403B;
+
+      --lavender: #CCC3D1;
+
+      --leaf: #C1BC77;
+      --grass: #8D8B4C;
+      --jungle: #65613F;
+
+      --sky: #AFB8CD;
+
+      --cream: #F5F0E7;
+      --black: #151515;
+
+    }
+
+
+    /* ==========================================================
        RESET
-    ========================================================= */
+    ========================================================== */
 
     * {
       margin: 0;
@@ -19,1094 +51,1811 @@
       box-sizing: border-box;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
-      background: #f0ede2;
-      color: #111;
-      font-family: Arial, Helvetica, sans-serif;
+
+      background: var(--cream);
+
+      color: var(--cacao);
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       overflow-x: hidden;
+
     }
+
 
     a {
+
       color: inherit;
+
       text-decoration: none;
+
     }
+
 
     img {
-      display: block;
+
       width: 100%;
+
+      display: block;
+
     }
+
 
     ::selection {
-      background: #111;
-      color: #f0ede2;
+
+      background: var(--cacao);
+
+      color: var(--peony);
+
     }
 
 
-    /* =========================================================
+
+    /* ==========================================================
        HEADER
-    ========================================================= */
+    ========================================================== */
 
     .header {
-      position: relative;
-      z-index: 20;
 
       width: 100%;
 
-      padding: 18px 28px;
+      min-height: 56px;
 
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
+
+      grid-template-columns:
+        1fr
+        auto
+        1fr;
+
       align-items: center;
 
-      font-size: 10px;
-      letter-spacing: 0.06em;
+      padding:
+        18px
+        28px;
 
-      border-bottom: 1px solid rgba(0,0,0,0.18);
+      border-bottom:
+        1px solid
+        rgba(107, 64, 59, 0.25);
+
+      font-size: 10px;
+
+      letter-spacing: 0.07em;
+
+      position: relative;
+
+      z-index: 100;
+
     }
+
 
     .logo {
-      font-weight: 600;
+
+      font-weight: 700;
+
     }
 
+
     .nav {
+
       display: flex;
-      gap: 34px;
+
+      align-items: center;
+
+      gap: 36px;
+
     }
+
+
+    .top-contact {
+
+      justify-self: end;
+
+    }
+
 
     .nav a,
     .top-contact {
+
       position: relative;
+
     }
+
 
     .nav a::after,
     .top-contact::after {
+
       content: "";
 
       position: absolute;
+
       left: 0;
-      bottom: -4px;
+
+      bottom: -5px;
 
       width: 0;
+
       height: 1px;
 
-      background: #111;
+      background: var(--cacao);
 
-      transition: width 0.3s ease;
+      transition:
+        width
+        0.3s
+        ease;
+
     }
+
 
     .nav a:hover::after,
     .top-contact:hover::after {
+
       width: 100%;
-    }
 
-    .top-contact {
-      justify-self: end;
     }
 
 
-    /* =========================================================
+
+    /* ==========================================================
        HERO
-    ========================================================= */
+    ========================================================== */
 
     .hero {
+
+      min-height: calc(100vh - 56px);
+
+      padding:
+        28px
+        28px
+        34px;
+
+      display: grid;
+
+      grid-template-rows:
+        auto
+        1fr
+        auto;
+
+      gap: 35px;
+
       position: relative;
-
-      min-height: 100vh;
-
-      padding: 24px 28px 35px;
 
       overflow: hidden;
 
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      background:
+        var(--peony);
+
     }
 
 
-    .hero-topline {
+    .hero-meta {
+
       display: flex;
+
       justify-content: space-between;
+
+      align-items: flex-start;
 
       font-size: 9px;
+
       line-height: 1.4;
-      letter-spacing: 0.04em;
+
+      letter-spacing: 0.06em;
+
+      position: relative;
+
+      z-index: 5;
+
     }
 
 
-    .hero-center {
+    .hero-meta-right {
+
+      text-align: right;
+
+    }
+
+
+
+    /* ---------- main hero layout ---------- */
+
+    .hero-main {
+
+      display: grid;
+
+      grid-template-columns:
+        1.15fr
+        0.55fr;
+
+      gap: 60px;
+
+      align-items: center;
+
+      width: 100%;
+
+      max-width: 1600px;
+
+      margin: 0 auto;
+
+    }
+
+
+    .hero-copy {
+
       position: relative;
 
-      min-height: 66vh;
+      z-index: 5;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    }
+
+
+    .hero-kicker {
+
+      font-size: 11px;
+
+      letter-spacing: 0.08em;
+
+      margin-bottom: 24px;
+
     }
 
 
     .hero-title {
-      position: relative;
-      z-index: 4;
 
-      width: 100%;
-
-      text-align: center;
-
-      font-size: clamp(68px, 11.5vw, 180px);
       font-weight: 500;
 
-      letter-spacing: -0.075em;
+      font-size:
+        clamp(
+          72px,
+          10vw,
+          165px
+        );
+
       line-height: 0.82;
+
+      letter-spacing: -0.075em;
+
+      color: var(--cacao);
+
     }
 
 
-    .hero-title .line {
+    .hero-title span {
+
       display: block;
+
     }
 
 
-    .hero-title .italic {
-      font-family: Georgia, "Times New Roman", serif;
+    .hero-title .serif {
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       font-style: italic;
+
       font-weight: 400;
+
+      color: var(--jungle);
+
+      font-size: 0.92em;
+
+      margin-left: 0.14em;
+
+    }
+
+
+
+    /* ---------- hero photo ---------- */
+
+    .hero-photo-wrap {
+
+      position: relative;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      min-height: 520px;
+
     }
 
 
     .hero-photo {
-      position: absolute;
-      z-index: 2;
 
-      width: min(25vw, 340px);
-      aspect-ratio: 3 / 4;
+      width:
+        min(
+          30vw,
+          400px
+        );
 
-      right: 13%;
-      top: 50%;
-
-      transform: translateY(-50%) rotate(2deg);
+      aspect-ratio:
+        3 / 4;
 
       overflow: hidden;
+
+      position: relative;
+
+      transform:
+        rotate(2deg);
+
+      box-shadow:
+        16px
+        16px
+        0
+        var(--leaf);
+
     }
 
 
     .hero-photo img {
+
       width: 100%;
+
       height: 100%;
 
       object-fit: cover;
+
       object-position: center;
 
-      filter: saturate(0.92) contrast(1.03);
     }
 
 
-    .hero-note {
+    .hero-photo-tag {
+
       position: absolute;
-      z-index: 6;
 
-      left: 8%;
-      bottom: 13%;
+      left: -25px;
 
-      font-family: Georgia, "Times New Roman", serif;
+      bottom: 30px;
+
+      background:
+        var(--sky);
+
+      padding:
+        10px
+        15px;
+
+      font-size: 9px;
+
+      line-height: 1.3;
+
+      letter-spacing: 0.06em;
+
+      transform:
+        rotate(-4deg);
+
+      color: var(--cacao);
+
+    }
+
+
+    .hero-handwritten {
+
+      position: absolute;
+
+      top: 25px;
+
+      right: -20px;
+
+      width: 190px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 24px;
+
+      line-height: 1;
+
       font-style: italic;
 
-      font-size: clamp(18px, 2vw, 31px);
-      line-height: 1.05;
+      transform:
+        rotate(7deg);
 
-      transform: rotate(-5deg);
+      color: var(--jungle);
+
     }
 
 
-    .hero-index {
-      position: absolute;
 
-      right: 2px;
-      bottom: 18%;
-
-      writing-mode: vertical-rl;
-
-      font-size: 8px;
-      letter-spacing: 0.08em;
-    }
-
+    /* ---------- hero bottom ---------- */
 
     .hero-bottom {
+
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      align-items: end;
+
+      grid-template-columns:
+        1fr
+        auto
+        1fr;
 
       gap: 30px;
 
+      align-items: end;
+
       font-size: 10px;
-      letter-spacing: 0.04em;
+
+      letter-spacing: 0.05em;
+
     }
 
 
     .hero-description {
-      max-width: 330px;
 
-      font-size: 15px;
-      line-height: 1.25;
-      letter-spacing: -0.015em;
+      max-width: 400px;
+
+      font-size: 16px;
+
+      line-height: 1.3;
+
+      letter-spacing: -0.02em;
+
     }
 
 
     .hero-services {
+
       text-align: center;
+
       line-height: 1.5;
+
     }
 
 
-    .hero-location {
+    .hero-availability {
+
       text-align: right;
+
       line-height: 1.5;
+
     }
 
 
-    /* =========================================================
-       TICKER
-    ========================================================= */
+
+    /* ==========================================================
+       MOVING STRIP
+    ========================================================== */
 
     .ticker {
-      width: 100%;
+
       overflow: hidden;
 
-      border-top: 1px solid #111;
-      border-bottom: 1px solid #111;
+      width: 100%;
 
-      padding: 12px 0;
+      padding:
+        13px
+        0;
+
+      background:
+        var(--jungle);
+
+      color:
+        var(--peony);
 
       white-space: nowrap;
+
     }
 
 
     .ticker-track {
-      display: inline-flex;
-      gap: 50px;
 
-      min-width: max-content;
+      width: max-content;
 
-      animation: tickerMove 25s linear infinite;
+      display: flex;
+
+      gap: 55px;
+
+      animation:
+        ticker
+        28s
+        linear
+        infinite;
+
     }
 
 
     .ticker span {
-      font-family: Georgia, "Times New Roman", serif;
 
-      font-size: clamp(24px, 3vw, 48px);
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       font-style: italic;
 
-      letter-spacing: -0.03em;
+      font-size:
+        clamp(
+          24px,
+          2.7vw,
+          44px
+        );
+
     }
 
 
-    @keyframes tickerMove {
+    @keyframes ticker {
+
       from {
-        transform: translateX(0);
+
+        transform:
+          translateX(0);
+
       }
 
       to {
-        transform: translateX(-50%);
+
+        transform:
+          translateX(-50%);
+
       }
+
     }
 
 
-    /* =========================================================
+
+    /* ==========================================================
        ABOUT
-    ========================================================= */
+    ========================================================== */
 
     .about {
+
+      min-height: 110vh;
+
+      padding:
+        120px
+        28px;
+
+      background:
+        var(--cream);
+
       position: relative;
-
-      min-height: 115vh;
-
-      padding: 120px 28px;
 
       overflow: hidden;
+
     }
 
 
-    .about-label {
+    .section-label {
+
       font-size: 9px;
-      letter-spacing: 0.06em;
+
+      letter-spacing: 0.07em;
+
     }
 
 
-    .about-title {
-      position: relative;
-      z-index: 3;
+    .about-grid {
 
-      width: 78%;
+      display: grid;
 
-      margin-top: 45px;
+      grid-template-columns:
+        1.15fr
+        0.85fr;
 
-      font-size: clamp(65px, 9.4vw, 150px);
+      gap: 90px;
+
+      align-items: start;
+
+      margin-top: 55px;
+
+    }
+
+
+    .about-heading {
+
+      font-size:
+        clamp(
+          68px,
+          8vw,
+          135px
+        );
+
       line-height: 0.82;
 
+      letter-spacing: -0.07em;
+
       font-weight: 500;
-      letter-spacing: -0.075em;
+
+      max-width: 950px;
+
     }
 
 
-    .about-title .serif {
-      font-family: Georgia, "Times New Roman", serif;
-      font-style: italic;
+    .about-heading em {
+
+      display: block;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       font-weight: 400;
+
+      color: var(--grass);
+
     }
 
 
-    .about-photo-main {
-      position: absolute;
+    .about-right {
 
-      right: 8%;
-      top: 22%;
+      padding-top: 40px;
 
-      width: min(26vw, 360px);
-      aspect-ratio: 2 / 3;
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 45px;
+
+    }
+
+
+    .about-main-photo {
+
+      width: 75%;
+
+      margin-left: auto;
+
+      aspect-ratio:
+        3 / 4;
 
       overflow: hidden;
 
-      transform: rotate(2deg);
+      transform:
+        rotate(1.5deg);
+
+      box-shadow:
+        -13px
+        13px
+        0
+        var(--lavender);
+
     }
 
 
-    .about-photo-main img {
+    .about-main-photo img {
+
       width: 100%;
+
       height: 100%;
 
       object-fit: cover;
-      object-position: center;
-    }
 
-
-    .about-photo-small {
-      position: absolute;
-
-      left: 8%;
-      bottom: 9%;
-
-      width: min(17vw, 240px);
-      aspect-ratio: 4 / 5;
-
-      overflow: hidden;
-
-      transform: rotate(-3deg);
-    }
-
-
-    .about-photo-small img {
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
     }
 
 
     .about-copy {
-      position: absolute;
 
-      right: 11%;
-      bottom: 9%;
+      max-width: 460px;
 
-      width: min(36vw, 480px);
+      margin-left: auto;
+
     }
 
 
     .about-copy p {
-      font-size: clamp(17px, 1.5vw, 23px);
-      line-height: 1.25;
 
-      letter-spacing: -0.025em;
+      font-size:
+        clamp(
+          17px,
+          1.4vw,
+          22px
+        );
+
+      line-height: 1.3;
+
+      letter-spacing: -0.02em;
 
       margin-bottom: 20px;
+
     }
 
 
-    .about-smalltext {
-      margin-top: 30px;
 
-      font-size: 9px !important;
-      letter-spacing: 0.05em !important;
+    /* ---------- small editorial picture ---------- */
 
-      text-transform: uppercase;
-    }
+    .about-detail {
 
-
-    /* =========================================================
-       WORK INTRO
-    ========================================================= */
-
-    .work-intro {
-      min-height: 75vh;
-
-      padding: 110px 28px;
+      margin-top: 80px;
 
       display: grid;
-      grid-template-columns: 90px 1fr 300px;
 
-      gap: 20px;
+      grid-template-columns:
+        0.4fr
+        1fr;
+
+      gap: 70px;
+
+      align-items: end;
+
     }
 
 
-    .section-number {
-      font-size: 10px;
+    .about-small-photo {
+
+      width: 100%;
+
+      max-width: 270px;
+
+      aspect-ratio:
+        4 / 5;
+
+      overflow: hidden;
+
+      transform:
+        rotate(-2deg);
+
+      box-shadow:
+        12px
+        12px
+        0
+        var(--rose);
+
     }
 
 
-    .work-intro h2 {
-      font-size: clamp(80px, 11vw, 180px);
-      line-height: 0.78;
+    .about-small-photo img {
 
-      font-weight: 500;
-      letter-spacing: -0.075em;
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
     }
 
 
-    .work-intro h2 span {
-      font-family: Georgia, "Times New Roman", serif;
+    .about-detail-text {
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       font-style: italic;
 
-      font-weight: 400;
+      font-size:
+        clamp(
+          28px,
+          3.5vw,
+          55px
+        );
+
+      line-height: 1.05;
+
+      color: var(--jungle);
+
+      max-width: 850px;
+
     }
 
 
-    .work-intro-copy {
-      align-self: end;
 
-      max-width: 230px;
+    /* ==========================================================
+       WORK INTRO
+    ========================================================== */
 
-      font-size: 14px;
-      line-height: 1.35;
-    }
+    .work-intro {
 
+      min-height: 70vh;
 
-    /* =========================================================
-       PROJECT 01
-    ========================================================= */
+      padding:
+        110px
+        28px;
 
-    .project {
-      padding: 35px 28px 160px;
-    }
+      background:
+        var(--sky);
 
+      display: grid;
 
-    .project-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
+      grid-template-columns:
+        90px
+        1fr
+        300px;
 
       gap: 20px;
 
-      margin-bottom: 16px;
+      align-items: start;
+
+    }
+
+
+    .work-number {
+
+      font-size: 10px;
+
+    }
+
+
+    .work-title {
+
+      font-size:
+        clamp(
+          80px,
+          11vw,
+          180px
+        );
+
+      line-height: 0.77;
+
+      letter-spacing: -0.08em;
+
+      font-weight: 500;
+
+      color: var(--cacao);
+
+    }
+
+
+    .work-title em {
+
+      display: block;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--jungle);
+
+      font-weight: 400;
+
+    }
+
+
+    .work-copy {
+
+      align-self: end;
+
+      max-width: 250px;
+
+      font-size: 15px;
+
+      line-height: 1.35;
+
+    }
+
+
+
+    /* ==========================================================
+       PROJECTS
+    ========================================================== */
+
+    .project {
+
+      padding:
+        80px
+        28px
+        150px;
+
+    }
+
+
+    .project:nth-of-type(even) {
+
+      background:
+        var(--cream);
+
+    }
+
+
+    .project-head {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        auto;
+
+      gap: 30px;
+
+      align-items: end;
+
+      margin-bottom: 20px;
+
     }
 
 
     .project-number {
+
       display: block;
 
       font-size: 9px;
 
       margin-bottom: 8px;
+
+      letter-spacing: 0.06em;
+
     }
 
 
     .project-title {
-      font-size: clamp(34px, 4.4vw, 70px);
-      line-height: 0.9;
+
+      font-size:
+        clamp(
+          42px,
+          5vw,
+          78px
+        );
 
       font-weight: 500;
+
       letter-spacing: -0.055em;
+
     }
 
 
     .project-meta {
+
       display: flex;
-      gap: 35px;
+
+      gap: 30px;
 
       font-size: 9px;
+
       letter-spacing: 0.05em;
+
     }
 
 
-    .project-screen {
+
+    /* ---------- visual project area ---------- */
+
+    .project-visual {
+
+      height: 70vh;
+
+      min-height: 500px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
       position: relative;
 
-      height: 76vh;
-      width: 100%;
-
       overflow: hidden;
 
-      background: #cbc7bc;
+      transition:
+        transform
+        0.5s
+        ease;
+
     }
 
 
-    .project-screen-inner {
-      width: 100%;
-      height: 100%;
+    .project-one {
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background:
+        var(--leaf);
 
-      transition: transform 0.7s cubic-bezier(.2,.8,.2,1);
     }
 
 
-    .project-screen-inner span {
-      font-family: Georgia, "Times New Roman", serif;
+    .project-two {
 
-      font-size: clamp(45px, 7vw, 110px);
+      background:
+        var(--rose);
+
+    }
+
+
+    .project-visual:hover {
+
+      transform:
+        scale(0.99);
+
+    }
+
+
+    .project-visual-text {
+
+      position: relative;
+
+      z-index: 3;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
       font-style: italic;
-      letter-spacing: -0.055em;
+
+      font-size:
+        clamp(
+          45px,
+          7vw,
+          105px
+        );
+
+      letter-spacing: -0.05em;
+
+      text-align: center;
+
+      color: var(--cacao);
+
     }
 
 
-    .project-screen:hover .project-screen-inner {
-      transform: scale(1.025);
-    }
-
-
-    .project-footer {
-      margin-top: 12px;
+    .project-bottom {
 
       display: flex;
+
       justify-content: space-between;
 
+      margin-top: 13px;
+
       font-size: 9px;
-      letter-spacing: 0.04em;
+
+      letter-spacing: 0.05em;
+
     }
 
 
-    /* =========================================================
-       PROJECT 02
-    ========================================================= */
 
-    .project-editorial {
+    /* ==========================================================
+       PERSONAL SECTION
+    ========================================================== */
+
+    .personal {
+
       min-height: 100vh;
 
-      padding: 40px 28px 160px;
+      padding:
+        90px
+        28px;
+
+      background:
+        var(--jungle);
+
+      color:
+        var(--peony);
 
       display: grid;
-      grid-template-columns: 0.75fr 1.6fr;
 
-      gap: 70px;
+      grid-template-columns:
+        0.9fr
+        1.1fr;
 
-      border-top: 1px solid rgba(0,0,0,0.17);
-    }
-
-
-    .project-editorial-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-
-    .project-editorial-meta {
-      display: flex;
-      flex-direction: column;
-
-      gap: 5px;
-
-      font-size: 9px;
-      letter-spacing: 0.05em;
-    }
-
-
-    .project-editorial-title {
-      font-size: clamp(50px, 7vw, 100px);
-
-      line-height: 0.83;
-      letter-spacing: -0.065em;
-
-      font-weight: 500;
-    }
-
-
-    .project-editorial-title em {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 400;
-    }
-
-
-    .project-editorial-image {
-      height: 78vh;
-
-      background: #c7c3b8;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      overflow: hidden;
-    }
-
-
-    .project-editorial-image span {
-      font-size: clamp(50px, 6vw, 100px);
-      letter-spacing: -0.06em;
-
-      transition: transform 0.6s ease;
-    }
-
-
-    .project-editorial-image:hover span {
-      transform: scale(1.05);
-    }
-
-
-    /* =========================================================
-       PERSONAL INTERLUDE
-    ========================================================= */
-
-    .personal-strip {
-      min-height: 95vh;
-
-      padding: 80px 28px;
-
-      background: #111;
-      color: #f0ede2;
-
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-
-      gap: 70px;
+      gap: 80px;
 
       align-items: center;
+
     }
 
 
     .personal-image {
+
       height: 72vh;
+
+      max-height: 820px;
+
       overflow: hidden;
+
+      box-shadow:
+        15px
+        15px
+        0
+        var(--grass);
+
     }
 
 
     .personal-image img {
+
+      width: 100%;
+
       height: 100%;
+
       object-fit: cover;
-      object-position: center;
+
     }
 
 
-    .personal-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    .personal-copy {
 
       min-height: 65vh;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
     }
 
 
-    .personal-text-small {
+    .personal-small {
+
       font-size: 9px;
-      letter-spacing: 0.06em;
+
+      letter-spacing: 0.07em;
+
     }
 
 
     .personal-quote {
-      font-family: Georgia, "Times New Roman", serif;
 
-      font-size: clamp(40px, 5.2vw, 80px);
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       font-style: italic;
 
-      line-height: 0.95;
+      font-size:
+        clamp(
+          42px,
+          5vw,
+          82px
+        );
+
+      line-height: 0.97;
+
       letter-spacing: -0.05em;
+
     }
 
 
-    .personal-caption {
-      max-width: 330px;
+    .personal-description {
 
-      font-size: 14px;
-      line-height: 1.35;
+      max-width: 370px;
+
+      font-size: 15px;
+
+      line-height: 1.4;
+
     }
 
 
-    /* =========================================================
+
+    /* ==========================================================
        CONTACT
-    ========================================================= */
+    ========================================================== */
 
     .contact {
+
       min-height: 90vh;
 
-      padding: 30px 28px;
+      padding:
+        32px
+        28px;
+
+      background:
+        var(--peony);
 
       display: flex;
+
       flex-direction: column;
+
       justify-content: space-between;
+
     }
 
 
-    .contact-top {
+    .contact-meta {
+
       display: flex;
+
       justify-content: space-between;
 
       font-size: 9px;
-      letter-spacing: 0.05em;
+
+      letter-spacing: 0.06em;
+
     }
 
 
     .contact-title {
-      font-size: clamp(75px, 13vw, 210px);
 
-      line-height: 0.75;
-      letter-spacing: -0.085em;
+      font-size:
+        clamp(
+          70px,
+          12vw,
+          195px
+        );
+
+      line-height: 0.78;
+
+      letter-spacing: -0.08em;
 
       font-weight: 500;
+
+      color:
+        var(--cacao);
+
     }
 
 
     .contact-title em {
-      font-family: Georgia, "Times New Roman", serif;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
       font-weight: 400;
-      font-style: italic;
+
+      color:
+        var(--jungle);
+
     }
 
 
-    .contact-title:hover {
-      font-style: italic;
+    .contact-title:hover em {
+
+      color:
+        var(--grass);
+
     }
 
 
-    .contact-bottom {
-      display: flex;
-      justify-content: space-between;
 
-      font-size: 9px;
-      letter-spacing: 0.05em;
-    }
-
-
-    /* =========================================================
+    /* ==========================================================
        FOOTER
-    ========================================================= */
+    ========================================================== */
 
     footer {
-      padding: 18px 28px;
 
-      border-top: 1px solid #111;
+      min-height: 60px;
+
+      padding:
+        18px
+        28px;
+
+      background:
+        var(--cacao);
+
+      color:
+        var(--peony);
 
       display: flex;
+
       justify-content: space-between;
 
+      align-items: center;
+
       font-size: 9px;
+
       letter-spacing: 0.05em;
+
     }
 
 
-    /* =========================================================
-       SCROLL REVEAL
-    ========================================================= */
+
+    /* ==========================================================
+       REVEAL
+    ========================================================== */
 
     .reveal {
+
       opacity: 0;
-      transform: translateY(35px);
+
+      transform:
+        translateY(30px);
 
       transition:
-        opacity 0.9s ease,
-        transform 0.9s cubic-bezier(.2,.7,.2,1);
+        opacity
+        0.8s
+        ease,
+        transform
+        0.8s
+        ease;
+
     }
 
 
     .reveal.visible {
+
       opacity: 1;
-      transform: translateY(0);
+
+      transform:
+        translateY(0);
+
     }
 
 
-    /* =========================================================
+
+    /* ==========================================================
        TABLET
-    ========================================================= */
+    ========================================================== */
 
     @media (max-width: 950px) {
 
+
       .header {
-        grid-template-columns: 1fr 1fr;
+
+        grid-template-columns:
+          1fr
+          1fr;
+
       }
+
 
       .nav {
+
         display: none;
-      }
 
-      .hero-photo {
-        width: 32vw;
-        right: 8%;
-      }
-
-      .about-title {
-        width: 90%;
-      }
-
-      .about-photo-main {
-        width: 31vw;
-      }
-
-      .work-intro {
-        grid-template-columns: 60px 1fr;
-      }
-
-      .work-intro-copy {
-        grid-column: 2;
-
-        margin-top: 60px;
-      }
-
-      .project-meta {
-        display: none;
-      }
-
-      .project-editorial {
-        grid-template-columns: 1fr;
-      }
-
-      .project-editorial-left {
-        gap: 50px;
-      }
-
-      .personal-strip {
-        grid-template-columns: 1fr;
-      }
-
-    }
-
-
-    /* =========================================================
-       MOBILE
-    ========================================================= */
-
-    @media (max-width: 650px) {
-
-      .header {
-        padding: 16px;
-
-        font-size: 9px;
       }
 
 
-      .hero {
-        min-height: 100svh;
+      .hero-main {
 
-        padding: 20px 16px 28px;
-      }
+        grid-template-columns:
+          1fr
+          0.65fr;
 
+        gap: 25px;
 
-      .hero-topline {
-        font-size: 7px;
-      }
-
-
-      .hero-center {
-        min-height: 64vh;
       }
 
 
       .hero-title {
-        font-size: 19vw;
-        text-align: left;
+
+        font-size:
+          clamp(
+            68px,
+            11vw,
+            120px
+          );
+
       }
 
 
       .hero-photo {
-        width: 46vw;
 
-        right: -5%;
-        top: 54%;
-      }
+        width:
+          min(
+            34vw,
+            330px
+          );
 
-
-      .hero-note {
-        left: 3%;
-        bottom: 8%;
-
-        font-size: 17px;
-      }
-
-
-      .hero-index {
-        display: none;
-      }
-
-
-      .hero-bottom {
-        grid-template-columns: 1fr;
-
-        gap: 25px;
-      }
-
-
-      .hero-description {
-        max-width: 280px;
-
-        font-size: 15px;
-      }
-
-
-      .hero-services {
-        text-align: left;
-      }
-
-
-      .hero-location {
-        display: none;
-      }
-
-
-      .about {
-        min-height: 135vh;
-
-        padding: 90px 16px;
-      }
-
-
-      .about-title {
-        width: 100%;
-
-        font-size: 17vw;
-      }
-
-
-      .about-photo-main {
-        top: 37%;
-        right: 8%;
-
-        width: 52vw;
-      }
-
-
-      .about-photo-small {
-        left: 8%;
-        bottom: 15%;
-
-        width: 35vw;
-      }
-
-
-      .about-copy {
-        width: 60vw;
-
-        right: 5%;
-        bottom: 3%;
-      }
-
-
-      .about-copy p {
-        font-size: 15px;
       }
 
 
       .work-intro {
-        min-height: auto;
 
-        padding: 90px 16px;
+        grid-template-columns:
+          60px
+          1fr;
 
-        grid-template-columns: 35px 1fr;
       }
 
 
-      .work-intro h2 {
-        font-size: 18vw;
+      .work-copy {
+
+        grid-column: 2;
+
+        margin-top: 50px;
+
       }
 
 
-      .project {
-        padding: 25px 16px 100px;
+      .project-meta {
+
+        display: none;
+
       }
 
 
-      .project-title {
-        font-size: 34px;
-      }
+      .about-grid {
 
-
-      .project-screen {
-        height: 56vh;
-      }
-
-
-      .project-editorial {
-        min-height: auto;
-
-        padding: 80px 16px 100px;
+        grid-template-columns:
+          1fr
+          0.8fr;
 
         gap: 40px;
+
       }
 
 
-      .project-editorial-image {
-        height: 56vh;
-      }
+      .personal {
 
+        grid-template-columns:
+          1fr
+          1fr;
 
-      .personal-strip {
-        min-height: auto;
+        gap: 40px;
 
-        padding: 70px 16px;
-
-        gap: 45px;
-      }
-
-
-      .personal-image {
-        height: 60vh;
-      }
-
-
-      .personal-text {
-        min-height: auto;
-        gap: 55px;
-      }
-
-
-      .personal-quote {
-        font-size: 12vw;
-      }
-
-
-      .contact {
-        min-height: 80vh;
-
-        padding: 25px 16px;
-      }
-
-
-      .contact-title {
-        font-size: 18vw;
-      }
-
-
-      footer {
-        padding: 18px 16px;
       }
 
     }
 
+
+
+    /* ==========================================================
+       MOBILE
+    ========================================================== */
+
+    @media (max-width: 650px) {
+
+
+      .header {
+
+        padding:
+          16px;
+
+      }
+
+
+      .hero {
+
+        padding:
+          22px
+          16px
+          28px;
+
+        min-height:
+          calc(
+            100svh - 54px
+          );
+
+      }
+
+
+      .hero-meta {
+
+        font-size: 7px;
+
+      }
+
+
+      .hero-main {
+
+        grid-template-columns:
+          1fr;
+
+        gap: 30px;
+
+        align-items: start;
+
+      }
+
+
+      .hero-title {
+
+        font-size:
+          18vw;
+
+        line-height: 0.83;
+
+      }
+
+
+      .hero-title .serif {
+
+        margin-left: 0;
+
+      }
+
+
+      .hero-photo-wrap {
+
+        min-height: auto;
+
+        justify-content: flex-end;
+
+      }
+
+
+      .hero-photo {
+
+        width: 59vw;
+
+        max-width: 330px;
+
+        margin-right: 8px;
+
+      }
+
+
+      .hero-handwritten {
+
+        top: 5px;
+
+        left: 5px;
+
+        right: auto;
+
+        width: 145px;
+
+        font-size: 18px;
+
+      }
+
+
+      .hero-photo-tag {
+
+        left: -30px;
+
+        bottom: 25px;
+
+      }
+
+
+      .hero-bottom {
+
+        grid-template-columns:
+          1fr;
+
+        gap: 20px;
+
+      }
+
+
+      .hero-services {
+
+        text-align: left;
+
+      }
+
+
+      .hero-availability {
+
+        display: none;
+
+      }
+
+
+      .hero-description {
+
+        max-width: 300px;
+
+        font-size: 15px;
+
+      }
+
+
+
+      /* ABOUT */
+
+      .about {
+
+        padding:
+          85px
+          16px;
+
+      }
+
+
+      .about-grid {
+
+        grid-template-columns:
+          1fr;
+
+        gap: 45px;
+
+      }
+
+
+      .about-heading {
+
+        font-size:
+          17vw;
+
+      }
+
+
+      .about-right {
+
+        padding-top: 0;
+
+      }
+
+
+      .about-main-photo {
+
+        width: 72%;
+
+      }
+
+
+      .about-detail {
+
+        grid-template-columns:
+          0.55fr
+          1fr;
+
+        gap: 30px;
+
+        margin-top: 75px;
+
+      }
+
+
+      .about-detail-text {
+
+        font-size: 7vw;
+
+      }
+
+
+
+      /* WORK */
+
+      .work-intro {
+
+        min-height: auto;
+
+        padding:
+          85px
+          16px;
+
+        grid-template-columns:
+          35px
+          1fr;
+
+      }
+
+
+      .work-title {
+
+        font-size:
+          18vw;
+
+      }
+
+
+
+      /* PROJECTS */
+
+      .project {
+
+        padding:
+          65px
+          16px
+          100px;
+
+      }
+
+
+      .project-head {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .project-visual {
+
+        height: 55vh;
+
+        min-height: 420px;
+
+      }
+
+
+
+      /* PERSONAL */
+
+      .personal {
+
+        padding:
+          75px
+          16px;
+
+        grid-template-columns:
+          1fr;
+
+        gap: 50px;
+
+      }
+
+
+      .personal-image {
+
+        height: 60vh;
+
+      }
+
+
+      .personal-copy {
+
+        min-height: auto;
+
+        gap: 60px;
+
+      }
+
+
+      .personal-quote {
+
+        font-size:
+          12vw;
+
+      }
+
+
+
+      /* CONTACT */
+
+      .contact {
+
+        min-height: 75vh;
+
+        padding:
+          25px
+          16px;
+
+      }
+
+
+      .contact-title {
+
+        font-size:
+          17vw;
+
+      }
+
+
+      footer {
+
+        padding:
+          18px
+          16px;
+
+      }
+
+    }
+
+
   </style>
+
 </head>
+
 
 
 <body>
 
 
-  <!-- ======================================================
+  <!-- =========================================================
        HEADER
-  ======================================================= -->
+  ========================================================== -->
 
   <header class="header">
 
-    <a href="#" class="logo">
+    <a
+      href="#"
+      class="logo"
+    >
       MARTA VAZ
     </a>
 
+
     <nav class="nav">
-      <a href="#about">ABOUT</a>
-      <a href="#work">WORK</a>
-      <a href="#contact">CONTACT</a>
+
+      <a href="#about">
+        ABOUT
+      </a>
+
+      <a href="#work">
+        WORK
+      </a>
+
+      <a href="#contact">
+        CONTACT
+      </a>
+
     </nav>
+
 
     <a
       class="top-contact"
@@ -1119,530 +1868,798 @@
 
 
 
-  <!-- ======================================================
+  <!-- =========================================================
        HERO
-  ======================================================= -->
+  ========================================================== -->
 
-  <section class="hero">
+  <main>
 
-    <div class="hero-topline">
 
-      <div>
-        INDEPENDENT DESIGNER<br>
-        WEB / VISUAL / DIGITAL
-      </div>
+    <section class="hero">
 
-      <div style="text-align:right;">
-        PORTUGAL<br>
-        2026
-      </div>
 
-    </div>
+      <div class="hero-meta">
 
+        <div>
 
-    <div class="hero-center">
+          INDEPENDENT DESIGNER<br>
 
-      <h1 class="hero-title">
+          WEB / VISUAL / DIGITAL
 
-        <span class="line">
-          DIGITAL
-        </span>
+        </div>
 
-        <span class="line italic">
-          experiences
-        </span>
 
-        <span class="line">
-          WITH PERSONALITY
-        </span>
+        <div class="hero-meta-right">
 
-      </h1>
+          PORTUGAL<br>
 
-
-      <div class="hero-photo">
-        <img
-          src="images/me/marta3.JPG"
-          alt="Marta Vaz"
-        >
-      </div>
-
-
-      <div class="hero-note">
-        web design,<br>
-        but make it personal.
-      </div>
-
-
-      <div class="hero-index">
-        MARTA VAZ / DESIGN ARCHIVE / 2026
-      </div>
-
-    </div>
-
-
-    <div class="hero-bottom">
-
-      <p class="hero-description">
-        Creating expressive digital experiences
-        for small businesses, independent brands
-        and people with something worth sharing.
-      </p>
-
-      <p class="hero-services">
-        WEB DESIGN<br>
-        DEVELOPMENT<br>
-        VISUAL IDENTITY
-      </p>
-
-      <p class="hero-location">
-        AVAILABLE FOR<br>
-        SELECTED PROJECTS ↗
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ======================================================
-       TICKER
-  ======================================================= -->
-
-  <section class="ticker">
-
-    <div class="ticker-track">
-
-      <span>
-        web design /
-      </span>
-
-      <span>
-        visual identity /
-      </span>
-
-      <span>
-        digital experiences /
-      </span>
-
-      <span>
-        small brands /
-      </span>
-
-      <span>
-        creative direction /
-      </span>
-
-
-      <span>
-        web design /
-      </span>
-
-      <span>
-        visual identity /
-      </span>
-
-      <span>
-        digital experiences /
-      </span>
-
-      <span>
-        small brands /
-      </span>
-
-      <span>
-        creative direction /
-      </span>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ======================================================
-       ABOUT
-  ======================================================= -->
-
-  <section class="about reveal" id="about">
-
-    <p class="about-label">
-      01 / ABOUT THE DESIGNER
-    </p>
-
-
-    <h2 class="about-title">
-
-      I'M MARTA,<br>
-
-      A DESIGNER WHO<br>
-
-      LIKES THINGS WITH<br>
-
-      <span class="serif">
-        a little soul.
-      </span>
-
-    </h2>
-
-
-    <div class="about-photo-main">
-
-      <img
-        src="images/me/marta5.JPEG"
-        alt="Marta Vaz portrait"
-      >
-
-    </div>
-
-
-    <div class="about-photo-small">
-
-      <img
-        src="images/me/marta1.JPG"
-        alt="Marta Vaz"
-      >
-
-    </div>
-
-
-    <div class="about-copy">
-
-      <p>
-        I'm a Communication & Multimedia Designer
-        focused on building websites, visual identities
-        and digital experiences that feel distinctive,
-        intentional and human.
-      </p>
-
-      <p>
-        I like mixing structure with experimentation —
-        clean layouts, strong typography, unexpected
-        details and images that actually say something.
-      </p>
-
-      <p class="about-smalltext">
-        PORTUGAL / DESIGN / WEB DEVELOPMENT /
-        VISUAL IDENTITY / 2026
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ======================================================
-       WORK INTRO
-  ======================================================= -->
-
-  <section class="work-intro reveal" id="work">
-
-    <p class="section-number">
-      02
-    </p>
-
-    <h2>
-      SELECTED<br>
-      <span>work.</span>
-    </h2>
-
-    <p class="work-intro-copy">
-      A growing archive of websites,
-      visual experiments and digital
-      experiences made with intention.
-    </p>
-
-  </section>
-
-
-
-  <!-- ======================================================
-       PROJECT 01
-  ======================================================= -->
-
-  <section class="project reveal">
-
-    <div class="project-header">
-
-      <div>
-
-        <span class="project-number">
-          PROJECT 01
-        </span>
-
-        <h3 class="project-title">
-          DEEP AWARENESS
-        </h3>
-
-      </div>
-
-
-      <div class="project-meta">
-
-        <span>WEB DESIGN</span>
-
-        <span>DEVELOPMENT</span>
-
-        <span>2026</span>
-
-      </div>
-
-    </div>
-
-
-    <a
-      href="https://martaffbvaz-spec.github.io/eldas/index.html"
-      target="_blank"
-      rel="noopener"
-      class="project-screen"
-    >
-
-      <div class="project-screen-inner">
-
-        <span>
-          Deep Awareness ↗
-        </span>
-
-      </div>
-
-    </a>
-
-
-    <div class="project-footer">
-
-      <span>
-        DIGITAL EXPERIENCE
-      </span>
-
-      <span>
-        VIEW LIVE SITE ↗
-      </span>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ======================================================
-       PROJECT 02
-  ======================================================= -->
-
-  <section class="project-editorial reveal">
-
-
-    <div class="project-editorial-left">
-
-      <div>
-
-        <span class="project-number">
-          PROJECT 02
-        </span>
-
-        <h3 class="project-editorial-title">
-
-          MARTA<br>
-
-          <em>
-            OS.
-          </em>
-
-        </h3>
-
-      </div>
-
-
-      <div class="project-editorial-meta">
-
-        <span>
-          EXPERIMENTAL PORTFOLIO
-        </span>
-
-        <span>
-          WEB DESIGN
-        </span>
-
-        <span>
           2026
+
+        </div>
+
+      </div>
+
+
+
+      <div class="hero-main">
+
+
+        <div class="hero-copy">
+
+          <p class="hero-kicker">
+
+            COMMUNICATION & MULTIMEDIA DESIGN
+
+          </p>
+
+
+          <h1 class="hero-title">
+
+            <span>
+              DIGITAL
+            </span>
+
+            <span class="serif">
+              experiences
+            </span>
+
+            <span>
+              WITH
+            </span>
+
+            <span>
+              PERSONALITY
+            </span>
+
+          </h1>
+
+        </div>
+
+
+
+        <div class="hero-photo-wrap">
+
+
+          <div class="hero-photo">
+
+            <img
+              src="imagens/marta3.JPG"
+              alt="Marta Vaz"
+            >
+
+          </div>
+
+
+          <div class="hero-handwritten">
+
+            made with intention,<br>
+            curiosity & a little soul.
+
+          </div>
+
+
+          <div class="hero-photo-tag">
+
+            MARTA VAZ<br>
+            DESIGNER / PORTUGAL
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="hero-bottom">
+
+
+        <p class="hero-description">
+
+          Creating expressive digital experiences
+          for small businesses, independent brands
+          and people with something worth sharing.
+
+        </p>
+
+
+        <p class="hero-services">
+
+          WEB DESIGN<br>
+          DEVELOPMENT<br>
+          VISUAL IDENTITY
+
+        </p>
+
+
+        <p class="hero-availability">
+
+          AVAILABLE FOR<br>
+          SELECTED PROJECTS ↗
+
+        </p>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =======================================================
+         MOVING TEXT
+    ======================================================== -->
+
+    <section class="ticker">
+
+
+      <div class="ticker-track">
+
+
+        <span>
+          web design /
+        </span>
+
+        <span>
+          visual identity /
+        </span>
+
+        <span>
+          digital experiences /
+        </span>
+
+        <span>
+          small brands /
+        </span>
+
+        <span>
+          creative direction /
+        </span>
+
+
+        <span>
+          web design /
+        </span>
+
+        <span>
+          visual identity /
+        </span>
+
+        <span>
+          digital experiences /
+        </span>
+
+        <span>
+          small brands /
+        </span>
+
+        <span>
+          creative direction /
+        </span>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =======================================================
+         ABOUT
+    ======================================================== -->
+
+    <section
+      class="about reveal"
+      id="about"
+    >
+
+
+      <p class="section-label">
+
+        01 / ABOUT THE DESIGNER
+
+      </p>
+
+
+
+      <div class="about-grid">
+
+
+        <div>
+
+
+          <h2 class="about-heading">
+
+            I'M MARTA,<br>
+
+            I CREATE<br>
+
+            THINGS WITH
+
+            <em>
+              personality.
+            </em>
+
+          </h2>
+
+
+        </div>
+
+
+
+        <div class="about-right">
+
+
+          <div class="about-main-photo">
+
+            <img
+              src="imagens/marta5.JPEG"
+              alt="Marta Vaz"
+            >
+
+          </div>
+
+
+
+          <div class="about-copy">
+
+
+            <p>
+
+              I'm a Communication & Multimedia Designer
+              focused on websites, visual identities and
+              digital experiences that feel distinctive,
+              intentional and human.
+
+            </p>
+
+
+            <p>
+
+              I like combining clean structures with
+              expressive typography, photography and
+              unexpected details.
+
+            </p>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="about-detail">
+
+
+        <div class="about-small-photo">
+
+          <img
+            src="imagens/marta1.JPG"
+            alt="Marta"
+          >
+
+        </div>
+
+
+        <p class="about-detail-text">
+
+          I believe a website should feel like
+          an extension of the person or brand
+          behind it — not just another template.
+
+        </p>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =======================================================
+         WORK INTRO
+    ======================================================== -->
+
+    <section
+      class="work-intro reveal"
+      id="work"
+    >
+
+
+      <span class="work-number">
+
+        02
+
+      </span>
+
+
+      <h2 class="work-title">
+
+        SELECTED
+
+        <em>
+          work.
+        </em>
+
+      </h2>
+
+
+      <p class="work-copy">
+
+        A growing collection of websites,
+        visual experiments and digital
+        experiences created with intention.
+
+      </p>
+
+
+    </section>
+
+
+
+    <!-- =======================================================
+         PROJECT 01
+    ======================================================== -->
+
+    <section class="project reveal">
+
+
+      <div class="project-head">
+
+
+        <div>
+
+
+          <span class="project-number">
+
+            PROJECT 01
+
+          </span>
+
+
+          <h3 class="project-title">
+
+            DEEP AWARENESS
+
+          </h3>
+
+
+        </div>
+
+
+
+        <div class="project-meta">
+
+          <span>
+            WEB DESIGN
+          </span>
+
+          <span>
+            DEVELOPMENT
+          </span>
+
+          <span>
+            2026
+          </span>
+
+        </div>
+
+
+      </div>
+
+
+
+      <a
+        href="https://martaffbvaz-spec.github.io/eldas/index.html"
+        target="_blank"
+        rel="noopener"
+      >
+
+
+        <div class="project-visual project-one">
+
+
+          <span class="project-visual-text">
+
+            Deep Awareness ↗
+
+          </span>
+
+
+        </div>
+
+
+      </a>
+
+
+
+      <div class="project-bottom">
+
+        <span>
+
+          DIGITAL EXPERIENCE
+
+        </span>
+
+        <span>
+
+          VIEW LIVE WEBSITE ↗
+
         </span>
 
       </div>
 
-    </div>
 
-
-    <a
-      href="https://martaffbvaz-spec.github.io/MartaP/index.html"
-      target="_blank"
-      rel="noopener"
-      class="project-editorial-image"
-    >
-
-      <span>
-        MARTA OS ↗
-      </span>
-
-    </a>
-
-  </section>
+    </section>
 
 
 
-  <!-- ======================================================
-       PERSONAL BREAK
-  ======================================================= -->
+    <!-- =======================================================
+         PROJECT 02
+    ======================================================== -->
 
-  <section class="personal-strip reveal">
+    <section class="project reveal">
 
-    <div class="personal-image">
 
-      <img
-        src="images/me/marta3.JPG"
-        alt="Marta"
+      <div class="project-head">
+
+
+        <div>
+
+
+          <span class="project-number">
+
+            PROJECT 02
+
+          </span>
+
+
+          <h3 class="project-title">
+
+            MARTA OS
+
+          </h3>
+
+
+        </div>
+
+
+
+        <div class="project-meta">
+
+          <span>
+            WEB DESIGN
+          </span>
+
+          <span>
+            EXPERIMENTAL
+          </span>
+
+          <span>
+            2026
+          </span>
+
+        </div>
+
+
+      </div>
+
+
+
+      <a
+        href="https://martaffbvaz-spec.github.io/MartaP/index.html"
+        target="_blank"
+        rel="noopener"
       >
 
-    </div>
+
+        <div class="project-visual project-two">
 
 
-    <div class="personal-text">
+          <span class="project-visual-text">
 
-      <p class="personal-text-small">
-        A SMALL NOTE / MARTA VAZ
-      </p>
+            Marta OS ↗
 
-      <p class="personal-quote">
-        “I want websites
-        to feel like places,
-        not templates.”
-      </p>
+          </span>
 
-      <p class="personal-caption">
-        I'm interested in creating digital spaces
-        with a clear identity — websites people
-        remember after closing the tab.
-      </p>
 
-    </div>
+        </div>
 
-  </section>
+
+      </a>
 
 
 
-  <!-- ======================================================
-       CONTACT
-  ======================================================= -->
+      <div class="project-bottom">
 
-  <section class="contact reveal" id="contact">
+        <span>
 
+          EXPERIMENTAL PORTFOLIO
 
-    <div class="contact-top">
+        </span>
 
-      <span>
-        HAVE A PROJECT IN MIND?
-      </span>
+        <span>
 
-      <span>
-        AVAILABLE FOR SELECTED WORK
-      </span>
+          VIEW PROJECT ↗
 
-    </div>
+        </span>
+
+      </div>
 
 
-    <a
-      href="mailto:martadesign26@example.com"
-      class="contact-title"
+    </section>
+
+
+
+    <!-- =======================================================
+         PERSONAL
+    ======================================================== -->
+
+    <section class="personal reveal">
+
+
+      <div class="personal-image">
+
+
+        <img
+          src="imagens/marta3.JPG"
+          alt="Marta"
+        >
+
+
+      </div>
+
+
+
+      <div class="personal-copy">
+
+
+        <p class="personal-small">
+
+          A SMALL NOTE / MARTA VAZ
+
+        </p>
+
+
+        <p class="personal-quote">
+
+          “I want websites
+          to feel like places,
+          not templates.”
+
+        </p>
+
+
+        <p class="personal-description">
+
+          I care about the details that make
+          digital spaces memorable — typography,
+          rhythm, imagery, movement and the feeling
+          someone gets while exploring them.
+
+        </p>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =======================================================
+         CONTACT
+    ======================================================== -->
+
+    <section
+      class="contact reveal"
+      id="contact"
     >
 
-      LET'S MAKE<br>
 
-      SOMETHING<br>
-
-      <em>
-        memorable.
-      </em>
-
-      ↗
-
-    </a>
+      <div class="contact-meta">
 
 
-    <div class="contact-bottom">
+        <span>
 
-      <span>
-        MARTA VAZ
-      </span>
+          HAVE A PROJECT IN MIND?
 
-      <span>
-        PORTUGAL / 2026
-      </span>
+        </span>
 
-    </div>
 
-  </section>
+        <span>
+
+          AVAILABLE FOR SELECTED WORK
+
+        </span>
+
+
+      </div>
 
 
 
-  <!-- ======================================================
+      <a
+        class="contact-title"
+        href="mailto:martadesign26@example.com"
+      >
+
+        LET'S MAKE<br>
+
+        SOMETHING
+
+        <em>
+          memorable.
+        </em>
+
+        ↗
+
+      </a>
+
+
+      <div class="contact-meta">
+
+
+        <span>
+
+          MARTA VAZ
+
+        </span>
+
+
+        <span>
+
+          PORTUGAL / 2026
+
+        </span>
+
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================================================
        FOOTER
-  ======================================================= -->
+  ========================================================== -->
 
   <footer>
 
+
     <span>
+
       MARTA VAZ © 2026
+
     </span>
+
 
     <a href="#">
+
       INSTAGRAM ↗
+
     </a>
 
+
     <span>
-      WEB DESIGN / VISUAL IDENTITY
+
+      WEB / DESIGN / VISUAL IDENTITY
+
     </span>
+
 
   </footer>
 
 
 
-  <!-- ======================================================
+  <!-- =========================================================
        JAVASCRIPT
-  ======================================================= -->
+  ========================================================== -->
 
   <script>
 
+
     const revealElements =
-      document.querySelectorAll(".reveal");
+      document.querySelectorAll(
+        ".reveal"
+      );
 
 
     const observer =
       new IntersectionObserver(
+
         (entries) => {
 
-          entries.forEach((entry) => {
 
-            if (entry.isIntersecting) {
+          entries.forEach(
 
-              entry.target.classList.add("visible");
+            (entry) => {
 
-              observer.unobserve(entry.target);
+
+              if (
+                entry.isIntersecting
+              ) {
+
+
+                entry.target
+                  .classList
+                  .add(
+                    "visible"
+                  );
+
+
+                observer
+                  .unobserve(
+                    entry.target
+                  );
+
+
+              }
+
 
             }
 
-          });
+          );
+
 
         },
+
         {
-          threshold: 0.12
+
+          threshold: 0.1
+
         }
+
       );
 
 
-    revealElements.forEach((element) => {
+    revealElements
+      .forEach(
 
-      observer.observe(element);
+        (element) => {
 
-    });
+          observer
+            .observe(
+              element
+            );
+
+        }
+
+      );
+
 
   </script>
 
