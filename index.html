@@ -10,53 +10,19 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>
-    Marta Vaz — Web & Visual Designer
-  </title>
+  <meta
+    name="description"
+    content="Marta Vaz — Communication & Multimedia Designer focused on web design, visual identity and digital experiences."
+  >
+
+  <title>Marta Vaz — Web & Visual Designer</title>
 
 
   <style>
-.custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
 
-  transform: translate(-50%, -50%);
-
-  pointer-events: none;
-  z-index: 9999;
-
-  font-size: 22px;
-  color: var(--cacao);
-
-  transition:
-    transform 0.18s ease,
-    font-size 0.18s ease,
-    color 0.18s ease;
-}
-
-.custom-cursor.hover {
-  transform: translate(-50%, -50%) rotate(20deg) scale(1.5);
-  color: var(--grass);
-}
-
-/* Só usamos cursor personalizado em dispositivos com rato */
-@media (pointer: fine) {
-  body,
-  a,
-  button {
-    cursor: none;
-  }
-}
-
-@media (pointer: coarse) {
-  .custom-cursor {
-    display: none;
-  }
-}
-    /* ==========================================================
-       COLOUR PALETTE
-    ========================================================== */
+    /* =========================================================
+       COLOUR SYSTEM
+    ========================================================= */
 
     :root {
 
@@ -72,15 +38,17 @@
 
       --sky: #AFB8CD;
 
-      --cream: #F5F0E7;
+      --cream: #F6F0E8;
       --black: #151515;
+      --white: #FFFDF8;
 
     }
 
 
-    /* ==========================================================
+
+    /* =========================================================
        RESET
-    ========================================================== */
+    ========================================================= */
 
     * {
       margin: 0;
@@ -97,7 +65,6 @@
     body {
 
       background: var(--cream);
-
       color: var(--cacao);
 
       font-family:
@@ -110,43 +77,133 @@
     }
 
 
-    a {
-
-      color: inherit;
-
-      text-decoration: none;
-
+    img {
+      display: block;
+      width: 100%;
     }
 
 
-    img {
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-      width: 100%;
 
-      display: block;
-
+    button {
+      font: inherit;
     }
 
 
     ::selection {
+      background: var(--cacao);
+      color: var(--peony);
+    }
+
+
+
+    /* =========================================================
+       CUSTOM CURSOR
+    ========================================================= */
+
+    .cursor {
+
+      position: fixed;
+
+      left: 0;
+      top: 0;
+
+      width: 34px;
+      height: 34px;
+
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--peony);
+      color: var(--cacao);
+
+      font-size: 18px;
+
+      pointer-events: none;
+
+      z-index: 9999;
+
+      transform:
+        translate(-50%, -50%);
+
+      transition:
+        width 0.25s ease,
+        height 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        font-size 0.25s ease;
+
+    }
+
+
+    .cursor.project-mode {
+
+      width: 92px;
+      height: 92px;
 
       background: var(--cacao);
-
       color: var(--peony);
+
+      font-size: 9px;
+      letter-spacing: 0.08em;
+
+    }
+
+
+    .cursor.project-mode .cursor-flower {
+      display: none;
+    }
+
+
+    .cursor-project-text {
+      display: none;
+    }
+
+
+    .cursor.project-mode .cursor-project-text {
+      display: block;
+    }
+
+
+    @media (pointer: fine) {
+
+      body,
+      a,
+      button {
+        cursor: none;
+      }
+
+    }
+
+
+    @media (pointer: coarse) {
+
+      .cursor {
+        display: none;
+      }
 
     }
 
 
 
-    /* ==========================================================
+    /* =========================================================
        HEADER
-    ========================================================== */
+    ========================================================= */
 
     .header {
 
-      width: 100%;
+      min-height: 58px;
 
-      min-height: 56px;
+      padding:
+        18px
+        28px;
 
       display: grid;
 
@@ -157,52 +214,42 @@
 
       align-items: center;
 
-      padding:
-        18px
-        28px;
-
       border-bottom:
         1px solid
         rgba(107, 64, 59, 0.25);
 
       font-size: 10px;
-
       letter-spacing: 0.07em;
 
-      position: relative;
+      background: var(--peony);
 
+      position: relative;
       z-index: 100;
 
     }
 
 
     .logo {
-
       font-weight: 700;
-
     }
 
 
     .nav {
 
       display: flex;
-
-      align-items: center;
-
-      gap: 36px;
+      gap: 38px;
 
     }
 
 
     .top-contact {
-
       justify-self: end;
-
     }
 
 
     .nav a,
-    .top-contact {
+    .top-contact,
+    .logo {
 
       position: relative;
 
@@ -217,19 +264,14 @@
       position: absolute;
 
       left: 0;
-
       bottom: -5px;
 
       width: 0;
-
       height: 1px;
 
-      background: var(--cacao);
+      background: currentColor;
 
-      transition:
-        width
-        0.3s
-        ease;
+      transition: width 0.3s ease;
 
     }
 
@@ -243,18 +285,21 @@
 
 
 
-    /* ==========================================================
+    /* =========================================================
        HERO
-    ========================================================== */
+    ========================================================= */
 
     .hero {
 
-      min-height: calc(100vh - 56px);
+      min-height:
+        calc(100vh - 58px);
 
       padding:
         28px
         28px
         34px;
+
+      background: var(--peony);
 
       display: grid;
 
@@ -263,14 +308,7 @@
         1fr
         auto;
 
-      gap: 35px;
-
-      position: relative;
-
-      overflow: hidden;
-
-      background:
-        var(--peony);
+      gap: 30px;
 
     }
 
@@ -281,96 +319,72 @@
 
       justify-content: space-between;
 
-      align-items: flex-start;
-
       font-size: 9px;
 
       line-height: 1.4;
 
       letter-spacing: 0.06em;
 
-      position: relative;
-
-      z-index: 5;
-
     }
 
 
     .hero-meta-right {
-
       text-align: right;
-
     }
 
 
-
-    /* ---------- main hero layout ---------- */
-
     .hero-main {
+
+      width: 100%;
+
+      max-width: 1650px;
+
+      margin: 0 auto;
 
       display: grid;
 
       grid-template-columns:
-        1.15fr
-        0.55fr;
+        minmax(0, 1.25fr)
+        minmax(280px, 0.55fr);
 
-      gap: 60px;
+      gap: 70px;
 
       align-items: center;
-
-      width: 100%;
-
-      max-width: 1600px;
-
-      margin: 0 auto;
-
-    }
-
-
-    .hero-copy {
-
-      position: relative;
-
-      z-index: 5;
 
     }
 
 
     .hero-kicker {
 
-      font-size: 11px;
+      margin-bottom: 22px;
+
+      font-size: 10px;
 
       letter-spacing: 0.08em;
-
-      margin-bottom: 24px;
 
     }
 
 
     .hero-title {
 
-      font-weight: 500;
-
       font-size:
         clamp(
           72px,
           10vw,
-          165px
+          166px
         );
 
-      line-height: 0.82;
+      line-height: 0.79;
 
-      letter-spacing: -0.075em;
+      letter-spacing: -0.078em;
 
-      color: var(--cacao);
+      font-weight: 500;
 
     }
 
 
     .hero-title span {
-
       display: block;
-
     }
 
 
@@ -381,23 +395,20 @@
         "Times New Roman",
         serif;
 
-      font-style: italic;
-
       font-weight: 400;
+      font-style: italic;
 
       color: var(--jungle);
 
-      font-size: 0.92em;
-
-      margin-left: 0.14em;
+      margin-left: 0.1em;
 
     }
 
 
 
-    /* ---------- hero photo ---------- */
+    /* HERO PHOTO */
 
-    .hero-photo-wrap {
+    .hero-photo-area {
 
       position: relative;
 
@@ -407,8 +418,6 @@
 
       align-items: center;
 
-      min-height: 520px;
-
     }
 
 
@@ -416,8 +425,8 @@
 
       width:
         min(
-          30vw,
-          400px
+          29vw,
+          390px
         );
 
       aspect-ratio:
@@ -425,10 +434,8 @@
 
       overflow: hidden;
 
-      position: relative;
-
       transform:
-        rotate(2deg);
+        rotate(1.8deg);
 
       box-shadow:
         16px
@@ -442,76 +449,85 @@
     .hero-photo img {
 
       width: 100%;
-
       height: 100%;
 
       object-fit: cover;
 
       object-position: center;
 
-    }
-
-
-    .hero-photo-tag {
-
-      position: absolute;
-
-      left: -25px;
-
-      bottom: 30px;
-
-      background:
-        var(--sky);
-
-      padding:
-        10px
-        15px;
-
-      font-size: 9px;
-
-      line-height: 1.3;
-
-      letter-spacing: 0.06em;
-
-      transform:
-        rotate(-4deg);
-
-      color: var(--cacao);
+      transition:
+        transform
+        0.8s
+        cubic-bezier(.2,.8,.2,1);
 
     }
 
 
-    .hero-handwritten {
+    .hero-photo:hover img {
+      transform: scale(1.035);
+    }
+
+
+    .hero-note {
 
       position: absolute;
 
-      top: 25px;
+      right: -12px;
+      top: 10%;
 
-      right: -20px;
-
-      width: 190px;
+      width: 180px;
 
       font-family:
         Georgia,
         "Times New Roman",
         serif;
 
-      font-size: 24px;
-
-      line-height: 1;
+      font-size:
+        clamp(
+          17px,
+          1.7vw,
+          25px
+        );
 
       font-style: italic;
 
-      transform:
-        rotate(7deg);
+      line-height: 1;
 
       color: var(--jungle);
+
+      transform:
+        rotate(5deg);
+
+    }
+
+
+    .hero-photo-label {
+
+      position: absolute;
+
+      bottom: 30px;
+      left: -15px;
+
+      padding:
+        10px
+        14px;
+
+      background: var(--sky);
+
+      font-size: 8px;
+
+      line-height: 1.35;
+
+      letter-spacing: 0.07em;
+
+      transform:
+        rotate(-3deg);
 
     }
 
 
 
-    /* ---------- hero bottom ---------- */
+    /* HERO BOTTOM */
 
     .hero-bottom {
 
@@ -522,20 +538,16 @@
         auto
         1fr;
 
-      gap: 30px;
+      gap: 40px;
 
       align-items: end;
-
-      font-size: 10px;
-
-      letter-spacing: 0.05em;
 
     }
 
 
     .hero-description {
 
-      max-width: 400px;
+      max-width: 420px;
 
       font-size: 16px;
 
@@ -550,7 +562,11 @@
 
       text-align: center;
 
+      font-size: 9px;
+
       line-height: 1.5;
+
+      letter-spacing: 0.06em;
 
     }
 
@@ -559,31 +575,28 @@
 
       text-align: right;
 
+      font-size: 9px;
+
       line-height: 1.5;
+
+      letter-spacing: 0.06em;
 
     }
 
 
 
-    /* ==========================================================
-       MOVING STRIP
-    ========================================================== */
+    /* =========================================================
+       TICKER
+    ========================================================= */
 
     .ticker {
 
       overflow: hidden;
 
-      width: 100%;
+      padding: 14px 0;
 
-      padding:
-        13px
-        0;
-
-      background:
-        var(--jungle);
-
-      color:
-        var(--peony);
+      background: var(--jungle);
+      color: var(--peony);
 
       white-space: nowrap;
 
@@ -592,14 +605,14 @@
 
     .ticker-track {
 
-      width: max-content;
-
       display: flex;
+
+      width: max-content;
 
       gap: 55px;
 
       animation:
-        ticker
+        tickerMove
         28s
         linear
         infinite;
@@ -614,107 +627,88 @@
         "Times New Roman",
         serif;
 
-      font-style: italic;
-
       font-size:
         clamp(
-          24px,
-          2.7vw,
-          44px
+          26px,
+          3vw,
+          47px
         );
+
+      font-style: italic;
 
     }
 
 
-    @keyframes ticker {
+    @keyframes tickerMove {
 
       from {
-
-        transform:
-          translateX(0);
-
+        transform: translateX(0);
       }
 
       to {
-
-        transform:
-          translateX(-50%);
-
+        transform: translateX(-50%);
       }
 
     }
 
 
 
-    /* ==========================================================
-       ABOUT
-    ========================================================== */
+    /* =========================================================
+       MINI ABOUT
+    ========================================================= */
 
-    .about {
+    .about-home {
 
-      min-height: 110vh;
+      min-height: 80vh;
 
       padding:
         120px
         28px;
 
-      background:
-        var(--cream);
-
-      position: relative;
-
-      overflow: hidden;
-
-    }
-
-
-    .section-label {
-
-      font-size: 9px;
-
-      letter-spacing: 0.07em;
-
-    }
-
-
-    .about-grid {
-
       display: grid;
 
       grid-template-columns:
-        1.15fr
-        0.85fr;
+        90px
+        1.4fr
+        0.65fr;
 
-      gap: 90px;
+      gap: 35px;
 
       align-items: start;
 
-      margin-top: 55px;
+      background: var(--cream);
 
     }
 
 
-    .about-heading {
+    .section-number {
+
+      font-size: 9px;
+
+      letter-spacing: 0.06em;
+
+    }
+
+
+    .about-home-title {
 
       font-size:
         clamp(
           68px,
-          8vw,
-          135px
+          8.6vw,
+          145px
         );
 
-      line-height: 0.82;
+      line-height: 0.8;
 
-      letter-spacing: -0.07em;
+      letter-spacing: -0.075em;
 
       font-weight: 500;
-
-      max-width: 950px;
 
     }
 
 
-    .about-heading em {
+    .about-home-title em {
 
       display: block;
 
@@ -730,174 +724,74 @@
     }
 
 
-    .about-right {
+    .about-home-copy {
 
-      padding-top: 40px;
+      align-self: end;
 
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 45px;
+      max-width: 430px;
 
     }
 
 
-    .about-main-photo {
-
-      width: 75%;
-
-      margin-left: auto;
-
-      aspect-ratio:
-        3 / 4;
-
-      overflow: hidden;
-
-      transform:
-        rotate(1.5deg);
-
-      box-shadow:
-        -13px
-        13px
-        0
-        var(--lavender);
-
-    }
-
-
-    .about-main-photo img {
-
-      width: 100%;
-
-      height: 100%;
-
-      object-fit: cover;
-
-    }
-
-
-    .about-copy {
-
-      max-width: 460px;
-
-      margin-left: auto;
-
-    }
-
-
-    .about-copy p {
+    .about-home-copy p {
 
       font-size:
         clamp(
           17px,
-          1.4vw,
+          1.45vw,
           22px
         );
 
       line-height: 1.3;
 
-      letter-spacing: -0.02em;
+      letter-spacing: -0.025em;
 
-      margin-bottom: 20px;
-
-    }
-
-
-
-    /* ---------- small editorial picture ---------- */
-
-    .about-detail {
-
-      margin-top: 80px;
-
-      display: grid;
-
-      grid-template-columns:
-        0.4fr
-        1fr;
-
-      gap: 70px;
-
-      align-items: end;
+      margin-bottom: 25px;
 
     }
 
 
-    .about-small-photo {
+    .text-link {
 
-      width: 100%;
+      display: inline-block;
 
-      max-width: 270px;
+      border-bottom:
+        1px solid
+        currentColor;
 
-      aspect-ratio:
-        4 / 5;
+      padding-bottom: 4px;
 
-      overflow: hidden;
+      font-size: 10px;
 
-      transform:
-        rotate(-2deg);
+      letter-spacing: 0.07em;
 
-      box-shadow:
-        12px
-        12px
-        0
-        var(--rose);
-
-    }
-
-
-    .about-small-photo img {
-
-      width: 100%;
-
-      height: 100%;
-
-      object-fit: cover;
+      transition:
+        opacity
+        0.25s
+        ease;
 
     }
 
 
-    .about-detail-text {
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      font-style: italic;
-
-      font-size:
-        clamp(
-          28px,
-          3.5vw,
-          55px
-        );
-
-      line-height: 1.05;
-
-      color: var(--jungle);
-
-      max-width: 850px;
-
+    .text-link:hover {
+      opacity: 0.55;
     }
 
 
 
-    /* ==========================================================
-       WORK INTRO
-    ========================================================== */
+    /* =========================================================
+       SELECTED WORK INTRO
+    ========================================================= */
 
     .work-intro {
 
-      min-height: 70vh;
+      min-height: 65vh;
 
       padding:
         110px
         28px;
 
-      background:
-        var(--sky);
+      background: var(--sky);
 
       display: grid;
 
@@ -908,15 +802,6 @@
 
       gap: 20px;
 
-      align-items: start;
-
-    }
-
-
-    .work-number {
-
-      font-size: 10px;
-
     }
 
 
@@ -926,16 +811,14 @@
         clamp(
           80px,
           11vw,
-          180px
+          185px
         );
 
-      line-height: 0.77;
+      line-height: 0.76;
 
-      letter-spacing: -0.08em;
+      letter-spacing: -0.082em;
 
       font-weight: 500;
-
-      color: var(--cacao);
 
     }
 
@@ -949,9 +832,9 @@
         "Times New Roman",
         serif;
 
-      color: var(--jungle);
-
       font-weight: 400;
+
+      color: var(--jungle);
 
     }
 
@@ -970,29 +853,28 @@
 
 
 
-    /* ==========================================================
-       PROJECTS
-    ========================================================== */
+    /* =========================================================
+       PROJECT
+    ========================================================= */
 
     .project {
 
       padding:
-        80px
+        90px
         28px
         150px;
 
-    }
-
-
-    .project:nth-of-type(even) {
-
-      background:
-        var(--cream);
+      background: var(--cream);
 
     }
 
 
-    .project-head {
+    .project.alt {
+      background: var(--peony);
+    }
+
+
+    .project-header {
 
       display: grid;
 
@@ -1004,7 +886,7 @@
 
       align-items: end;
 
-      margin-bottom: 20px;
+      margin-bottom: 18px;
 
     }
 
@@ -1013,11 +895,11 @@
 
       display: block;
 
-      font-size: 9px;
-
       margin-bottom: 8px;
 
-      letter-spacing: 0.06em;
+      font-size: 9px;
+
+      letter-spacing: 0.07em;
 
     }
 
@@ -1028,12 +910,14 @@
         clamp(
           42px,
           5vw,
-          78px
+          80px
         );
 
-      font-weight: 500;
+      line-height: 0.9;
 
-      letter-spacing: -0.055em;
+      letter-spacing: -0.058em;
+
+      font-weight: 500;
 
     }
 
@@ -1042,173 +926,196 @@
 
       display: flex;
 
-      gap: 30px;
+      gap: 32px;
 
       font-size: 9px;
 
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
 
     }
 
 
 
-    /* ---------- visual project area ---------- */
+    /* PROJECT IMAGE */
 
-    .project-visual {
-
-      height: 70vh;
-
-      min-height: 500px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
+    .project-image {
 
       position: relative;
 
+      width: 100%;
+
       overflow: hidden;
+
+      background: var(--black);
+
+    }
+
+
+    .project-image img {
+
+      width: 100%;
+      height: auto;
 
       transition:
         transform
-        0.5s
+        0.75s
+        cubic-bezier(.2,.8,.2,1),
+        filter
+        0.45s
         ease;
 
     }
 
 
-    .project-one {
+    .project-image::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
 
       background:
-        var(--leaf);
+        rgba(20,20,20,0.25);
+
+      opacity: 0;
+
+      transition:
+        opacity
+        0.4s
+        ease;
 
     }
 
 
-    .project-two {
+    .project-image:hover img {
 
-      background:
-        var(--rose);
+      transform: scale(1.025);
 
     }
 
 
-    .project-visual:hover {
+    .project-image:hover::after {
+      opacity: 1;
+    }
+
+
+    .project-hover-label {
+
+      position: absolute;
+
+      z-index: 4;
+
+      left: 50%;
+      top: 50%;
 
       transform:
-        scale(0.99);
+        translate(-50%, -50%);
+
+      color: white;
+
+      font-size: 10px;
+
+      letter-spacing: 0.08em;
+
+      opacity: 0;
+
+      transition:
+        opacity
+        0.3s
+        ease;
 
     }
 
 
-    .project-visual-text {
-
-      position: relative;
-
-      z-index: 3;
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      font-style: italic;
-
-      font-size:
-        clamp(
-          45px,
-          7vw,
-          105px
-        );
-
-      letter-spacing: -0.05em;
-
-      text-align: center;
-
-      color: var(--cacao);
-
+    .project-image:hover
+    .project-hover-label {
+      opacity: 1;
     }
 
+
+
+    /* PROJECT INFO */
 
     .project-bottom {
+
+      margin-top: 14px;
 
       display: flex;
 
       justify-content: space-between;
 
-      margin-top: 13px;
+      gap: 20px;
 
       font-size: 9px;
 
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
 
     }
 
 
 
-    /* ==========================================================
-       PERSONAL SECTION
-    ========================================================== */
+    /* SECOND PROJECT: EDITORIAL COMPOSITION */
 
-    .personal {
-
-      min-height: 100vh;
-
-      padding:
-        90px
-        28px;
-
-      background:
-        var(--jungle);
-
-      color:
-        var(--peony);
+    .project-layout-editorial {
 
       display: grid;
 
       grid-template-columns:
-        0.9fr
-        1.1fr;
+        1.4fr
+        0.6fr;
 
-      gap: 80px;
+      gap: 25px;
 
-      align-items: center;
+      align-items: end;
 
     }
 
 
-    .personal-image {
+    .project-secondary-image {
 
-      height: 72vh;
+      align-self: end;
 
-      max-height: 820px;
+      margin-bottom: 12%;
 
       overflow: hidden;
 
-      box-shadow:
-        15px
-        15px
-        0
-        var(--grass);
-
     }
 
 
-    .personal-image img {
+    .project-secondary-image img {
 
       width: 100%;
 
-      height: 100%;
-
-      object-fit: cover;
+      transition:
+        transform
+        0.6s
+        ease;
 
     }
 
 
-    .personal-copy {
+    .project-secondary-image:hover img {
+      transform: scale(1.025);
+    }
 
-      min-height: 65vh;
+
+
+    /* =========================================================
+       PERSONAL STATEMENT
+    ========================================================= */
+
+    .statement {
+
+      min-height: 70vh;
+
+      background: var(--jungle);
+
+      color: var(--peony);
+
+      padding:
+        80px
+        28px;
 
       display: flex;
 
@@ -1219,7 +1126,7 @@
     }
 
 
-    .personal-small {
+    .statement-label {
 
       font-size: 9px;
 
@@ -1228,55 +1135,62 @@
     }
 
 
-    .personal-quote {
+    .statement-text {
+
+      max-width: 1250px;
 
       font-family:
         Georgia,
         "Times New Roman",
         serif;
 
-      font-style: italic;
-
       font-size:
         clamp(
-          42px,
-          5vw,
-          82px
+          48px,
+          7vw,
+          115px
         );
 
-      line-height: 0.97;
+      line-height: 0.96;
 
-      letter-spacing: -0.05em;
+      letter-spacing: -0.055em;
 
-    }
-
-
-    .personal-description {
-
-      max-width: 370px;
-
-      font-size: 15px;
-
-      line-height: 1.4;
+      font-style: italic;
 
     }
 
 
+    .statement-bottom {
 
-    /* ==========================================================
-       CONTACT
-    ========================================================== */
+      display: flex;
 
-    .contact {
+      justify-content: space-between;
 
-      min-height: 90vh;
+      align-items: end;
+
+      gap: 30px;
+
+      font-size: 9px;
+
+      letter-spacing: 0.06em;
+
+    }
+
+
+
+    /* =========================================================
+       CONTACT PREVIEW
+    ========================================================= */
+
+    .contact-section {
+
+      min-height: 86vh;
 
       padding:
         32px
         28px;
 
-      background:
-        var(--peony);
+      background: var(--peony);
 
       display: flex;
 
@@ -1293,6 +1207,8 @@
 
       justify-content: space-between;
 
+      gap: 30px;
+
       font-size: 9px;
 
       letter-spacing: 0.06em;
@@ -1306,17 +1222,14 @@
         clamp(
           70px,
           12vw,
-          195px
+          198px
         );
 
-      line-height: 0.78;
+      line-height: 0.77;
 
-      letter-spacing: -0.08em;
+      letter-spacing: -0.082em;
 
       font-weight: 500;
-
-      color:
-        var(--cacao);
 
     }
 
@@ -1328,26 +1241,24 @@
         "Times New Roman",
         serif;
 
+      font-style: italic;
+
       font-weight: 400;
 
-      color:
-        var(--jungle);
+      color: var(--jungle);
 
     }
 
 
     .contact-title:hover em {
-
-      color:
-        var(--grass);
-
+      color: var(--grass);
     }
 
 
 
-    /* ==========================================================
+    /* =========================================================
        FOOTER
-    ========================================================== */
+    ========================================================= */
 
     footer {
 
@@ -1357,44 +1268,43 @@
         18px
         28px;
 
-      background:
-        var(--cacao);
-
-      color:
-        var(--peony);
+      background: var(--cacao);
+      color: var(--peony);
 
       display: flex;
 
+      align-items: center;
+
       justify-content: space-between;
 
-      align-items: center;
+      gap: 30px;
 
       font-size: 9px;
 
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
 
     }
 
 
 
-    /* ==========================================================
-       REVEAL
-    ========================================================== */
+    /* =========================================================
+       SCROLL REVEAL
+    ========================================================= */
 
     .reveal {
 
       opacity: 0;
 
       transform:
-        translateY(30px);
+        translateY(35px);
 
       transition:
         opacity
-        0.8s
+        0.85s
         ease,
         transform
-        0.8s
-        ease;
+        0.85s
+        cubic-bezier(.2,.7,.2,1);
 
     }
 
@@ -1410,48 +1320,20 @@
 
 
 
-    /* ==========================================================
+    /* =========================================================
        TABLET
-    ========================================================== */
+    ========================================================= */
 
-    @media (max-width: 950px) {
-
-
-      .header {
-
-        grid-template-columns:
-          1fr
-          1fr;
-
-      }
-
-
-      .nav {
-
-        display: none;
-
-      }
+    @media (max-width: 1000px) {
 
 
       .hero-main {
 
         grid-template-columns:
           1fr
-          0.65fr;
+          0.55fr;
 
-        gap: 25px;
-
-      }
-
-
-      .hero-title {
-
-        font-size:
-          clamp(
-            68px,
-            11vw,
-            120px
-          );
+        gap: 30px;
 
       }
 
@@ -1461,8 +1343,26 @@
         width:
           min(
             34vw,
-            330px
+            340px
           );
+
+      }
+
+
+      .about-home {
+
+        grid-template-columns:
+          60px
+          1fr;
+
+      }
+
+
+      .about-home-copy {
+
+        grid-column: 2;
+
+        margin-top: 60px;
 
       }
 
@@ -1480,36 +1380,21 @@
 
         grid-column: 2;
 
-        margin-top: 50px;
+        margin-top: 55px;
 
       }
 
 
       .project-meta {
-
         display: none;
-
       }
 
 
-      .about-grid {
+      .project-layout-editorial {
 
         grid-template-columns:
           1fr
-          0.8fr;
-
-        gap: 40px;
-
-      }
-
-
-      .personal {
-
-        grid-template-columns:
-          1fr
-          1fr;
-
-        gap: 40px;
+          0.5fr;
 
       }
 
@@ -1517,61 +1402,66 @@
 
 
 
-    /* ==========================================================
+    /* =========================================================
        MOBILE
-    ========================================================== */
+    ========================================================= */
 
-    @media (max-width: 650px) {
+    @media (max-width: 700px) {
 
+
+      /* HEADER */
 
       .header {
 
         padding:
           16px;
 
+        grid-template-columns:
+          1fr
+          1fr;
+
       }
 
 
+      .nav {
+        display: none;
+      }
+
+
+
+      /* HERO */
+
       .hero {
+
+        min-height: auto;
 
         padding:
           22px
           16px
-          28px;
+          30px;
 
-        min-height:
-          calc(
-            100svh - 54px
-          );
+        gap: 45px;
 
       }
 
 
       .hero-meta {
-
         font-size: 7px;
-
       }
 
 
       .hero-main {
 
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
 
-        gap: 30px;
-
-        align-items: start;
+        gap: 45px;
 
       }
 
 
       .hero-title {
 
-        font-size:
-          18vw;
-
-        line-height: 0.83;
+        font-size: 18vw;
 
       }
 
@@ -1583,56 +1473,49 @@
       }
 
 
-      .hero-photo-wrap {
-
-        min-height: auto;
+      .hero-photo-area {
 
         justify-content: flex-end;
+
+        padding-right: 6px;
 
       }
 
 
       .hero-photo {
 
-        width: 59vw;
+        width: 62vw;
 
         max-width: 330px;
 
-        margin-right: 8px;
-
       }
 
 
-      .hero-handwritten {
+      .hero-note {
 
-        top: 5px;
-
-        left: 5px;
-
+        left: 0;
         right: auto;
+        top: 12%;
 
-        width: 145px;
+        width: 130px;
 
-        font-size: 18px;
+        font-size: 17px;
 
       }
 
 
-      .hero-photo-tag {
+      .hero-photo-label {
 
-        left: -30px;
-
-        bottom: 25px;
+        left: -35px;
 
       }
 
 
       .hero-bottom {
 
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
 
-        gap: 20px;
+        gap: 25px;
 
       }
 
@@ -1663,63 +1546,34 @@
 
       /* ABOUT */
 
-      .about {
+      .about-home {
+
+        min-height: auto;
 
         padding:
-          85px
+          90px
           16px;
 
-      }
-
-
-      .about-grid {
-
         grid-template-columns:
+          35px
           1fr;
 
-        gap: 45px;
+      }
+
+
+      .about-home-title {
+
+        font-size: 17vw;
 
       }
 
 
-      .about-heading {
+      .about-home-copy {
 
-        font-size:
-          17vw;
+        grid-column:
+          2;
 
-      }
-
-
-      .about-right {
-
-        padding-top: 0;
-
-      }
-
-
-      .about-main-photo {
-
-        width: 72%;
-
-      }
-
-
-      .about-detail {
-
-        grid-template-columns:
-          0.55fr
-          1fr;
-
-        gap: 30px;
-
-        margin-top: 75px;
-
-      }
-
-
-      .about-detail-text {
-
-        font-size: 7vw;
+        margin-top: 45px;
 
       }
 
@@ -1732,7 +1586,7 @@
         min-height: auto;
 
         padding:
-          85px
+          90px
           16px;
 
         grid-template-columns:
@@ -1744,8 +1598,7 @@
 
       .work-title {
 
-        font-size:
-          18vw;
+        font-size: 18vw;
 
       }
 
@@ -1756,67 +1609,71 @@
       .project {
 
         padding:
-          65px
+          70px
           16px
           100px;
 
       }
 
 
-      .project-head {
+      .project-header {
 
-        grid-template-columns:
-          1fr;
-
-      }
-
-
-      .project-visual {
-
-        height: 55vh;
-
-        min-height: 420px;
+        grid-template-columns: 1fr;
 
       }
 
 
+      .project-title {
 
-      /* PERSONAL */
+        font-size: 10vw;
 
-      .personal {
+      }
+
+
+      .project-layout-editorial {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+      }
+
+
+      .project-secondary-image {
+
+        width: 68%;
+
+        margin-left: auto;
+
+        margin-bottom: 0;
+
+      }
+
+
+      .project-bottom {
+
+        line-height: 1.35;
+
+      }
+
+
+
+      /* STATEMENT */
+
+      .statement {
+
+        min-height: 70vh;
 
         padding:
-          75px
+          70px
           16px;
 
-        grid-template-columns:
-          1fr;
-
-        gap: 50px;
-
       }
 
 
-      .personal-image {
+      .statement-text {
 
-        height: 60vh;
-
-      }
-
-
-      .personal-copy {
-
-        min-height: auto;
-
-        gap: 60px;
-
-      }
-
-
-      .personal-quote {
-
-        font-size:
-          12vw;
+        font-size: 11vw;
 
       }
 
@@ -1824,12 +1681,12 @@
 
       /* CONTACT */
 
-      .contact {
+      .contact-section {
 
-        min-height: 75vh;
+        min-height: 72vh;
 
         padding:
-          25px
+          26px
           16px;
 
       }
@@ -1837,11 +1694,20 @@
 
       .contact-title {
 
-        font-size:
-          17vw;
+        font-size: 17vw;
 
       }
 
+
+      .contact-meta {
+
+        font-size: 8px;
+
+      }
+
+
+
+      /* FOOTER */
 
       footer {
 
@@ -1849,49 +1715,98 @@
           18px
           16px;
 
+        flex-wrap: wrap;
+
       }
 
     }
 
 
+
+    /* =========================================================
+       VERY SMALL MOBILE
+    ========================================================= */
+
+    @media (max-width: 400px) {
+
+      .hero-title {
+        font-size: 19vw;
+      }
+
+      .hero-photo {
+        width: 68vw;
+      }
+
+      .about-home-title {
+        font-size: 18vw;
+      }
+
+      .work-title {
+        font-size: 19vw;
+      }
+
+      .contact-title {
+        font-size: 18vw;
+      }
+
+    }
+
+
+
+    /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+      }
+
+    }
+
   </style>
 
 </head>
 
-<div class="custom-cursor">✿</div>
 
-<script>
-  const cursor = document.querySelector(".custom-cursor");
-
-  document.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
-  });
-
-  const interactiveElements = document.querySelectorAll("a, button");
-
-  interactiveElements.forEach((element) => {
-    element.addEventListener("mouseenter", () => {
-      cursor.classList.add("hover");
-    });
-
-    element.addEventListener("mouseleave", () => {
-      cursor.classList.remove("hover");
-    });
-  });
-</script>
 
 <body>
 
 
-  <!-- =========================================================
+  <!-- CUSTOM CURSOR -->
+
+  <div class="cursor">
+
+    <span class="cursor-flower">
+      ✿
+    </span>
+
+    <span class="cursor-project-text">
+      VIEW ↗
+    </span>
+
+  </div>
+
+
+
+  <!-- ======================================================
        HEADER
-  ========================================================== -->
+  ======================================================= -->
 
   <header class="header">
 
     <a
-      href="#"
+      href="index.html"
       class="logo"
     >
       MARTA VAZ
@@ -1900,7 +1815,7 @@
 
     <nav class="nav">
 
-      <a href="#about">
+      <a href="about.html">
         ABOUT
       </a>
 
@@ -1908,7 +1823,7 @@
         WORK
       </a>
 
-      <a href="#contact">
+      <a href="contact.html">
         CONTACT
       </a>
 
@@ -1917,7 +1832,7 @@
 
     <a
       class="top-contact"
-      href="mailto:martadesign26@example.com"
+      href="contact.html"
     >
       GET IN TOUCH ↗
     </a>
@@ -1926,17 +1841,19 @@
 
 
 
-  <!-- =========================================================
-       HERO
-  ========================================================== -->
-
   <main>
 
+
+
+    <!-- ======================================================
+         HERO
+    ======================================================= -->
 
     <section class="hero">
 
 
       <div class="hero-meta">
+
 
         <div>
 
@@ -1955,6 +1872,7 @@
 
         </div>
 
+
       </div>
 
 
@@ -1962,7 +1880,8 @@
       <div class="hero-main">
 
 
-        <div class="hero-copy">
+        <div>
+
 
           <p class="hero-kicker">
 
@@ -1991,11 +1910,12 @@
 
           </h1>
 
+
         </div>
 
 
 
-        <div class="hero-photo-wrap">
+        <div class="hero-photo-area">
 
 
           <div class="hero-photo">
@@ -2008,20 +1928,20 @@
           </div>
 
 
-          <div class="hero-handwritten">
+          <p class="hero-note">
 
-            made with intention,<br>
+            made with intention,
             curiosity & a little soul.
 
-          </div>
+          </p>
 
 
-          <div class="hero-photo-tag">
+          <p class="hero-photo-label">
 
             MARTA VAZ<br>
             DESIGNER / PORTUGAL
 
-          </div>
+          </p>
 
 
         </div>
@@ -2067,16 +1987,14 @@
 
 
 
-    <!-- =======================================================
-         MOVING TEXT
-    ======================================================== -->
+    <!-- ======================================================
+         TICKER
+    ======================================================= -->
 
     <section class="ticker">
 
-
       <div class="ticker-track">
 
-
         <span>
           web design /
         </span>
@@ -2090,7 +2008,7 @@
         </span>
 
         <span>
-          small brands /
+          independent brands /
         </span>
 
         <span>
@@ -2111,132 +2029,75 @@
         </span>
 
         <span>
-          small brands /
+          independent brands /
         </span>
 
         <span>
           creative direction /
         </span>
-
 
       </div>
-
 
     </section>
 
 
 
-    <!-- =======================================================
-         ABOUT
-    ======================================================== -->
+    <!-- ======================================================
+         ABOUT PREVIEW
+    ======================================================= -->
 
-    <section
-      class="about reveal"
-      id="about"
-    >
+    <section class="about-home reveal">
 
 
-      <p class="section-label">
-
-        01 / ABOUT THE DESIGNER
-
-      </p>
+      <span class="section-number">
+        01
+      </span>
 
 
+      <h2 class="about-home-title">
 
-      <div class="about-grid">
+        DESIGN THAT<br>
 
+        FEELS
 
-        <div>
+        <em>
+          human.
+        </em>
 
-
-          <h2 class="about-heading">
-
-            I'M MARTA,<br>
-
-            I CREATE<br>
-
-            THINGS WITH
-
-            <em>
-              personality.
-            </em>
-
-          </h2>
+      </h2>
 
 
-        </div>
+      <div class="about-home-copy">
 
 
+        <p>
 
-        <div class="about-right">
-
-
-          <div class="about-main-photo">
-
-            <img
-              src="imagens/marta5.JPEG"
-              alt="Marta Vaz"
-            >
-
-          </div>
-
-
-
-          <div class="about-copy">
-
-
-            <p>
-
-              I'm a Communication & Multimedia Designer
-              focused on websites, visual identities and
-              digital experiences that feel distinctive,
-              intentional and human.
-
-            </p>
-
-
-            <p>
-
-              I like combining clean structures with
-              expressive typography, photography and
-              unexpected details.
-
-            </p>
-
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-
-
-      <div class="about-detail">
-
-
-        <div class="about-small-photo">
-
-          <img
-            src="imagens/marta1.JPG"
-            alt="Marta"
-          >
-
-        </div>
-
-
-        <p class="about-detail-text">
-
-          I believe a website should feel like
-          an extension of the person or brand
-          behind it — not just another template.
+          I'm Marta, a Communication & Multimedia
+          Designer creating websites, identities
+          and digital experiences with character,
+          intention and clarity.
 
         </p>
 
 
+        <p>
+
+          I like thoughtful typography,
+          expressive imagery and small unexpected
+          details that make digital spaces
+          memorable.
+
+        </p>
+
+
+        <a
+          href="about.html"
+          class="text-link"
+        >
+          MORE ABOUT ME ↗
+        </a>
+
+
       </div>
 
 
@@ -2244,9 +2105,9 @@
 
 
 
-    <!-- =======================================================
+    <!-- ======================================================
          WORK INTRO
-    ======================================================== -->
+    ======================================================= -->
 
     <section
       class="work-intro reveal"
@@ -2254,10 +2115,8 @@
     >
 
 
-      <span class="work-number">
-
+      <span class="section-number">
         02
-
       </span>
 
 
@@ -2274,9 +2133,9 @@
 
       <p class="work-copy">
 
-        A growing collection of websites,
-        visual experiments and digital
-        experiences created with intention.
+        A growing archive of websites,
+        digital experiments and visual
+        experiences designed with purpose.
 
       </p>
 
@@ -2285,14 +2144,14 @@
 
 
 
-    <!-- =======================================================
-         PROJECT 01
-    ======================================================== -->
+    <!-- ======================================================
+         DEEP AWARENESS
+    ======================================================= -->
 
     <section class="project reveal">
 
 
-      <div class="project-head">
+      <div class="project-header">
 
 
         <div>
@@ -2318,17 +2177,21 @@
 
         <div class="project-meta">
 
+
           <span>
             WEB DESIGN
           </span>
+
 
           <span>
             DEVELOPMENT
           </span>
 
+
           <span>
             2026
           </span>
+
 
         </div>
 
@@ -2338,18 +2201,23 @@
 
 
       <a
-        href="https://martaffbvaz-spec.github.io/eldas/index.html"
-        target="_blank"
-        rel="noopener"
+        href="projects/deep-awareness.html"
+        class="project-link"
       >
 
 
-        <div class="project-visual project-one">
+        <div class="project-image">
 
 
-          <span class="project-visual-text">
+          <img
+            src="imagens/deep-awareness-01.png"
+            alt="Deep Awareness hypnotherapy website"
+          >
 
-            Deep Awareness ↗
+
+          <span class="project-hover-label">
+
+            VIEW PROJECT ↗
 
           </span>
 
@@ -2363,17 +2231,20 @@
 
       <div class="project-bottom">
 
-        <span>
-
-          DIGITAL EXPERIENCE
-
-        </span>
 
         <span>
 
-          VIEW LIVE WEBSITE ↗
+          HYPNOTHERAPY / WEBSITE  DESIGN 
 
         </span>
+
+
+        <span>
+
+          CASE STUDY ↗
+
+        </span>
+
 
       </div>
 
@@ -2382,14 +2253,14 @@
 
 
 
-    <!-- =======================================================
-         PROJECT 02
-    ======================================================== -->
+    <!-- ======================================================
+         MARTA OS
+    ======================================================= -->
 
-    <section class="project reveal">
+    <section class="project alt reveal">
 
 
-      <div class="project-head">
+      <div class="project-header">
 
 
         <div>
@@ -2415,17 +2286,21 @@
 
         <div class="project-meta">
 
-          <span>
-            WEB DESIGN
-          </span>
 
           <span>
-            EXPERIMENTAL
+            PORTFOLIO
           </span>
+
+
+          <span>
+            INTERACTIVE WEB
+          </span>
+
 
           <span>
             2026
           </span>
+
 
         </div>
 
@@ -2435,20 +2310,44 @@
 
 
       <a
-        href="https://martaffbvaz-spec.github.io/MartaP/index.html"
-        target="_blank"
-        rel="noopener"
+        href="projects/marta-os.html"
+        class="project-link"
       >
 
 
-        <div class="project-visual project-two">
+        <div class="project-layout-editorial">
 
 
-          <span class="project-visual-text">
+          <div class="project-image">
 
-            Marta OS ↗
 
-          </span>
+            <img
+              src="imagens/marta-os-01.png"
+              alt="Marta OS interactive portfolio"
+            >
+
+
+            <span class="project-hover-label">
+
+              VIEW PROJECT ↗
+
+            </span>
+
+
+          </div>
+
+
+
+          <div class="project-secondary-image">
+
+
+            <img
+              src="imagens/marta-os-02.png"
+              alt="Marta OS interface detail"
+            >
+
+
+          </div>
 
 
         </div>
@@ -2460,17 +2359,21 @@
 
       <div class="project-bottom">
 
-        <span>
-
-          EXPERIMENTAL PORTFOLIO
-
-        </span>
 
         <span>
 
-          VIEW PROJECT ↗
+          PERSONAL PORTFOLIO /
+          INTERACTIVE EXPERIENCE
 
         </span>
+
+
+        <span>
+
+          CASE STUDY ↗
+
+        </span>
+
 
       </div>
 
@@ -2479,53 +2382,47 @@
 
 
 
-    <!-- =======================================================
-         PERSONAL
-    ======================================================== -->
+    <!-- ======================================================
+         STATEMENT
+    ======================================================= -->
 
-    <section class="personal reveal">
-
-
-      <div class="personal-image">
+    <section class="statement reveal">
 
 
-        <img
-          src="imagens/marta3.JPG"
-          alt="Marta"
+      <p class="statement-label">
+
+        A SMALL NOTE / MARTA VAZ
+
+      </p>
+
+
+      <p class="statement-text">
+
+        “I want websites to feel like places
+        people remember, not templates
+        they've already seen.”
+
+      </p>
+
+
+      <div class="statement-bottom">
+
+
+        <span>
+
+          WEB / VISUAL / DIGITAL
+
+        </span>
+
+
+        <a
+          href="about.html"
+          class="text-link"
         >
 
+          MY APPROACH ↗
 
-      </div>
-
-
-
-      <div class="personal-copy">
-
-
-        <p class="personal-small">
-
-          A SMALL NOTE / MARTA VAZ
-
-        </p>
-
-
-        <p class="personal-quote">
-
-          “I want websites
-          to feel like places,
-          not templates.”
-
-        </p>
-
-
-        <p class="personal-description">
-
-          I care about the details that make
-          digital spaces memorable — typography,
-          rhythm, imagery, movement and the feeling
-          someone gets while exploring them.
-
-        </p>
+        </a>
 
 
       </div>
@@ -2535,12 +2432,12 @@
 
 
 
-    <!-- =======================================================
+    <!-- ======================================================
          CONTACT
-    ======================================================== -->
+    ======================================================= -->
 
     <section
-      class="contact reveal"
+      class="contact-section reveal"
       id="contact"
     >
 
@@ -2567,8 +2464,8 @@
 
 
       <a
+        href="contact.html"
         class="contact-title"
-        href="mailto:martadesign26@example.com"
       >
 
         LET'S MAKE<br>
@@ -2582,6 +2479,7 @@
         ↗
 
       </a>
+
 
 
       <div class="contact-meta">
@@ -2611,9 +2509,9 @@
 
 
 
-  <!-- =========================================================
+  <!-- ======================================================
        FOOTER
-  ========================================================== -->
+  ======================================================= -->
 
   <footer>
 
@@ -2625,7 +2523,7 @@
     </span>
 
 
-    <a href="https://www.instagram.com/_.martavaz._/">
+    <a href="https://www.instagram.com/_.martavaz._/" target="_blank">
 
       INSTAGRAM ↗
 
@@ -2643,17 +2541,20 @@
 
 
 
-  <!-- =========================================================
+  <!-- ======================================================
        JAVASCRIPT
-  ========================================================== -->
+  ======================================================= -->
 
   <script>
 
 
+    /* ======================================================
+       SCROLL REVEAL
+    ======================================================= */
+
+
     const revealElements =
-      document.querySelectorAll(
-        ".reveal"
-      );
+      document.querySelectorAll(".reveal");
 
 
     const observer =
@@ -2661,62 +2562,184 @@
 
         (entries) => {
 
-
           entries.forEach(
 
             (entry) => {
 
-
-              if (
-                entry.isIntersecting
-              ) {
-
+              if (entry.isIntersecting) {
 
                 entry.target
                   .classList
-                  .add(
-                    "visible"
-                  );
-
+                  .add("visible");
 
                 observer
-                  .unobserve(
-                    entry.target
-                  );
-
+                  .unobserve(entry.target);
 
               }
 
+            }
+
+          );
+
+        },
+
+        {
+          threshold: 0.1
+        }
+
+      );
+
+
+    revealElements.forEach(
+
+      (element) => {
+
+        observer.observe(element);
+
+      }
+
+    );
+
+
+
+    /* ======================================================
+       CUSTOM CURSOR
+    ======================================================= */
+
+
+    const cursor =
+      document.querySelector(".cursor");
+
+
+    const finePointer =
+      window.matchMedia(
+        "(pointer: fine)"
+      );
+
+
+    if (finePointer.matches) {
+
+
+      document.addEventListener(
+
+        "mousemove",
+
+        (event) => {
+
+
+          cursor.style.left =
+            event.clientX + "px";
+
+
+          cursor.style.top =
+            event.clientY + "px";
+
+
+        }
+
+      );
+
+
+
+      const projectLinks =
+        document.querySelectorAll(
+          ".project-link"
+        );
+
+
+      projectLinks.forEach(
+
+        (project) => {
+
+
+          project.addEventListener(
+
+            "mouseenter",
+
+            () => {
+
+              cursor
+                .classList
+                .add("project-mode");
 
             }
 
           );
 
 
+          project.addEventListener(
+
+            "mouseleave",
+
+            () => {
+
+              cursor
+                .classList
+                .remove("project-mode");
+
+            }
+
+          );
+
+
+        }
+
+      );
+
+
+    }
+
+
+
+    /* ======================================================
+       SMALL HERO PARALLAX
+    ======================================================= */
+
+
+    const heroPhoto =
+      document.querySelector(
+        ".hero-photo img"
+      );
+
+
+    if (
+      heroPhoto &&
+      finePointer.matches
+    ) {
+
+
+      window.addEventListener(
+
+        "scroll",
+
+        () => {
+
+
+          const scrollY =
+            window.scrollY;
+
+
+          const movement =
+            Math.min(
+              scrollY * 0.025,
+              14
+            );
+
+
+          heroPhoto.style.transform =
+            `translateY(${movement}px) scale(1.02)`;
+
+
         },
 
         {
-
-          threshold: 0.1
-
+          passive: true
         }
 
       );
 
 
-    revealElements
-      .forEach(
-
-        (element) => {
-
-          observer
-            .observe(
-              element
-            );
-
-        }
-
-      );
+    }
 
 
   </script>
