@@ -1194,80 +1194,436 @@
     }
 
 
-    .award {
+    /* =========================================================
+   FEATURED FILM / AWARD
+========================================================= */
 
-      margin-top: 80px;
+.award {
 
-      padding:
+  margin-top: 80px;
+
+  padding: 24px;
+
+  border:
+    1.5px solid
+    var(--black);
+
+  background: var(--yellow);
+
+  box-shadow:
+    8px
+    8px
+    0
+    rgba(18,18,18,0.08);
+
+}
+
+
+/* TOP */
+
+.award-top {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding-bottom: 18px;
+
+  border-bottom:
+    1px solid
+    rgba(18,18,18,0.25);
+
+}
+
+
+.award-label {
+
+  font-size: 8px;
+
+  letter-spacing: 0.08em;
+
+}
+
+
+.award-file {
+
+  font-size: 8px;
+
+  letter-spacing: 0.08em;
+
+  opacity: 0.6;
+
+}
+
+
+/* CONTENT */
+
+.award-content {
+
+  display: grid;
+
+  grid-template-columns:
+    1.35fr
+    0.65fr;
+
+  gap: 55px;
+
+  padding-top: 24px;
+
+  align-items: start;
+
+}
+
+
+/* VIDEO WINDOW */
+
+.award-video {
+
+  border:
+    1.5px solid
+    var(--black);
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  background: var(--black);
+
+  box-shadow:
+    7px
+    7px
+    0
+    rgba(18,18,18,0.12);
+
+}
+
+
+.award-video-bar {
+
+  height: 40px;
+
+  padding:
+    0
+    13px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto
+    1fr;
+
+  align-items: center;
+
+  background: var(--white);
+
+  border-bottom:
+    1.5px solid
+    var(--black);
+
+  font-size: 7px;
+
+  letter-spacing: 0.1em;
+
+}
+
+
+.award-video-bar .window-status {
+
+  justify-self: end;
+
+}
+
+
+.award-video video {
+
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  object-fit: cover;
+
+  background: var(--black);
+
+}
+
+
+/* INFORMATION */
+
+.award-info {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 35px;
+
+}
+
+
+.award-number {
+
+  font-size: 8px;
+
+  letter-spacing: 0.08em;
+
+}
+
+
+.award-title {
+
+  font-size:
+    clamp(
+      48px,
+      5vw,
+      78px
+    );
+
+  line-height: 0.85;
+
+  letter-spacing: -0.065em;
+
+  font-weight: 600;
+
+}
+
+
+.award-title em {
+
+  display: block;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  color: var(--cacao);
+
+  font-weight: 400;
+
+}
+
+
+/* AWARD BADGE */
+
+.award-badge {
+
+  display: inline-flex;
+
+  width: fit-content;
+
+  padding:
+    10px
+    14px;
+
+  background: var(--pink-soft);
+
+  border:
+    1px solid
+    var(--black);
+
+  font-size: 8px;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.08em;
+
+  box-shadow:
+    4px
+    4px
+    0
+    var(--black);
+
+}
+
+
+/* DESCRIPTION */
+
+.award-description {
+
+  max-width: 460px;
+
+}
+
+
+.award-description p {
+
+  margin-bottom: 17px;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+
+}
+
+
+.award-description .synopsis {
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 19px;
+
+  line-height: 1.45;
+
+  font-style: italic;
+
+  color: var(--cacao);
+
+}
+
+
+/* PROJECT DATA */
+
+.film-data {
+
+  margin-top: 5px;
+
+}
+
+
+.film-row {
+
+  padding:
+    11px
+    0;
+
+  display: grid;
+
+  grid-template-columns:
+    90px
+    1fr;
+
+  gap: 20px;
+
+  border-top:
+    1px solid
+    rgba(18,18,18,0.25);
+
+}
+
+
+.film-row:last-child {
+
+  border-bottom:
+    1px solid
+    rgba(18,18,18,0.25);
+
+}
+
+
+.film-label {
+
+  font-size: 7px;
+
+  letter-spacing: 0.08em;
+
+}
+
+
+.film-value {
+
+  font-size: 13px;
+
+  line-height: 1.4;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .award {
+
+    margin-top: 55px;
+
+    padding: 15px;
+
+  }
+
+
+  .award-top {
+
+    padding-bottom: 14px;
+
+  }
+
+
+  .award-file {
+
+    display: none;
+
+  }
+
+
+  .award-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 45px;
+
+    padding-top: 15px;
+
+  }
+
+
+  .award-video {
+
+    width: 100%;
+
+    border-radius: 10px;
+
+  }
+
+
+  .award-video-bar {
+
+    height: 35px;
+
+    font-size: 6px;
+
+  }
+
+
+  .award-title {
+
+    font-size:
+      clamp(
+        44px,
+        13vw,
         65px
-        24px;
+      );
 
-      border:
-        1.5px solid
-        var(--black);
-
-      background: var(--yellow);
-
-      display: grid;
-
-      grid-template-columns:
-        0.5fr
-        1.5fr;
-
-      gap: 45px;
-
-      align-items: end;
-
-      box-shadow:
-        8px
-        8px
-        0
-        rgba(18,18,18,0.08);
-
-    }
+  }
 
 
-    .award-label {
+  .award-description .synopsis {
 
-      font-size: 8px;
+    font-size: 17px;
 
-      letter-spacing: 0.08em;
-
-    }
+  }
 
 
-    .award-title {
+  .film-row {
 
-      font-size:
-        clamp(
-          40px,
-          4.3vw,
-          70px
-        );
+    grid-template-columns:
+      75px
+      minmax(0, 1fr);
 
-      line-height: 0.95;
+  }
 
-      letter-spacing: -0.055em;
-
-      font-weight: 600;
-
-    }
-
-
-    .award-title em {
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      color: var(--cacao);
-
-      font-weight: 400;
-
-    }
-
-
+}
     /* =========================================================
        ABOUT THE SYSTEM
     ========================================================= */
