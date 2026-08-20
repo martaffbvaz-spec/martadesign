@@ -1,0 +1,3683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Marta OS — Interactive portfolio, photography, multimedia and academic work by Marta Vaz."
+  >
+
+  <title>Marta OS — Marta Vaz</title>
+
+
+  <style>
+
+    /* =========================================================
+       COLOUR SYSTEM
+    ========================================================= */
+
+    :root {
+
+      --cream: #f7f1eb;
+
+      --blue: #e7eef5;
+      --blue-dot: #c5d1dc;
+
+      --pink: #efaaa9;
+      --pink-soft: #f4c8d3;
+
+      --green: #dcecdc;
+      --yellow: #f8e6aa;
+
+      --cacao: #6b403b;
+      --black: #121212;
+      --white: #fffdf9;
+
+      --shadow:
+        rgba(18,18,18,0.12);
+
+    }
+
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      background: var(--cream);
+      color: var(--black);
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      overflow-x: hidden;
+
+    }
+
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      display: block;
+    }
+
+
+    ::selection {
+      background: var(--pink-soft);
+      color: var(--black);
+    }
+
+
+    /* =========================================================
+       DOT BACKGROUND
+    ========================================================= */
+
+    .dot-bg {
+
+      background-color: var(--blue);
+
+      background-image:
+        radial-gradient(
+          var(--blue-dot)
+          1px,
+          transparent
+          1px
+        );
+
+      background-size:
+        28px
+        28px;
+
+    }
+
+
+    /* =========================================================
+       CURSOR
+    ========================================================= */
+
+    .cursor {
+
+      position: fixed;
+
+      left: 0;
+      top: 0;
+
+      width: 34px;
+      height: 34px;
+
+      border:
+        1.5px solid
+        var(--black);
+
+      background: var(--white);
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      pointer-events: none;
+
+      z-index: 9999;
+
+      transform:
+        translate(-50%, -50%);
+
+      box-shadow:
+        3px
+        3px
+        0
+        var(--black);
+
+      font-size: 14px;
+
+      transition:
+        width 0.25s ease,
+        height 0.25s ease,
+        background 0.25s ease;
+
+    }
+
+
+    .cursor.link-mode {
+
+      width: 88px;
+      height: 42px;
+
+      background: var(--yellow);
+
+      font-size: 9px;
+
+      letter-spacing: 0.08em;
+
+    }
+
+
+    .cursor-text {
+      display: none;
+    }
+
+
+    .cursor.link-mode .cursor-symbol {
+      display: none;
+    }
+
+
+    .cursor.link-mode .cursor-text {
+      display: block;
+    }
+
+
+    @media (pointer: fine) {
+
+      body,
+      a {
+        cursor: none;
+      }
+
+    }
+
+
+    @media (pointer: coarse) {
+
+      .cursor {
+        display: none;
+      }
+
+    }
+
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    .header {
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      padding:
+        20px
+        24px;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+      align-items: center;
+
+      z-index: 30;
+
+      font-size: 8px;
+
+      letter-spacing: 0.08em;
+
+    }
+
+
+    .header-center {
+
+      display: flex;
+
+      gap: 32px;
+
+    }
+
+
+    .header-right {
+      justify-self: end;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+
+      min-height: 100vh;
+
+      padding:
+        110px
+        24px
+        34px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+    }
+
+
+    .hero-meta {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      font-size: 8px;
+
+      letter-spacing: 0.07em;
+
+    }
+
+
+    .hero-main {
+
+      width: 100%;
+
+      max-width: 1450px;
+
+      margin:
+        50px
+        auto;
+
+      display: grid;
+
+      grid-template-columns:
+        0.65fr
+        1.35fr;
+
+      gap: 55px;
+
+      align-items: center;
+
+    }
+
+
+    .hero-copy {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 30px;
+
+    }
+
+
+    .hero-label {
+
+      font-size: 8px;
+
+      letter-spacing: 0.12em;
+
+    }
+
+
+    .hero-title {
+
+      font-size:
+        clamp(
+          72px,
+          8vw,
+          130px
+        );
+
+      line-height: 0.78;
+
+      letter-spacing: -0.075em;
+
+      font-weight: 800;
+
+    }
+
+
+    .hero-title span {
+      display: block;
+    }
+
+
+    .hero-title .os {
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-style: italic;
+
+      font-weight: 400;
+
+      color: var(--cacao);
+
+      margin-left: 0.15em;
+
+    }
+
+
+    .hero-description {
+
+      max-width: 390px;
+
+      font-size: 16px;
+
+      line-height: 1.45;
+
+    }
+
+
+    /* WINDOW */
+
+    .window {
+
+      border:
+        1.5px solid
+        var(--black);
+
+      border-radius: 16px;
+
+      overflow: hidden;
+
+      background: var(--white);
+
+      box-shadow:
+        12px
+        12px
+        0
+        rgba(18,18,18,0.08);
+
+    }
+
+
+    .window-bar {
+
+      min-height: 44px;
+
+      padding:
+        0
+        16px;
+
+      border-bottom:
+        1.5px solid
+        var(--black);
+
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+      align-items: center;
+
+      font-size: 8px;
+
+      letter-spacing: 0.1em;
+
+    }
+
+
+    .window-dots {
+
+      display: flex;
+
+      gap: 6px;
+
+    }
+
+
+    .dot {
+
+      width: 10px;
+      height: 10px;
+
+      border:
+        1px solid
+        var(--black);
+
+      border-radius: 50%;
+
+    }
+
+
+    .dot.pink {
+      background: var(--pink-soft);
+    }
+
+
+    .dot.yellow {
+      background: var(--yellow);
+    }
+
+
+    .dot.green {
+      background: var(--green);
+    }
+
+
+    .window-name {
+      font-weight: 600;
+    }
+
+
+    .window-status {
+      justify-self: end;
+    }
+
+
+    .window img {
+
+      transition:
+        transform
+        0.7s
+        ease;
+
+    }
+
+
+    .window:hover img {
+      transform: scale(1.015);
+    }
+
+
+    .hero-bottom {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      font-size: 8px;
+
+      letter-spacing: 0.07em;
+
+    }
+
+
+    /* =========================================================
+       OVERVIEW
+    ========================================================= */
+
+    .overview {
+
+      padding:
+        105px
+        24px;
+
+      background: var(--cream);
+
+      display: grid;
+
+      grid-template-columns:
+        70px
+        1.1fr
+        0.75fr;
+
+      gap: 35px;
+
+    }
+
+
+    .section-number {
+
+      font-size: 8px;
+
+      letter-spacing: 0.07em;
+
+    }
+
+
+    .overview-title {
+
+      font-size:
+        clamp(
+          52px,
+          6vw,
+          92px
+        );
+
+      line-height: 0.88;
+
+      letter-spacing: -0.065em;
+
+      font-weight: 600;
+
+    }
+
+
+    .overview-title em {
+
+      display: block;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--cacao);
+
+      font-weight: 400;
+
+    }
+
+
+    .overview-copy {
+
+      align-self: end;
+
+      max-width: 460px;
+
+    }
+
+
+    .overview-copy p {
+
+      margin-bottom: 20px;
+
+      font-size: 16px;
+
+      line-height: 1.5;
+
+    }
+
+
+    /* =========================================================
+       DETAILS
+    ========================================================= */
+
+    .details {
+
+      padding:
+        95px
+        24px;
+
+      background: var(--yellow);
+
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
+      gap: 70px;
+
+    }
+
+
+    .details-left {
+
+      min-height: 430px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+    }
+
+
+    .details-kicker {
+
+      font-size: 8px;
+
+      letter-spacing: 0.08em;
+
+    }
+
+
+    .details-title {
+
+      font-size:
+        clamp(
+          46px,
+          5.3vw,
+          84px
+        );
+
+      line-height: 0.87;
+
+      letter-spacing: -0.065em;
+
+      font-weight: 600;
+
+    }
+
+
+    .details-title em {
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--cacao);
+
+      font-weight: 400;
+
+    }
+
+
+    .details-right {
+      align-self: end;
+    }
+
+
+    .detail-row {
+
+      padding:
+        16px
+        0;
+
+      border-top:
+        1px solid
+        rgba(18,18,18,0.22);
+
+      display: grid;
+
+      grid-template-columns:
+        120px
+        1fr;
+
+      gap: 25px;
+
+    }
+
+
+    .detail-row:last-child {
+
+      border-bottom:
+        1px solid
+        rgba(18,18,18,0.22);
+
+    }
+
+
+    .detail-label {
+
+      font-size: 8px;
+
+      letter-spacing: 0.07em;
+
+    }
+
+
+    .detail-value {
+
+      font-size: 15px;
+
+      line-height: 1.4;
+
+    }
+
+
+    /* =========================================================
+       PROCESS
+    ========================================================= */
+
+    .process {
+
+      padding:
+        100px
+        24px;
+
+      background: var(--cream);
+
+    }
+
+
+    .process-heading {
+
+      display: grid;
+
+      grid-template-columns:
+        70px
+        1fr;
+
+      gap: 30px;
+
+      margin-bottom: 70px;
+
+    }
+
+
+    .process-title {
+
+      max-width: 950px;
+
+      font-size:
+        clamp(
+          48px,
+          5.5vw,
+          88px
+        );
+
+      line-height: 0.88;
+
+      letter-spacing: -0.065em;
+
+      font-weight: 600;
+
+    }
+
+
+    .process-title em {
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--cacao);
+
+      font-weight: 400;
+
+    }
+
+
+    .process-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 15px;
+
+    }
+
+
+    .process-card {
+
+      min-height: 300px;
+
+      padding: 22px;
+
+      border:
+        1.5px solid
+        var(--black);
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+      box-shadow:
+        6px
+        6px
+        0
+        rgba(18,18,18,0.08);
+
+      transition:
+        transform
+        0.3s ease;
+
+    }
+
+
+    .process-card:nth-child(1) {
+      background: var(--pink-soft);
+    }
+
+
+    .process-card:nth-child(2) {
+      background: var(--green);
+    }
+
+
+    .process-card:nth-child(3) {
+      background: var(--blue);
+    }
+
+
+    .process-card:hover {
+
+      transform:
+        translateY(-7px)
+        rotate(-0.5deg);
+
+    }
+
+
+    .process-number {
+
+      font-size: 8px;
+
+      letter-spacing: 0.08em;
+
+    }
+
+
+    .process-card h3 {
+
+      font-size:
+        clamp(
+          30px,
+          2.7vw,
+          44px
+        );
+
+      letter-spacing: -0.05em;
+
+      font-weight: 600;
+
+    }
+
+
+    .process-card p {
+
+      max-width: 300px;
+
+      font-size: 14px;
+
+      line-height: 1.45;
+
+    }
+
+
+    /* =========================================================
+       ACADEMIC ARCHIVE
+    ========================================================= */
+
+    .archive {
+
+      padding:
+        100px
+        24px;
+
+      background: var(--blue);
+
+    }
+
+
+    .archive-heading {
+
+      display: grid;
+
+      grid-template-columns:
+        70px
+        1fr
+        0.7fr;
+
+      gap: 35px;
+
+      margin-bottom: 70px;
+
+    }
+
+
+    .archive-title {
+
+      font-size:
+        clamp(
+          46px,
+          5.3vw,
+          84px
+        );
+
+      line-height: 0.9;
+
+      letter-spacing: -0.065em;
+
+      font-weight: 600;
+
+    }
+
+
+    .archive-title em {
+
+      display: block;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--cacao);
+
+      font-weight: 400;
+
+    }
+
+
+    .archive-copy {
+
+      align-self: end;
+
+      max-width: 420px;
+
+      font-size: 16px;
+
+      line-height: 1.5;
+
+    }
+
+
+    /* =========================================================
+       WINDOWS STACK
+    ========================================================= */
+
+    .window-stack {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 22px;
+
+    }
+
+
+    .window-stack .window {
+
+      width: 78%;
+
+      margin: 0 auto;
+
+    }
+
+
+    /* =========================================================
+       PHOTOGRAPHY
+    ========================================================= */
+
+    .photography {
+
+      padding:
+        100px
+        24px;
+
+      background: var(--cream);
+
+    }
+
+
+    .photography-heading {
+
+      display: grid;
+
+      grid-template-columns:
+        70px
+        1fr
+        0.7fr;
+
+      gap: 35px;
+
+      margin-bottom: 70px;
+
+    }
+
+
+    .photography-title {
+
+      font-size:
+        clamp(
+          48px,
+          5.5vw,
+          90px
+        );
+
+      line-height: 0.88;
+
+      letter-spacing: -0.065em;
+
+      font-weight: 600;
+
+    }
+
+
+    .photography-title em {
+
+      display: block;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--cacao);
+
+      font-weight: 400;
+
+    }
+
+
+    .photography-copy {
+
+      align-self: end;
+
+      max-width: 430px;
+
+    }
+
+
+    .photography-copy p {
+
+      margin-bottom: 18px;
+
+      font-size: 16px;
+
+      line-height: 1.5;
+
+    }
+
+
+    .photo-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 20px;
+
+      align-items: start;
+
+    }
+
+
+    .photo-grid .window:nth-child(2) {
+
+      margin-top: 90px;
+
+    }
+
+
+    /* =========================================================
+       MULTIMEDIA
+    ========================================================= */
+
+    .multimedia {
+
+      padding:
+        100px
+        24px;
+
+      background: var(--green);
+
+    }
+
+
+    .multimedia-heading {
+
+      display: grid;
+
+      grid-template-columns:
+        70px
+        1fr
+        0.7fr;
+
+      gap: 35px;
+
+      margin-bottom: 70px;
+
+    }
+
+
+    .multimedia-title {
+
+      font-size:
+        clamp(
+          48px,
+          5.5vw,
+          90px
+        );
+
+      line-height: 0.88;
+
+      letter-spacing: -0.065em;
+
+      font-weight: 600;
+
+    }
+
+
+    .multimedia-title em {
+
+      display: block;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--cacao);
+
+      font-weight: 400;
+
+    }
+
+
+    .multimedia-copy {
+
+      align-self: end;
+
+      max-width: 430px;
+
+      font-size: 16px;
+
+      line-height: 1.5;
+
+    }
+
+
+    .award {
+
+      margin-top: 80px;
+
+      padding:
+        65px
+        24px;
+
+      border:
+        1.5px solid
+        var(--black);
+
+      background: var(--yellow);
+
+      display: grid;
+
+      grid-template-columns:
+        0.5fr
+        1.5fr;
+
+      gap: 45px;
+
+      align-items: end;
+
+      box-shadow:
+        8px
+        8px
+        0
+        rgba(18,18,18,0.08);
+
+    }
+
+
+    .award-label {
+
+      font-size: 8px;
+
+      letter-spacing: 0.08em;
+
+    }
+
+
+    .award-title {
+
+      font-size:
+        clamp(
+          40px,
+          4.3vw,
+          70px
+        );
+
+      line-height: 0.95;
+
+      letter-spacing: -0.055em;
+
+      font-weight: 600;
+
+    }
+
+
+    .award-title em {
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--cacao);
+
+      font-weight: 400;
+
+    }
+
+
+    /* =========================================================
+       ABOUT THE SYSTEM
+    ========================================================= */
+
+    .system {
+
+      padding:
+        100px
+        24px;
+
+      background: var(--pink);
+
+    }
+
+
+    .system-heading {
+
+      display: grid;
+
+      grid-template-columns:
+        70px
+        1fr;
+
+      gap: 30px;
+
+      margin-bottom: 70px;
+
+    }
+
+
+    .system-title {
+
+      max-width: 950px;
+
+      font-size:
+        clamp(
+          46px,
+          5.3vw,
+          84px
+        );
+
+      line-height: 0.9;
+
+      letter-spacing: -0.065em;
+
+      font-weight: 600;
+
+    }
+
+
+    .system-title em {
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--cacao);
+
+      font-weight: 400;
+
+    }
+
+
+    .system-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 15px;
+
+    }
+
+
+    .system-card {
+
+      min-height: 240px;
+
+      padding: 22px;
+
+      border:
+        1.5px solid
+        var(--black);
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+      background: var(--white);
+
+    }
+
+
+    .system-card:nth-child(1) {
+      background: var(--pink-soft);
+    }
+
+
+    .system-card:nth-child(2) {
+      background: var(--yellow);
+    }
+
+
+    .system-card:nth-child(3) {
+      background: var(--green);
+    }
+
+
+    .system-card:nth-child(4) {
+      background: var(--blue);
+    }
+
+
+    .system-card span {
+
+      font-size: 8px;
+
+      letter-spacing: 0.07em;
+
+    }
+
+
+    .system-card h3 {
+
+      font-size:
+        clamp(
+          26px,
+          2.4vw,
+          38px
+        );
+
+      font-weight: 600;
+
+      letter-spacing: -0.045em;
+
+    }
+
+
+    .system-card p {
+
+      font-size: 14px;
+
+      line-height: 1.45;
+
+    }
+
+
+    /* =========================================================
+       RESULT
+    ========================================================= */
+
+    .result {
+
+      min-height: 65vh;
+
+      padding:
+        85px
+        24px;
+
+      background: var(--black);
+      color: var(--cream);
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+    }
+
+
+    .result-label {
+
+      font-size: 8px;
+
+      letter-spacing: 0.08em;
+
+    }
+
+
+    .result-title {
+
+      max-width: 1100px;
+
+      font-size:
+        clamp(
+          46px,
+          5vw,
+          80px
+        );
+
+      line-height: 0.95;
+
+      letter-spacing: -0.06em;
+
+      font-weight: 600;
+
+    }
+
+
+    .result-title em {
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--pink-soft);
+
+      font-weight: 400;
+
+    }
+
+
+    .result-bottom {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 40px;
+
+      align-items: end;
+
+    }
+
+
+    .result-copy {
+
+      max-width: 500px;
+
+      color:
+        rgba(247,241,235,0.72);
+
+      font-size: 16px;
+
+      line-height: 1.5;
+
+    }
+
+
+    .result-meta {
+
+      text-align: right;
+
+      font-size: 8px;
+
+      line-height: 1.5;
+
+      letter-spacing: 0.07em;
+
+    }
+
+
+    /* =========================================================
+       LIVE SITE
+    ========================================================= */
+
+    .live {
+
+      min-height: 72vh;
+
+      padding:
+        30px
+        24px;
+
+      background: var(--pink-soft);
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+    }
+
+
+    .live-meta {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      font-size: 8px;
+
+      letter-spacing: 0.07em;
+
+    }
+
+
+    .live-link {
+
+      font-size:
+        clamp(
+          56px,
+          7vw,
+          108px
+        );
+
+      line-height: 0.8;
+
+      letter-spacing: -0.07em;
+
+      font-weight: 600;
+
+    }
+
+
+    .live-link em {
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--cacao);
+
+      font-weight: 400;
+
+    }
+
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
+
+    .contact {
+
+      min-height: 70vh;
+
+      padding:
+        30px
+        24px;
+
+      background: var(--yellow);
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+    }
+
+
+    .contact-meta {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      font-size: 8px;
+
+      letter-spacing: 0.07em;
+
+    }
+
+
+    .contact-title {
+
+      font-size:
+        clamp(
+          54px,
+          7vw,
+          105px
+        );
+
+      line-height: 0.82;
+
+      letter-spacing: -0.07em;
+
+      font-weight: 600;
+
+    }
+
+
+    .contact-title em {
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--cacao);
+
+      font-weight: 400;
+
+    }
+
+
+    /* =========================================================
+       PREVIOUS PROJECT
+    ========================================================= */
+
+    .previous {
+
+      padding:
+        55px
+        24px;
+
+      background: var(--blue);
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 30px;
+
+    }
+
+
+    .previous-small {
+
+      font-size: 8px;
+
+      letter-spacing: 0.07em;
+
+    }
+
+
+    .previous-title {
+
+      font-size:
+        clamp(
+          30px,
+          3.4vw,
+          52px
+        );
+
+      font-weight: 600;
+
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+
+      padding:
+        18px
+        24px;
+
+      background: var(--black);
+      color: var(--cream);
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 25px;
+
+      font-size: 8px;
+
+    }
+
+
+    /* =========================================================
+       REVEAL
+    ========================================================= */
+
+    .reveal {
+
+      opacity: 0;
+
+      transform:
+        translateY(28px);
+
+      transition:
+        opacity
+        0.8s ease,
+        transform
+        0.8s ease;
+
+    }
+
+
+    .reveal.visible {
+
+      opacity: 1;
+
+      transform: translateY(0);
+
+    }
+
+
+    /* =========================================================
+       LAPTOP / TABLET
+    ========================================================= */
+
+    @media (min-width: 701px) and (max-width: 1100px) {
+
+
+      .hero-main {
+
+        grid-template-columns:
+          0.75fr
+          1.25fr;
+
+        gap: 35px;
+
+      }
+
+
+      .hero-title {
+
+        font-size:
+          clamp(
+            64px,
+            7vw,
+            95px
+          );
+
+      }
+
+
+      .overview {
+
+        grid-template-columns:
+          55px
+          1fr;
+
+      }
+
+
+      .overview-copy {
+
+        grid-column: 2;
+
+        margin-top: 45px;
+
+      }
+
+
+      .archive-heading,
+      .photography-heading,
+      .multimedia-heading {
+
+        grid-template-columns:
+          55px
+          1fr;
+
+      }
+
+
+      .archive-copy,
+      .photography-copy,
+      .multimedia-copy {
+
+        grid-column: 2;
+
+        margin-top: 40px;
+
+      }
+
+
+      .process-grid,
+      .system-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+      }
+
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 700px) {
+
+
+      .header {
+
+        padding:
+          17px
+          16px;
+
+        grid-template-columns:
+          1fr
+          auto;
+
+      }
+
+
+      .header-center {
+        display: none;
+      }
+
+
+      .hero {
+
+        min-height: auto;
+
+        padding:
+          95px
+          16px
+          28px;
+
+      }
+
+
+      .hero-meta {
+
+        font-size: 7px;
+
+      }
+
+
+      .hero-main {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 50px;
+
+        margin:
+          55px
+          0;
+
+      }
+
+
+      .hero-title {
+
+        font-size:
+          clamp(
+            58px,
+            17vw,
+            90px
+          );
+
+      }
+
+
+      .hero-description {
+
+        max-width: 310px;
+
+        font-size: 15px;
+
+      }
+
+
+      .hero-bottom {
+
+        font-size: 7px;
+
+      }
+
+
+      .window {
+
+        width: 100%;
+
+        border-radius: 12px;
+
+      }
+
+
+      .window-bar {
+
+        min-height: 38px;
+
+        padding:
+          0
+          12px;
+
+        font-size: 7px;
+
+      }
+
+
+      .window-status {
+        display: none;
+      }
+
+
+      .overview {
+
+        padding:
+          80px
+          16px;
+
+        display: block;
+
+      }
+
+
+      .overview .section-number {
+
+        display: block;
+
+        margin-bottom: 30px;
+
+      }
+
+
+      .overview-title {
+
+        font-size:
+          clamp(
+            44px,
+            12vw,
+            68px
+          );
+
+      }
+
+
+      .overview-copy {
+
+        margin-top: 45px;
+
+      }
+
+
+      .overview-copy p {
+
+        font-size: 15px;
+
+      }
+
+
+      .details {
+
+        padding:
+          80px
+          16px;
+
+        display: block;
+
+      }
+
+
+      .details-left {
+
+        min-height: auto;
+
+        margin-bottom: 60px;
+
+      }
+
+
+      .details-kicker {
+
+        display: block;
+
+        margin-bottom: 38px;
+
+      }
+
+
+      .details-title {
+
+        font-size:
+          clamp(
+            42px,
+            11vw,
+            65px
+          );
+
+      }
+
+
+      .detail-row {
+
+        grid-template-columns:
+          80px
+          minmax(0, 1fr);
+
+        gap: 15px;
+
+      }
+
+
+      .detail-label {
+
+        font-size: 7px;
+
+      }
+
+
+      .detail-value {
+
+        font-size: 14px;
+
+        overflow-wrap: anywhere;
+
+      }
+
+
+      .process {
+
+        padding:
+          80px
+          16px;
+
+      }
+
+
+      .process-heading {
+
+        display: block;
+
+        margin-bottom: 50px;
+
+      }
+
+
+      .process-heading
+      .section-number {
+
+        display: block;
+
+        margin-bottom: 30px;
+
+      }
+
+
+      .process-title {
+
+        font-size:
+          clamp(
+            42px,
+            11vw,
+            66px
+          );
+
+      }
+
+
+      .process-grid {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 13px;
+
+      }
+
+
+      .process-card {
+
+        min-height: 230px;
+
+      }
+
+
+      .archive,
+      .photography,
+      .multimedia,
+      .system {
+
+        padding:
+          80px
+          16px;
+
+      }
+
+
+      .archive-heading,
+      .photography-heading,
+      .multimedia-heading {
+
+        display: block;
+
+        margin-bottom: 50px;
+
+      }
+
+
+      .archive-heading
+      .section-number,
+      .photography-heading
+      .section-number,
+      .multimedia-heading
+      .section-number {
+
+        display: block;
+
+        margin-bottom: 30px;
+
+      }
+
+
+      .archive-title,
+      .photography-title,
+      .multimedia-title {
+
+        font-size:
+          clamp(
+            42px,
+            11vw,
+            66px
+          );
+
+      }
+
+
+      .archive-copy,
+      .photography-copy,
+      .multimedia-copy {
+
+        margin-top: 38px;
+
+        font-size: 15px;
+
+      }
+
+
+      .window-stack .window {
+
+        width: 100%;
+
+      }
+
+
+      .photo-grid {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 18px;
+
+      }
+
+
+      .photo-grid .window:nth-child(2) {
+
+        margin-top: 0;
+
+      }
+
+
+      .award {
+
+        margin-top: 55px;
+
+        padding:
+          40px
+          20px;
+
+        display: block;
+
+      }
+
+
+      .award-label {
+
+        display: block;
+
+        margin-bottom: 30px;
+
+      }
+
+
+      .award-title {
+
+        font-size:
+          clamp(
+            38px,
+            10vw,
+            58px
+          );
+
+      }
+
+
+      .system-heading {
+
+        display: block;
+
+        margin-bottom: 50px;
+
+      }
+
+
+      .system-heading
+      .section-number {
+
+        display: block;
+
+        margin-bottom: 30px;
+
+      }
+
+
+      .system-title {
+
+        font-size:
+          clamp(
+            42px,
+            11vw,
+            66px
+          );
+
+      }
+
+
+      .system-grid {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 13px;
+
+      }
+
+
+      .system-card {
+
+        min-height: 210px;
+
+      }
+
+
+      .result {
+
+        min-height: auto;
+
+        padding:
+          75px
+          16px;
+
+      }
+
+
+      .result-title {
+
+        margin:
+          90px
+          0;
+
+        font-size:
+          clamp(
+            42px,
+            11vw,
+            64px
+          );
+
+      }
+
+
+      .result-bottom {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+      }
+
+
+      .result-meta {
+        text-align: left;
+      }
+
+
+      .live {
+
+        min-height: auto;
+
+        padding:
+          25px
+          16px;
+
+      }
+
+
+      .live-link {
+
+        margin:
+          110px
+          0;
+
+        font-size:
+          clamp(
+            50px,
+            14vw,
+            80px
+          );
+
+      }
+
+
+      .live-meta {
+
+        font-size: 7px;
+
+      }
+
+
+      .contact {
+
+        min-height: auto;
+
+        padding:
+          25px
+          16px;
+
+      }
+
+
+      .contact-title {
+
+        margin:
+          110px
+          0;
+
+        font-size:
+          clamp(
+            50px,
+            14vw,
+            80px
+          );
+
+      }
+
+
+      .contact-meta {
+
+        font-size: 7px;
+
+      }
+
+
+      .previous {
+
+        padding:
+          50px
+          16px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+      }
+
+
+      footer {
+
+        padding:
+          18px
+          16px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+      }
+
+
+      .cursor {
+        display: none !important;
+      }
+
+    }
+
+
+    /* =========================================================
+       VERY SMALL MOBILE
+    ========================================================= */
+
+    @media (max-width: 390px) {
+
+      .hero-title {
+
+        font-size: 16vw;
+
+      }
+
+
+      .overview-title,
+      .details-title,
+      .process-title,
+      .archive-title,
+      .photography-title,
+      .multimedia-title,
+      .system-title {
+
+        font-size: 10.8vw;
+
+      }
+
+
+      .live-link,
+      .contact-title {
+
+        font-size: 13.5vw;
+
+      }
+
+    }
+
+
+  </style>
+
+</head>
+
+
+<body class="dot-bg">
+
+
+  <div class="cursor">
+
+    <span class="cursor-symbol">
+      ↖
+    </span>
+
+    <span class="cursor-text">
+      OPEN
+    </span>
+
+  </div>
+
+
+  <!-- HEADER -->
+
+  <header class="header">
+
+    <a href="../index.html">
+      MARTA VAZ
+    </a>
+
+
+    <nav class="header-center">
+
+      <a href="../index.html#work">
+        WORK
+      </a>
+
+      <a href="../about.html">
+        ABOUT
+      </a>
+
+      <a href="../contact.html">
+        CONTACT
+      </a>
+
+    </nav>
+
+
+    <a
+      href="../index.html"
+      class="header-right"
+    >
+      BACK HOME ↗
+    </a>
+
+  </header>
+
+
+  <main>
+
+
+    <!-- HERO -->
+
+    <section class="hero dot-bg">
+
+
+      <div class="hero-meta">
+
+        <span>
+          PROJECT 02 / PERSONAL PORTFOLIO
+        </span>
+
+        <span>
+          PORTUGAL / 2026
+        </span>
+
+      </div>
+
+
+      <div class="hero-main">
+
+
+        <div class="hero-copy">
+
+          <p class="hero-label">
+            MARTA OS / VERSION 1.2
+          </p>
+
+
+          <h1 class="hero-title">
+
+            <span>
+              MARTA
+            </span>
+
+            <span class="os">
+              OS.
+            </span>
+
+          </h1>
+
+
+          <p class="hero-description">
+
+            An experimental personal portfolio
+            designed as a digital operating system,
+            bringing together academic work,
+            photography, video and personal archives.
+
+          </p>
+
+        </div>
+
+
+        <div class="window">
+
+          <div class="window-bar">
+
+            <div class="window-dots">
+
+              <span class="dot pink"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+
+            </div>
+
+            <span class="window-name">
+              MARTA_OS.EXE
+            </span>
+
+            <span class="window-status">
+              SYSTEM ACTIVE
+            </span>
+
+          </div>
+
+
+          <img
+            src="../imagens/marta-os-home.png"
+            alt="Marta OS homepage interface"
+          >
+
+        </div>
+
+
+      </div>
+
+
+      <div class="hero-bottom">
+
+        <span>
+          WEB DESIGN / INTERACTION / DEVELOPMENT
+        </span>
+
+        <span>
+          ACADEMIC & PERSONAL ARCHIVE
+        </span>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- OVERVIEW -->
+
+    <section class="overview reveal">
+
+
+      <span class="section-number">
+        01
+      </span>
+
+
+      <h2 class="overview-title">
+
+        A portfolio
+        designed as
+
+        <em>
+          a personal computer.
+        </em>
+
+      </h2>
+
+
+      <div class="overview-copy">
+
+        <p>
+
+          Marta OS was created while I was
+          beginning to explore programming
+          and web development.
+
+        </p>
+
+
+        <p>
+
+          The project became a way to bring together
+          my academic path and different areas of my
+          creative practice — photography, multimedia,
+          graphic work and personal experimentation.
+
+        </p>
+
+
+        <p>
+
+          Rather than creating a conventional portfolio,
+          I designed a digital desktop where every folder
+          opens a different part of my work.
+
+        </p>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- DETAILS -->
+
+    <section class="details reveal">
+
+
+      <div class="details-left">
+
+        <span class="details-kicker">
+          PROJECT DETAILS / MARTA OS
+        </span>
+
+
+        <h2 class="details-title">
+
+          CREATIVE<br>
+          ARCHIVE<br>
+          AS AN
+
+          <em>
+            interface.
+          </em>
+
+        </h2>
+
+      </div>
+
+
+      <div class="details-right">
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            PROJECT
+          </span>
+
+          <span class="detail-value">
+            Marta OS
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            TYPE
+          </span>
+
+          <span class="detail-value">
+            Personal / Academic Portfolio
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            CONTENT
+          </span>
+
+          <span class="detail-value">
+            Photography / Video /
+            Graphic Work / Personal Archive
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            ROLE
+          </span>
+
+          <span class="detail-value">
+            Creative Direction / UX /
+            Interface Design / Development
+          </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+          <span class="detail-label">
+            GOAL
+          </span>
+
+          <span class="detail-value">
+            Create an expressive digital portrait
+            of my work and creative identity
+          </span>
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- PROCESS -->
+
+    <section class="process reveal">
+
+
+      <div class="process-heading">
+
+        <span class="section-number">
+          02
+        </span>
+
+
+        <h2 class="process-title">
+
+          Turning folders
+          into a way to
+
+          <em>
+            discover my work.
+          </em>
+
+        </h2>
+
+      </div>
+
+
+      <div class="process-grid">
+
+
+        <article class="process-card">
+
+          <span class="process-number">
+            01 / CONCEPT
+          </span>
+
+          <h3>
+            Personal system
+          </h3>
+
+          <p>
+
+            Reimagine the portfolio as a personal
+            operating system rather than a sequence
+            of traditional pages.
+
+          </p>
+
+        </article>
+
+
+        <article class="process-card">
+
+          <span class="process-number">
+            02 / ARCHIVE
+          </span>
+
+          <h3>
+            Organise
+          </h3>
+
+          <p>
+
+            Divide the work into folders dedicated
+            to photography, video, academic projects
+            and personal information.
+
+          </p>
+
+        </article>
+
+
+        <article class="process-card">
+
+          <span class="process-number">
+            03 / INTERACTION
+          </span>
+
+          <h3>
+            Explore
+          </h3>
+
+          <p>
+
+            Allow visitors to open windows and files,
+            making navigation itself part of the
+            personality of the portfolio.
+
+          </p>
+
+        </article>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ACADEMIC WORK -->
+
+    <section class="archive reveal dot-bg">
+
+
+      <div class="archive-heading">
+
+        <span class="section-number">
+          03
+        </span>
+
+
+        <h2 class="archive-title">
+
+          An archive of
+          academic
+
+          <em>
+            experimentation.
+          </em>
+
+        </h2>
+
+
+        <p class="archive-copy">
+
+          The Works folder became an evolving
+          collection of graphic design, typography,
+          branding and visual experiments created
+          throughout my academic path.
+
+        </p>
+
+      </div>
+
+
+      <div class="window-stack">
+
+
+        <div class="window">
+
+          <div class="window-bar">
+
+            <div class="window-dots">
+
+              <span class="dot pink"></span>
+              <span class="dot yellow"></span>
+
+            </div>
+
+            <span class="window-name">
+              TRABALHOS.APP
+            </span>
+
+            <span class="window-status">
+              ARCHIVE
+            </span>
+
+          </div>
+
+
+          <img
+            src="../imagens/marta-os-work.png"
+            alt="Marta OS academic works archive"
+          >
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- PHOTOGRAPHY -->
+
+    <section class="photography reveal">
+
+
+      <div class="photography-heading">
+
+        <span class="section-number">
+          04
+        </span>
+
+
+        <h2 class="photography-title">
+
+          Photography as
+          a personal
+
+          <em>
+            visual diary.
+          </em>
+
+        </h2>
+
+
+        <div class="photography-copy">
+
+          <p>
+
+            Photography is one of the areas
+            I feel most connected to.
+
+          </p>
+
+          <p>
+
+            Much of the archive was created
+            through analogue photography,
+            documenting places, objects,
+            light and everyday moments.
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="photo-grid">
+
+
+        <div class="window">
+
+          <div class="window-bar">
+
+            <div class="window-dots">
+
+              <span class="dot pink"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+
+            </div>
+
+            <span class="window-name">
+              PHOTO_ARCHIVE.APP
+            </span>
+
+            <span class="window-status">
+              ANALOG
+            </span>
+
+          </div>
+
+
+          <img
+            src="../imagens/marta-os-photo-archive.png"
+            alt="Marta OS analogue photography archive"
+          >
+
+        </div>
+
+
+        <div class="window">
+
+          <div class="window-bar">
+
+            <div class="window-dots">
+
+              <span class="dot green"></span>
+              <span class="dot yellow"></span>
+
+            </div>
+
+            <span class="window-name">
+              PHOTO_GRID.APP
+            </span>
+
+            <span class="window-status">
+              GALLERY
+            </span>
+
+          </div>
+
+
+          <img
+            src="../imagens/marta-os-photo-grid.png"
+            alt="Marta OS photography gallery"
+          >
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- MULTIMEDIA -->
+
+    <section class="multimedia reveal dot-bg">
+
+
+      <div class="multimedia-heading">
+
+        <span class="section-number">
+          05
+        </span>
+
+
+        <h2 class="multimedia-title">
+
+          Moving images,
+          experiments
+          and
+
+          <em>
+            stories.
+          </em>
+
+        </h2>
+
+
+        <p class="multimedia-copy">
+
+          The multimedia folder brings together
+          short films, editing experiments and
+          audiovisual projects created during
+          my academic development.
+
+        </p>
+
+      </div>
+
+
+      <div class="window">
+
+        <div class="window-bar">
+
+          <div class="window-dots">
+
+            <span class="dot green"></span>
+            <span class="dot yellow"></span>
+            <span class="dot pink"></span>
+
+          </div>
+
+          <span class="window-name">
+            MULTIMEDIA_ARCHIVE.EXE
+          </span>
+
+          <span class="window-status">
+            VIDEO
+          </span>
+
+        </div>
+
+
+        <img
+          src="../imagens/marta-os-multimedia.png"
+          alt="Marta OS multimedia projects"
+        >
+
+      </div>
+
+
+      <div class="award">
+
+        <span class="award-label">
+          SELECTED ACHIEVEMENT / 2023
+        </span>
+
+
+        <h2 class="award-title">
+
+          1st place —
+          Medeiros Cabral Prize
+
+          <em>
+            Multimedia.
+          </em>
+
+        </h2>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- INFORMATION -->
+
+    <section class="archive reveal">
+
+
+      <div class="archive-heading">
+
+        <span class="section-number">
+          06
+        </span>
+
+
+        <h2 class="archive-title">
+
+          The system also
+          became a way to
+          explain
+
+          <em>
+            who I am.
+          </em>
+
+        </h2>
+
+
+        <p class="archive-copy">
+
+          The personal section combines contact
+          information with my academic background,
+          creative interests and early experiences
+          in arts and multimedia.
+
+        </p>
+
+      </div>
+
+
+      <div class="window">
+
+        <div class="window-bar">
+
+          <div class="window-dots">
+
+            <span class="dot pink"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+
+          </div>
+
+          <span class="window-name">
+            INFO.TXT
+          </span>
+
+          <span class="window-status">
+            USER PROFILE
+          </span>
+
+        </div>
+
+
+        <img
+          src="../imagens/marta-os-info.png"
+          alt="Marta OS about and information section"
+        >
+
+      </div>
+
+
+    </section>
+
+
+    <!-- SYSTEM -->
+
+    <section class="system reveal">
+
+
+      <div class="system-heading">
+
+        <span class="section-number">
+          07
+        </span>
+
+
+        <h2 class="system-title">
+
+          A visual system
+          inspired by
+
+          <em>
+            early computers.
+          </em>
+
+        </h2>
+
+      </div>
+
+
+      <div class="system-grid">
+
+
+        <article class="system-card">
+
+          <span>
+            01 / FOLDERS
+          </span>
+
+          <h3>
+            Archive
+          </h3>
+
+          <p>
+
+            Each creative area becomes its own
+            folder, making the portfolio feel
+            like a personal desktop.
+
+          </p>
+
+        </article>
+
+
+        <article class="system-card">
+
+          <span>
+            02 / WINDOWS
+          </span>
+
+          <h3>
+            Interface
+          </h3>
+
+          <p>
+
+            Content is displayed inside windows,
+            creating a clear system while keeping
+            the navigation playful.
+
+          </p>
+
+        </article>
+
+
+        <article class="system-card">
+
+          <span>
+            03 / COLOUR
+          </span>
+
+          <h3>
+            Personality
+          </h3>
+
+          <p>
+
+            Soft pastel colours contrast with
+            black outlines and pixel-inspired
+            interface details.
+
+          </p>
+
+        </article>
+
+
+        <article class="system-card">
+
+          <span>
+            04 / INTERACTION
+          </span>
+
+          <h3>
+            Discovery
+          </h3>
+
+          <p>
+
+            The visitor is encouraged to explore,
+            open and move through content rather
+            than simply scroll through a portfolio.
+
+          </p>
+
+        </article>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- RESULT -->
+
+    <section class="result reveal">
+
+
+      <span class="result-label">
+        08 / RESULT
+      </span>
+
+
+      <h2 class="result-title">
+
+        A digital portfolio
+        that works as both
+        archive and
+
+        <em>
+          self portrait.
+        </em>
+
+      </h2>
+
+
+      <div class="result-bottom">
+
+        <p class="result-copy">
+
+          Marta OS became an early experiment
+          in combining design, interaction and code.
+          More than presenting finished work,
+          the website reflects how I organise,
+          explore and communicate my creative practice.
+
+        </p>
+
+
+        <p class="result-meta">
+
+          PERSONAL PROJECT<br>
+          WEB / MEDIA / PHOTOGRAPHY<br>
+          PORTFOLIO
+
+        </p>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- LIVE -->
+
+    <section class="live reveal">
+
+
+      <div class="live-meta">
+
+        <span>
+          MARTA OS / PERSONAL ARCHIVE
+        </span>
+
+        <span>
+          LIVE WEBSITE
+        </span>
+
+      </div>
+
+
+      <a
+        href="https://martaffbvaz-spec.github.io/MartaP/index.html"
+        target="_blank"
+        rel="noopener"
+        class="live-link external-link"
+      >
+
+        OPEN THE<br>
+
+        <em>
+          system.
+        </em>
+
+        ↗
+
+      </a>
+
+
+      <div class="live-meta">
+
+        <span>
+          WEB / INTERACTION / DEVELOPMENT
+        </span>
+
+        <span>
+          MARTA VAZ
+        </span>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact reveal">
+
+
+      <div class="contact-meta">
+
+        <span>
+          LIKE THE WAY I THINK?
+        </span>
+
+        <span>
+          AVAILABLE FOR SELECTED PROJECTS
+        </span>
+
+      </div>
+
+
+      <a
+        href="../contact.html"
+        class="contact-title external-link"
+      >
+
+        LET'S CREATE<br>
+
+        SOMETHING
+
+        <em>
+          personal.
+        </em>
+
+        ↗
+
+      </a>
+
+
+      <div class="contact-meta">
+
+        <span>
+          MARTA VAZ
+        </span>
+
+        <span>
+          PORTUGAL / 2026
+        </span>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- PREVIOUS -->
+
+    <a
+      href="deep-awareness.html"
+      class="previous external-link"
+    >
+
+      <span class="previous-small">
+        PREVIOUS PROJECT
+      </span>
+
+      <span class="previous-title">
+        ← DEEP AWARENESS
+      </span>
+
+    </a>
+
+
+  </main>
+
+
+  <footer>
+
+    <span>
+      MARTA VAZ © 2026
+    </span>
+
+    <a href="../index.html">
+      BACK HOME ↗
+    </a>
+
+    <span>
+      WEB / DESIGN / DIGITAL
+    </span>
+
+  </footer>
+
+
+  <script>
+
+
+    /* REVEAL */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    const observer =
+      new IntersectionObserver(
+
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              entry.target
+                .classList
+                .add("visible");
+
+              observer
+                .unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+
+        {
+          threshold: 0.08
+        }
+
+      );
+
+
+    revealElements.forEach((element) => {
+
+      observer.observe(element);
+
+    });
+
+
+
+    /* CURSOR */
+
+    const cursor =
+      document.querySelector(".cursor");
+
+
+    const finePointer =
+      window.matchMedia("(pointer: fine)");
+
+
+    if (finePointer.matches) {
+
+
+      document.addEventListener(
+
+        "mousemove",
+
+        (event) => {
+
+          cursor.style.left =
+            event.clientX + "px";
+
+          cursor.style.top =
+            event.clientY + "px";
+
+        }
+
+      );
+
+
+      const links =
+        document.querySelectorAll(".external-link");
+
+
+      links.forEach((link) => {
+
+
+        link.addEventListener(
+          "mouseenter",
+          () => {
+            cursor.classList.add("link-mode");
+          }
+        );
+
+
+        link.addEventListener(
+          "mouseleave",
+          () => {
+            cursor.classList.remove("link-mode");
+          }
+        );
+
+
+      });
+
+
+    }
+
+
+  </script>
+
+
+</body>
+
+</html>
