@@ -1,0 +1,3445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="About Marta Vaz — Communication Design student working across web design, visual identity, photography and multimedia."
+  >
+
+  <title>About — Marta Vaz</title>
+
+
+  <style>
+
+    /* =========================================================
+       COLOURS
+    ========================================================= */
+
+    :root {
+
+      --peony: #F7DDD5;
+      --rose: #D8A4AF;
+      --cacao: #6B403B;
+
+      --lavender: #CCC3D1;
+
+      --leaf: #C1BC77;
+      --grass: #8D8B4C;
+      --jungle: #65613F;
+
+      --sky: #AFB8CD;
+
+      --cream: #F6F0E8;
+      --black: #151515;
+      --white: #FFFDF8;
+
+    }
+
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      background: var(--cream);
+      color: var(--cacao);
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      overflow-x: hidden;
+
+    }
+
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+
+
+    ::selection {
+      background: var(--cacao);
+      color: var(--peony);
+    }
+
+
+    /* =========================================================
+       CURSOR
+    ========================================================= */
+
+    .cursor {
+
+      position: fixed;
+
+      left: 0;
+      top: 0;
+
+      width: 32px;
+      height: 32px;
+
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--peony);
+      color: var(--cacao);
+
+      pointer-events: none;
+
+      z-index: 9999;
+
+      transform:
+        translate(-50%, -50%);
+
+      font-size: 17px;
+
+      transition:
+        width 0.25s ease,
+        height 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+
+    }
+
+
+    .cursor.link-mode {
+
+      width: 86px;
+      height: 86px;
+
+      background: var(--cacao);
+      color: var(--peony);
+
+      font-size: 9px;
+      letter-spacing: 0.08em;
+
+    }
+
+
+    .cursor-text {
+      display: none;
+    }
+
+
+    .cursor.link-mode .cursor-flower {
+      display: none;
+    }
+
+
+    .cursor.link-mode .cursor-text {
+      display: block;
+    }
+
+
+    @media (pointer: fine) {
+
+      body,
+      a {
+        cursor: none;
+      }
+
+    }
+
+
+    @media (pointer: coarse) {
+
+      .cursor {
+        display: none;
+      }
+
+    }
+
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    .header {
+
+      min-height: 58px;
+
+      padding:
+        17px
+        24px;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+      align-items: center;
+
+      border-bottom:
+        1px solid
+        rgba(107, 64, 59, 0.22);
+
+      background: var(--peony);
+
+      font-size: 9px;
+      letter-spacing: 0.07em;
+
+      position: relative;
+      z-index: 100;
+
+    }
+
+
+    .logo {
+      font-weight: 700;
+    }
+
+
+    .nav {
+
+      display: flex;
+      gap: 36px;
+
+    }
+
+
+    .header-right {
+      justify-self: end;
+    }
+
+
+    .nav a,
+    .header-right {
+
+      position: relative;
+
+    }
+
+
+    .nav a::after,
+    .header-right::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: -5px;
+
+      width: 0;
+      height: 1px;
+
+      background: currentColor;
+
+      transition:
+        width 0.3s ease;
+
+    }
+
+
+    .nav a:hover::after,
+    .header-right:hover::after {
+      width: 100%;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+
+      min-height:
+        calc(100vh - 58px);
+
+      padding:
+        32px
+        24px
+        38px;
+
+      background: var(--peony);
+
+      display: flex;
+      flex-direction: column;
+
+      justify-content: space-between;
+
+      overflow: hidden;
+
+    }
+
+
+    .hero-meta {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      font-size: 8px;
+      line-height: 1.4;
+      letter-spacing: 0.07em;
+
+    }
+
+
+    .hero-main {
+
+      width: 100%;
+
+      max-width: 1500px;
+
+      margin:
+        45px
+        auto;
+
+      display: grid;
+
+      grid-template-columns:
+        1.35fr
+        0.65fr;
+
+      gap: 55px;
+
+      align-items: center;
+
+    }
+
+
+    .hero-title {
+
+      font-size:
+        clamp(
+          68px,
+          8vw,
+          132px
+        );
+
+      line-height: 0.81;
+
+      letter-spacing: -0.075em;
+
+      font-weight: 500;
+
+    }
+
+
+    .hero-title span {
+      display: block;
+    }
+
+
+    .hero-title em {
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--jungle);
+
+      font-weight: 400;
+      font-style: italic;
+
+    }
+
+
+    .hero-copy {
+
+      max-width: 430px;
+
+      align-self: end;
+
+    }
+
+
+    .hero-copy p {
+
+      margin-bottom: 20px;
+
+      font-size: 17px;
+
+      line-height: 1.45;
+
+    }
+
+
+    .hero-small {
+
+      margin-top: 35px;
+
+      font-size: 8px !important;
+
+      letter-spacing: 0.07em;
+
+      line-height: 1.5 !important;
+
+    }
+
+
+    .hero-bottom {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      font-size: 8px;
+
+      letter-spacing: 0.07em;
+
+    }
+
+
+    /* =========================================================
+       MANIFESTO
+    ========================================================= */
+
+    .manifesto {
+
+      min-height: 75vh;
+
+      padding:
+        110px
+        24px;
+
+      background: var(--cream);
+
+      display: grid;
+
+      grid-template-columns:
+        70px
+        1.25fr
+        0.7fr;
+
+      gap: 35px;
+
+    }
+
+
+    .section-number {
+
+      font-size: 8px;
+      letter-spacing: 0.07em;
+
+    }
+
+
+    .manifesto-title {
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        clamp(
+          52px,
+          6vw,
+          96px
+        );
+
+      line-height: 0.97;
+
+      letter-spacing: -0.055em;
+
+      font-weight: 400;
+
+    }
+
+
+    .manifesto-title em {
+      color: var(--grass);
+    }
+
+
+    .manifesto-copy {
+
+      align-self: end;
+
+      max-width: 450px;
+
+    }
+
+
+    .manifesto-copy p {
+
+      margin-bottom: 20px;
+
+      font-size: 17px;
+
+      line-height: 1.5;
+
+    }
+
+
+    /* =========================================================
+       BETWEEN PLACES
+    ========================================================= */
+
+    .places {
+
+      padding:
+        105px
+        24px;
+
+      background: var(--sky);
+
+    }
+
+
+    .places-heading {
+
+      display: grid;
+
+      grid-template-columns:
+        70px
+        1fr;
+
+      gap: 30px;
+
+      margin-bottom: 70px;
+
+    }
+
+
+    .places-title {
+
+      font-size:
+        clamp(
+          52px,
+          6vw,
+          96px
+        );
+
+      line-height: 0.88;
+
+      letter-spacing: -0.065em;
+
+      font-weight: 500;
+
+    }
+
+
+    .places-title em {
+
+      display: block;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--jungle);
+
+      font-weight: 400;
+
+    }
+
+
+    /* TIMELINE FIXED */
+
+    .journey {
+
+      position: relative;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 50px;
+
+      padding-top: 55px;
+
+    }
+
+
+    .journey::before {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      right: 0;
+
+      top: 18px;
+
+      height: 1px;
+
+      background:
+        rgba(107, 64, 59, 0.35);
+
+    }
+
+
+    .journey-item {
+
+      position: relative;
+
+      padding-top: 15px;
+
+    }
+
+
+    .journey-dot {
+
+      position: absolute;
+
+      top: -41px;
+      left: 0;
+
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: var(--cacao);
+
+      border: none;
+
+    }
+
+
+    .journey-year {
+
+      display: block;
+
+      margin-bottom: 22px;
+
+      font-size: 8px;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .journey-place {
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        clamp(
+          36px,
+          3.5vw,
+          58px
+        );
+
+      font-weight: 400;
+
+      line-height: 1;
+
+    }
+
+
+    .journey-item p {
+
+      max-width: 320px;
+
+      margin-top: 22px;
+
+      font-size: 15px;
+
+      line-height: 1.5;
+
+    }
+
+
+    /* =========================================================
+       EDUCATION
+    ========================================================= */
+
+    .education {
+
+      padding:
+        105px
+        24px;
+
+      background: var(--cream);
+
+      display: grid;
+
+      grid-template-columns:
+        0.8fr
+        1.2fr;
+
+      gap: 80px;
+
+      align-items: start;
+
+    }
+
+
+    .education-left {
+
+      position: sticky;
+      top: 40px;
+
+    }
+
+
+    .education-label {
+
+      margin-bottom: 35px;
+
+      font-size: 8px;
+
+      letter-spacing: 0.08em;
+
+    }
+
+
+    .education-title {
+
+      font-size:
+        clamp(
+          48px,
+          5.5vw,
+          88px
+        );
+
+      line-height: 0.9;
+
+      letter-spacing: -0.065em;
+
+      font-weight: 500;
+
+    }
+
+
+    .education-title em {
+
+      display: block;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--grass);
+
+      font-weight: 400;
+
+    }
+
+
+    .timeline {
+
+      display: flex;
+
+      flex-direction: column;
+
+    }
+
+
+    .timeline-item {
+
+      padding:
+        30px
+        0;
+
+      border-top:
+        1px solid
+        rgba(107,64,59,0.25);
+
+      display: grid;
+
+      grid-template-columns:
+        110px
+        1fr;
+
+      gap: 30px;
+
+    }
+
+
+    .timeline-item:last-child {
+
+      border-bottom:
+        1px solid
+        rgba(107,64,59,0.25);
+
+    }
+
+
+    .timeline-date {
+
+      font-size: 8px;
+
+      letter-spacing: 0.07em;
+
+    }
+
+
+    .timeline-content h3 {
+
+      margin-bottom: 12px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        clamp(
+          28px,
+          2.7vw,
+          42px
+        );
+
+      font-weight: 400;
+
+    }
+
+
+    .timeline-content p {
+
+      max-width: 620px;
+
+      font-size: 15px;
+
+      line-height: 1.5;
+
+    }
+
+
+    /* =========================================================
+       PRACTICE
+    ========================================================= */
+
+    .practice {
+
+      padding:
+        100px
+        24px;
+
+      background: var(--jungle);
+
+      color: var(--peony);
+
+    }
+
+
+    .practice-heading {
+
+      display: grid;
+
+      grid-template-columns:
+        70px
+        1fr;
+
+      gap: 30px;
+
+      margin-bottom: 65px;
+
+    }
+
+
+    .practice-title {
+
+      font-size:
+        clamp(
+          52px,
+          6vw,
+          96px
+        );
+
+      line-height: 0.88;
+
+      letter-spacing: -0.065em;
+
+      font-weight: 500;
+
+    }
+
+
+    .practice-title em {
+
+      display: block;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--leaf);
+
+      font-weight: 400;
+
+    }
+
+
+    .practice-list {
+
+      border-top:
+        1px solid
+        rgba(247,221,213,0.25);
+
+    }
+
+
+    .practice-item {
+
+      padding:
+        22px
+        0;
+
+      border-bottom:
+        1px solid
+        rgba(247,221,213,0.25);
+
+      display: grid;
+
+      grid-template-columns:
+        80px
+        1fr
+        0.55fr;
+
+      gap: 35px;
+
+      align-items: center;
+
+      transition:
+        padding-left
+        0.3s ease,
+        color
+        0.3s ease;
+
+    }
+
+
+    .practice-item:hover {
+
+      padding-left: 15px;
+
+      color: var(--leaf);
+
+    }
+
+
+    .practice-number {
+
+      font-size: 8px;
+
+      letter-spacing: 0.07em;
+
+    }
+
+
+    .practice-name {
+
+      font-size:
+        clamp(
+          32px,
+          4vw,
+          62px
+        );
+
+      letter-spacing: -0.05em;
+
+      font-weight: 500;
+
+    }
+
+
+    .practice-copy {
+
+      max-width: 380px;
+
+      font-size: 14px;
+
+      line-height: 1.45;
+
+      color:
+        rgba(247,221,213,0.72);
+
+    }
+
+
+    /* =========================================================
+       PHOTOGRAPHY
+    ========================================================= */
+
+    .photo-section {
+
+      padding:
+        105px
+        24px;
+
+      background: var(--cream);
+
+      display: grid;
+
+      grid-template-columns:
+        0.8fr
+        1.2fr;
+
+      gap: 70px;
+
+      align-items: center;
+
+    }
+
+
+    .photo-copy {
+
+      max-width: 440px;
+
+    }
+
+
+    .photo-label {
+
+      margin-bottom: 30px;
+
+      font-size: 8px;
+
+      letter-spacing: 0.08em;
+
+    }
+
+
+    .photo-title {
+
+      margin-bottom: 35px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        clamp(
+          46px,
+          5vw,
+          82px
+        );
+
+      line-height: 0.97;
+
+      letter-spacing: -0.055em;
+
+      font-weight: 400;
+
+    }
+
+
+    .photo-title em {
+      color: var(--grass);
+    }
+
+
+    .photo-copy p {
+
+      margin-bottom: 20px;
+
+      font-size: 16px;
+
+      line-height: 1.5;
+
+    }
+
+
+    .photo-frame {
+
+      width: 75%;
+
+      margin-left: auto;
+
+      aspect-ratio:
+        3 / 4;
+
+      overflow: hidden;
+
+      transform:
+        rotate(1.5deg);
+
+      box-shadow:
+        14px
+        14px
+        0
+        var(--lavender);
+
+    }
+
+
+    .photo-frame img {
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+    }
+
+
+    /* =========================================================
+       CROCHET WITHOUT GENDER
+    ========================================================= */
+
+    .crochet {
+
+      min-height: 90vh;
+
+      padding:
+        95px
+        24px;
+
+      background: var(--rose);
+
+      position: relative;
+
+      overflow: hidden;
+
+    }
+
+
+    /* LARGE CROCHET FRAME */
+
+    .crochet-frame {
+
+      position: absolute;
+
+      width:
+        min(
+          48vw,
+          650px
+        );
+
+      right: -4%;
+      top: 50%;
+
+      transform:
+        translateY(-50%)
+        rotate(5deg);
+
+      opacity: 0.22;
+
+      mix-blend-mode: multiply;
+
+      pointer-events: none;
+
+      transition:
+        transform
+        1s
+        cubic-bezier(.2,.8,.2,1),
+        opacity
+        0.5s ease;
+
+    }
+
+
+    .crochet:hover
+    .crochet-frame {
+
+      transform:
+        translateY(-50%)
+        rotate(1deg)
+        scale(1.04);
+
+      opacity: 0.32;
+
+    }
+
+
+    /* SECOND DECORATIVE CROP */
+
+    .crochet-frame-small {
+
+      position: absolute;
+
+      width: 230px;
+
+      left: 8%;
+      bottom: -70px;
+
+      transform:
+        rotate(-12deg);
+
+      opacity: 0.12;
+
+      mix-blend-mode: multiply;
+
+      pointer-events: none;
+
+    }
+
+
+    .crochet-content {
+
+      position: relative;
+
+      z-index: 2;
+
+      display: grid;
+
+      grid-template-columns:
+        70px
+        1.05fr
+        0.78fr;
+
+      gap: 35px;
+
+      min-height: 68vh;
+
+      align-items: center;
+
+    }
+
+
+    .crochet-title {
+
+      font-size:
+        clamp(
+          56px,
+          6.5vw,
+          105px
+        );
+
+      line-height: 0.84;
+
+      letter-spacing: -0.07em;
+
+      font-weight: 500;
+
+    }
+
+
+    .crochet-title em {
+
+      display: block;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--cacao);
+
+      font-weight: 400;
+
+    }
+
+
+    .crochet-copy {
+
+      max-width: 470px;
+
+      position: relative;
+
+      padding:
+        35px;
+
+      background:
+        rgba(247, 221, 213, 0.63);
+
+      backdrop-filter:
+        blur(5px);
+
+      border:
+        1px solid
+        rgba(107, 64, 59, 0.25);
+
+    }
+
+
+    .crochet-copy::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 9px;
+
+      border:
+        1px dashed
+        rgba(107, 64, 59, 0.35);
+
+      pointer-events: none;
+
+    }
+
+
+    .crochet-copy p {
+
+      position: relative;
+
+      z-index: 2;
+
+      margin-bottom: 20px;
+
+      font-size: 16px;
+
+      line-height: 1.5;
+
+    }
+
+
+    .crochet-quote {
+
+      margin-top: 35px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        clamp(
+          25px,
+          2.5vw,
+          39px
+        ) !important;
+
+      font-style: italic;
+
+      line-height: 1.2 !important;
+
+    }
+
+
+    .crochet-label {
+
+      position: absolute;
+
+      left: 50%;
+      bottom: 30px;
+
+      transform:
+        translateX(-50%);
+
+      font-size: 8px;
+
+      letter-spacing: 0.15em;
+
+      white-space: nowrap;
+
+    }
+
+
+    /* =========================================================
+       RECOGNITION
+    ========================================================= */
+
+    .recognition {
+
+      padding:
+        100px
+        24px;
+
+      background: var(--sky);
+
+      display: grid;
+
+      grid-template-columns:
+        70px
+        1fr;
+
+      gap: 30px;
+
+    }
+
+
+    .recognition-main {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        0.55fr;
+
+      gap: 70px;
+
+      align-items: end;
+
+    }
+
+
+    .recognition-title {
+
+      font-size:
+        clamp(
+          60px,
+          7vw,
+          115px
+        );
+
+      line-height: 0.82;
+
+      letter-spacing: -0.075em;
+
+      font-weight: 500;
+
+    }
+
+
+    .recognition-title em {
+
+      display: block;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--jungle);
+
+      font-weight: 400;
+
+    }
+
+
+    .recognition-copy {
+
+      max-width: 420px;
+
+    }
+
+
+    .recognition-copy p {
+
+      margin-bottom: 25px;
+
+      font-size: 16px;
+
+      line-height: 1.5;
+
+    }
+
+
+    .recognition-link {
+
+      display: inline-block;
+
+      padding-bottom: 4px;
+
+      border-bottom:
+        1px solid
+        currentColor;
+
+      font-size: 9px;
+
+      letter-spacing: 0.07em;
+
+    }
+
+
+    /* =========================================================
+       FINAL MANIFESTO
+    ========================================================= */
+
+    .final-manifesto {
+
+      min-height: 75vh;
+
+      padding:
+        85px
+        24px;
+
+      background: var(--black);
+      color: var(--peony);
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+    }
+
+
+    .final-label {
+
+      font-size: 8px;
+
+      letter-spacing: 0.08em;
+
+    }
+
+
+    .final-text {
+
+      max-width: 1200px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        clamp(
+          48px,
+          6vw,
+          95px
+        );
+
+      line-height: 0.98;
+
+      letter-spacing: -0.055em;
+
+    }
+
+
+    .final-text em {
+      color: var(--leaf);
+    }
+
+
+    .final-small {
+
+      max-width: 520px;
+
+      font-size: 15px;
+
+      line-height: 1.5;
+
+      color:
+        rgba(247,221,213,0.72);
+
+    }
+
+
+    /* =========================================================
+       CONTACT CTA
+    ========================================================= */
+
+    .contact-cta {
+
+      min-height: 78vh;
+
+      padding:
+        30px
+        24px;
+
+      background: var(--peony);
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+    }
+
+
+    .contact-meta {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      font-size: 8px;
+
+      letter-spacing: 0.07em;
+
+    }
+
+
+    .contact-title {
+
+      font-size:
+        clamp(
+          58px,
+          8vw,
+          125px
+        );
+
+      line-height: 0.8;
+
+      letter-spacing: -0.075em;
+
+      font-weight: 500;
+
+    }
+
+
+    .contact-title em {
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--jungle);
+
+      font-weight: 400;
+
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+
+      padding:
+        18px
+        24px;
+
+      background: var(--cacao);
+      color: var(--peony);
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 25px;
+
+      font-size: 8px;
+
+      letter-spacing: 0.06em;
+
+    }
+
+
+    /* =========================================================
+       REVEAL
+    ========================================================= */
+
+    .reveal {
+
+      opacity: 0;
+
+      transform:
+        translateY(28px);
+
+      transition:
+        opacity
+        0.8s ease,
+        transform
+        0.8s ease;
+
+    }
+
+
+    .reveal.visible {
+
+      opacity: 1;
+      transform: translateY(0);
+
+    }
+
+
+    /* =========================================================
+       TABLET
+    ========================================================= */
+
+    @media (min-width: 701px) and (max-width: 1100px) {
+
+
+      .hero-main {
+
+        grid-template-columns:
+          1fr
+          0.7fr;
+
+        gap: 35px;
+
+      }
+
+
+      .hero-title {
+
+        font-size:
+          clamp(
+            64px,
+            7vw,
+            100px
+          );
+
+      }
+
+
+      .manifesto {
+
+        grid-template-columns:
+          55px
+          1fr;
+
+      }
+
+
+      .manifesto-copy {
+
+        grid-column: 2;
+
+        margin-top: 45px;
+
+      }
+
+
+      .crochet-content {
+
+        grid-template-columns:
+          55px
+          1fr;
+
+      }
+
+
+      .crochet-copy {
+
+        grid-column: 2;
+
+        margin-top: 45px;
+
+      }
+
+
+      .crochet-frame {
+
+        width: 58vw;
+
+        right: -18%;
+
+      }
+
+
+      .recognition-main {
+
+        grid-template-columns:
+          1fr
+          0.7fr;
+
+      }
+
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 700px) {
+
+
+      .header {
+
+        min-height: 54px;
+
+        padding:
+          15px
+          16px;
+
+        grid-template-columns:
+          1fr
+          auto;
+
+      }
+
+
+      .nav {
+        display: none;
+      }
+
+
+      /* HERO */
+
+      .hero {
+
+        min-height: auto;
+
+        padding:
+          22px
+          16px
+          34px;
+
+      }
+
+
+      .hero-meta {
+
+        font-size: 7px;
+
+      }
+
+
+      .hero-main {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 50px;
+
+        margin:
+          55px
+          0;
+
+      }
+
+
+      .hero-title {
+
+        font-size:
+          clamp(
+            52px,
+            15vw,
+            82px
+          );
+
+      }
+
+
+      .hero-copy {
+        max-width: 100%;
+      }
+
+
+      .hero-copy p {
+        font-size: 16px;
+      }
+
+
+      .hero-bottom {
+        font-size: 7px;
+      }
+
+
+      /* MANIFESTO */
+
+      .manifesto {
+
+        min-height: auto;
+
+        padding:
+          80px
+          16px;
+
+        display: block;
+
+      }
+
+
+      .manifesto .section-number {
+
+        display: block;
+
+        margin-bottom: 30px;
+
+      }
+
+
+      .manifesto-title {
+
+        font-size:
+          clamp(
+            44px,
+            12vw,
+            68px
+          );
+
+      }
+
+
+      .manifesto-copy {
+
+        margin-top: 45px;
+
+      }
+
+
+      .manifesto-copy p {
+        font-size: 16px;
+      }
+
+
+      /* PLACES */
+
+      .places {
+
+        padding:
+          80px
+          16px;
+
+      }
+
+
+      .places-heading {
+
+        display: block;
+
+        margin-bottom: 55px;
+
+      }
+
+
+      .places-heading .section-number {
+
+        display: block;
+
+        margin-bottom: 30px;
+
+      }
+
+
+      .places-title {
+
+        font-size:
+          clamp(
+            44px,
+            12vw,
+            68px
+          );
+
+      }
+
+
+      .journey {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 55px;
+
+        padding-top: 0;
+        padding-left: 30px;
+
+      }
+
+
+      .journey::before {
+
+        left: 4px;
+        right: auto;
+
+        top: 4px;
+        bottom: 4px;
+
+        width: 1px;
+        height: auto;
+
+        background:
+          rgba(107, 64, 59, 0.35);
+
+      }
+
+
+      .journey-item {
+
+        padding-top: 0;
+
+      }
+
+
+      .journey-dot {
+
+        top: 5px;
+        left: -30px;
+
+        width: 8px;
+        height: 8px;
+
+        border: none;
+
+        background: var(--cacao);
+
+      }
+
+
+      .journey-year {
+
+        margin-bottom: 15px;
+
+        font-size: 7px;
+
+      }
+
+
+      .journey-place {
+        font-size: 38px;
+      }
+
+
+      .journey-item p {
+
+        margin-top: 16px;
+
+        max-width: 290px;
+
+      }
+
+
+      /* EDUCATION */
+
+      .education {
+
+        padding:
+          80px
+          16px;
+
+        display: block;
+
+      }
+
+
+      .education-left {
+
+        position: static;
+
+        margin-bottom: 60px;
+
+      }
+
+
+      .education-title {
+
+        font-size:
+          clamp(
+            42px,
+            11vw,
+            66px
+          );
+
+      }
+
+
+      .timeline-item {
+
+        grid-template-columns:
+          80px
+          minmax(0, 1fr);
+
+        gap: 18px;
+
+      }
+
+
+      .timeline-date {
+        font-size: 7px;
+      }
+
+
+      .timeline-content h3 {
+        font-size: 30px;
+      }
+
+
+      .timeline-content p {
+        font-size: 15px;
+      }
+
+
+      /* PRACTICE */
+
+      .practice {
+
+        padding:
+          80px
+          16px;
+
+      }
+
+
+      .practice-heading {
+
+        display: block;
+
+        margin-bottom: 50px;
+
+      }
+
+
+      .practice-heading .section-number {
+
+        display: block;
+
+        margin-bottom: 30px;
+
+      }
+
+
+      .practice-title {
+
+        font-size:
+          clamp(
+            44px,
+            12vw,
+            68px
+          );
+
+      }
+
+
+      .practice-item {
+
+        display: block;
+
+        padding:
+          22px
+          0;
+
+      }
+
+
+      .practice-number {
+
+        display: block;
+
+        margin-bottom: 12px;
+
+      }
+
+
+      .practice-name {
+        font-size: 40px;
+      }
+
+
+      .practice-copy {
+
+        margin-top: 15px;
+
+        font-size: 14px;
+
+      }
+
+
+      /* PHOTOGRAPHY */
+
+      .photo-section {
+
+        padding:
+          80px
+          16px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 50px;
+
+      }
+
+
+      .photo-title {
+
+        font-size:
+          clamp(
+            42px,
+            11vw,
+            65px
+          );
+
+      }
+
+
+      .photo-frame {
+
+        width: 72%;
+
+        margin-left: auto;
+        margin-right: 7px;
+
+      }
+
+
+      /* CROCHET */
+
+      .crochet {
+
+        min-height: auto;
+
+        padding:
+          80px
+          16px
+          100px;
+
+      }
+
+
+      .crochet-content {
+        display: block;
+      }
+
+
+      .crochet-content .section-number {
+
+        display: block;
+
+        margin-bottom: 30px;
+
+      }
+
+
+      .crochet-title {
+
+        font-size:
+          clamp(
+            46px,
+            13vw,
+            72px
+          );
+
+      }
+
+
+      .crochet-copy {
+
+        width: 100%;
+
+        margin-top: 55px;
+
+        padding: 28px;
+
+      }
+
+
+      .crochet-copy p {
+        font-size: 15px;
+      }
+
+
+      .crochet-frame {
+
+        width: 95vw;
+
+        right: -40%;
+
+        top: 62%;
+
+        opacity: 0.16;
+
+      }
+
+
+      .crochet-frame-small {
+
+        width: 170px;
+
+        left: -40px;
+        bottom: -50px;
+
+      }
+
+
+      .crochet-label {
+
+        bottom: 24px;
+
+        font-size: 6px;
+
+      }
+
+
+      /* RECOGNITION */
+
+      .recognition {
+
+        padding:
+          80px
+          16px;
+
+        display: block;
+
+      }
+
+
+      .recognition > .section-number {
+
+        display: block;
+
+        margin-bottom: 30px;
+
+      }
+
+
+      .recognition-main {
+        display: block;
+      }
+
+
+      .recognition-title {
+
+        font-size:
+          clamp(
+            48px,
+            13vw,
+            74px
+          );
+
+      }
+
+
+      .recognition-copy {
+        margin-top: 50px;
+      }
+
+
+      /* FINAL */
+
+      .final-manifesto {
+
+        min-height: auto;
+
+        padding:
+          75px
+          16px;
+
+      }
+
+
+      .final-text {
+
+        margin:
+          100px
+          0;
+
+        font-size:
+          clamp(
+            40px,
+            11vw,
+            64px
+          );
+
+      }
+
+
+      /* CONTACT */
+
+      .contact-cta {
+
+        min-height: auto;
+
+        padding:
+          25px
+          16px;
+
+      }
+
+
+      .contact-meta {
+        font-size: 7px;
+      }
+
+
+      .contact-title {
+
+        margin:
+          110px
+          0;
+
+        font-size:
+          clamp(
+            50px,
+            14vw,
+            80px
+          );
+
+      }
+
+
+      footer {
+
+        padding:
+          18px
+          16px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+      }
+
+
+      .cursor {
+        display: none !important;
+      }
+
+    }
+
+
+    /* =========================================================
+       VERY SMALL MOBILE
+    ========================================================= */
+
+    @media (max-width: 390px) {
+
+      .hero-title {
+        font-size: 14vw;
+      }
+
+      .manifesto-title,
+      .places-title,
+      .education-title,
+      .practice-title,
+      .photo-title,
+      .recognition-title {
+        font-size: 11vw;
+      }
+
+      .crochet-title {
+        font-size: 12vw;
+      }
+
+      .contact-title {
+        font-size: 13.5vw;
+      }
+
+    }
+
+
+    /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+
+        animation-duration:
+          0.01ms !important;
+
+        transition-duration:
+          0.01ms !important;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- CURSOR -->
+
+  <div class="cursor">
+
+    <span class="cursor-flower">
+      ✿
+    </span>
+
+    <span class="cursor-text">
+      OPEN ↗
+    </span>
+
+  </div>
+
+
+  <!-- ======================================================
+       HEADER
+  ======================================================= -->
+
+  <header class="header">
+
+    <a
+      href="index.html"
+      class="logo"
+    >
+      MARTA VAZ
+    </a>
+
+
+    <nav class="nav">
+
+      <a href="about.html">
+        ABOUT
+      </a>
+
+      <a href="index.html#work">
+        WORK
+      </a>
+
+      <a href="contact.html">
+        CONTACT
+      </a>
+
+    </nav>
+
+
+    <a
+      href="contact.html"
+      class="header-right"
+    >
+      GET IN TOUCH ↗
+    </a>
+
+  </header>
+
+
+  <main>
+
+
+    <!-- ======================================================
+         HERO
+    ======================================================= -->
+
+    <section class="hero">
+
+
+      <div class="hero-meta">
+
+        <span>
+          ABOUT / MARTA VAZ
+        </span>
+
+        <span>
+          PORTUGAL / 2026
+        </span>
+
+      </div>
+
+
+      <div class="hero-main">
+
+
+        <h1 class="hero-title">
+
+          <span>
+            I DESIGN
+          </span>
+
+          <span>
+            THE WAY I SEE
+          </span>
+
+          <span>
+            THE WORLD —
+          </span>
+
+          <span>
+            <em>
+              curious, colourful
+            </em>
+          </span>
+
+          <span>
+            & A LITTLE
+            UNEXPECTED.
+          </span>
+
+        </h1>
+
+
+        <div class="hero-copy">
+
+          <p>
+            Hi, I'm Marta.
+          </p>
+
+          <p>
+            I'm a Communication Design student
+            based in Porto, originally from Lisbon
+            and shaped by the years I've spent
+            living in the Azores.
+          </p>
+
+          <p>
+            My practice moves between web design,
+            visual identities, photography and
+            moving image.
+          </p>
+
+          <p class="hero-small">
+            DESIGN / WEB / PHOTOGRAPHY /
+            VIDEO / VISUAL IDENTITY
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="hero-bottom">
+
+        <span>
+          COMMUNICATION DESIGN / ESAP
+        </span>
+
+        <span>
+          THIRD YEAR
+        </span>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ======================================================
+         MANIFESTO
+    ======================================================= -->
+
+    <section class="manifesto reveal">
+
+
+      <span class="section-number">
+        01
+      </span>
+
+
+      <h2 class="manifesto-title">
+
+        I don't believe every project
+        should look like me.
+
+        <em>
+          I believe every project
+          should feel like itself.
+        </em>
+
+      </h2>
+
+
+      <div class="manifesto-copy">
+
+        <p>
+          I like creating work with personality,
+          but I don't want every project to have
+          the same personality.
+        </p>
+
+        <p>
+          For me, design is about understanding
+          what makes each idea, person or brand
+          unique and translating that into a visual
+          language of its own.
+        </p>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ======================================================
+         BETWEEN PLACES
+    ======================================================= -->
+
+    <section class="places reveal">
+
+
+      <div class="places-heading">
+
+        <span class="section-number">
+          02
+        </span>
+
+
+        <h2 class="places-title">
+
+          BETWEEN
+
+          <em>
+            places.
+          </em>
+
+        </h2>
+
+      </div>
+
+
+      <div class="journey">
+
+
+        <article class="journey-item">
+
+          <span class="journey-dot"></span>
+
+          <span class="journey-year">
+            ORIGIN
+          </span>
+
+          <h3 class="journey-place">
+            Lisbon
+          </h3>
+
+          <p>
+            The city where I was born
+            and where my story begins.
+          </p>
+
+        </article>
+
+
+        <article class="journey-item">
+
+          <span class="journey-dot"></span>
+
+          <span class="journey-year">
+            6 YEARS
+          </span>
+
+          <h3 class="journey-place">
+            Azores
+          </h3>
+
+          <p>
+            A place that changed my relationship
+            with nature, space and the way I
+            observe the world around me.
+          </p>
+
+        </article>
+
+
+        <article class="journey-item">
+
+          <span class="journey-dot"></span>
+
+          <span class="journey-year">
+            NOW
+          </span>
+
+          <h3 class="journey-place">
+            Porto
+          </h3>
+
+          <p>
+            Where I currently study Communication
+            Design at ESAP and continue developing
+            my creative practice.
+          </p>
+
+        </article>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ======================================================
+         EDUCATION
+    ======================================================= -->
+
+    <section class="education reveal">
+
+
+      <div class="education-left">
+
+        <p class="education-label">
+          03 / HOW IT STARTED
+        </p>
+
+
+        <h2 class="education-title">
+
+          ART FIRST,
+
+          <em>
+            design later.
+          </em>
+
+        </h2>
+
+      </div>
+
+
+      <div class="timeline">
+
+
+        <article class="timeline-item">
+
+          <span class="timeline-date">
+            SECONDARY
+          </span>
+
+          <div class="timeline-content">
+
+            <h3>
+              Visual Arts
+            </h3>
+
+            <p>
+              I studied Visual Arts during secondary
+              school, where I started experimenting
+              more seriously with image, composition,
+              photography and creative projects.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="timeline-item">
+
+          <span class="timeline-date">
+            ART STUDIO
+          </span>
+
+          <div class="timeline-content">
+
+            <h3>
+              Atelier de Artes
+            </h3>
+
+            <p>
+              Through the school's Art Studio I
+              participated in several projects linked
+              to the National Arts Plan and had the
+              opportunity to work alongside artists
+              from different backgrounds, including
+              international artist Gregory Leloy.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="timeline-item">
+
+          <span class="timeline-date">
+            PROJECTS
+          </span>
+
+          <div class="timeline-content">
+
+            <h3>
+              Learning through making
+            </h3>
+
+            <p>
+              Collaborative projects, exhibitions
+              and competitions became an important
+              part of how I learned — not only by
+              studying art, but by creating work
+              with people and for real contexts.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="timeline-item">
+
+          <span class="timeline-date">
+            NOW
+          </span>
+
+          <div class="timeline-content">
+
+            <h3>
+              Communication Design — ESAP
+            </h3>
+
+            <p>
+              I am currently in my third year of
+              Communication Design at ESAP in Porto,
+              where my interests have expanded into
+              web design, digital interaction,
+              visual identity and multimedia.
+            </p>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ======================================================
+         PRACTICE
+    ======================================================= -->
+
+    <section class="practice reveal">
+
+
+      <div class="practice-heading">
+
+        <span class="section-number">
+          04
+        </span>
+
+
+        <h2 class="practice-title">
+
+          MY PRACTICE
+
+          <em>
+            moves around.
+          </em>
+
+        </h2>
+
+      </div>
+
+
+      <div class="practice-list">
+
+
+        <div class="practice-item">
+
+          <span class="practice-number">01</span>
+
+          <span class="practice-name">
+            WEB DESIGN
+          </span>
+
+          <p class="practice-copy">
+            Creating digital spaces with strong
+            identities, clear structure and
+            thoughtful interaction.
+          </p>
+
+        </div>
+
+
+        <div class="practice-item">
+
+          <span class="practice-number">02</span>
+
+          <span class="practice-name">
+            VISUAL IDENTITY
+          </span>
+
+          <p class="practice-copy">
+            Building visual systems that feel
+            specific to the idea or brand behind them.
+          </p>
+
+        </div>
+
+
+        <div class="practice-item">
+
+          <span class="practice-number">03</span>
+
+          <span class="practice-name">
+            PHOTOGRAPHY
+          </span>
+
+          <p class="practice-copy">
+            Observing people, places, light and
+            small moments — often through analogic film.
+          </p>
+
+        </div>
+
+
+        <div class="practice-item">
+
+          <span class="practice-number">04</span>
+
+          <span class="practice-name">
+            VIDEO
+          </span>
+
+          <p class="practice-copy">
+            Exploring atmosphere, narrative
+            and emotion through moving image.
+          </p>
+
+        </div>
+
+
+        <div class="practice-item">
+
+          <span class="practice-number">05</span>
+
+          <span class="practice-name">
+            CREATIVE DIRECTION
+          </span>
+
+          <p class="practice-copy">
+            Connecting concept, image, typography
+            and experience into one coherent world.
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ======================================================
+         PHOTOGRAPHY
+    ======================================================= -->
+
+    <section class="photo-section reveal">
+
+
+      <div class="photo-copy">
+
+        <p class="photo-label">
+          05 / THROUGH MY LENS
+        </p>
+
+
+        <h2 class="photo-title">
+
+          Photography is
+          how I learn to
+
+          <em>
+            notice.
+          </em>
+
+        </h2>
+
+
+        <p>
+          Photography is one of the areas I feel
+          most connected to, especially analogic
+          photography.
+        </p>
+
+        <p>
+          I like the slower process of film —
+          waiting, observing and accepting that
+          not everything needs to be immediate
+          or perfectly controlled.
+        </p>
+
+      </div>
+
+
+      <div class="photo-frame">
+
+        <img
+          src="imagens/marta5.JPEG"
+          alt="Marta Vaz"
+        >
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ======================================================
+         CROCHET WITHOUT GENDER
+    ======================================================= -->
+
+    <section class="crochet reveal">
+
+
+      <!-- DECORATIVE CROCHET FRAME -->
+
+      <img
+        src="imagens/crochet-frame.jpg"
+        alt=""
+        class="crochet-frame"
+        aria-hidden="true"
+      >
+
+
+      <img
+        src="imagens/crochet-frame.jpg"
+        alt=""
+        class="crochet-frame-small"
+        aria-hidden="true"
+      >
+
+
+      <div class="crochet-content">
+
+
+        <span class="section-number">
+          06
+        </span>
+
+
+        <h2 class="crochet-title">
+
+          CROCHET
+
+          <em>
+            WITHOUT GENDER.
+          </em>
+
+        </h2>
+
+
+        <div class="crochet-copy">
+
+          <p>
+            During secondary school I developed
+            a project that brought crochet into
+            a younger generation while creating
+            a space for different generations
+            to meet.
+          </p>
+
+          <p>
+            Residents from elderly care homes
+            were invited into our school to crochet
+            alongside students, exchanging knowledge,
+            conversations and experiences through
+            one shared activity.
+          </p>
+
+          <p class="crochet-quote">
+            Different ages.<br>
+            Different stories.<br>
+            One thread.
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+      <span class="crochet-label">
+        PEOPLE / GENERATIONS / CRAFT / CONNECTION
+      </span>
+
+
+    </section>
+
+
+    <!-- ======================================================
+         RECOGNITION
+    ======================================================= -->
+
+    <section class="recognition reveal">
+
+
+      <span class="section-number">
+        07
+      </span>
+
+
+      <div class="recognition-main">
+
+
+        <h2 class="recognition-title">
+
+          1ST PLACE
+
+          <em>
+            Multimedia.
+          </em>
+
+        </h2>
+
+
+        <div class="recognition-copy">
+
+          <p>
+            One of the projects developed during
+            my academic path received 1st place
+            in Multimedia at the Medeiros Cabral Prize.
+          </p>
+
+          <p>
+            The awarded work, <em>Refúgio</em>,
+            explores dreams, rest and the space
+            between the mind and reality through video art.
+          </p>
+
+          <a
+            href="designs/marta-os.html"
+            class="recognition-link interactive-link"
+          >
+            VIEW REFÚGIO IN MARTA OS ↗
+          </a>
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+    <!-- ======================================================
+         FINAL MANIFESTO
+    ======================================================= -->
+
+    <section class="final-manifesto reveal">
+
+
+      <span class="final-label">
+        A LITTLE MORE ABOUT ME
+      </span>
+
+
+      <p class="final-text">
+
+        I like making things,
+        meeting people,
+        trying ideas and
+        seeing where they
+
+        <em>
+          might lead.
+        </em>
+
+      </p>
+
+
+      <p class="final-small">
+
+        Outside design you'll probably find me
+        around photography, yoga, surf or crochet.
+        I like being around people, adapting to
+        different situations and approaching work
+        with curiosity rather than one fixed way
+        of doing things.
+
+      </p>
+
+
+    </section>
+
+
+    <!-- ======================================================
+         CONTACT
+    ======================================================= -->
+
+    <section class="contact-cta reveal">
+
+
+      <div class="contact-meta">
+
+        <span>
+          HAVE AN IDEA?
+        </span>
+
+        <span>
+          LET'S MAKE IT FEEL LIKE ITSELF.
+        </span>
+
+      </div>
+
+
+      <a
+        href="contact.html"
+        class="contact-title interactive-link"
+      >
+
+        LET'S MAKE<br>
+
+        SOMETHING
+
+        <em>
+          memorable.
+        </em>
+
+        ↗
+
+      </a>
+
+
+      <div class="contact-meta">
+
+        <span>
+          MARTA VAZ
+        </span>
+
+        <span>
+          WEB / VISUAL / DIGITAL
+        </span>
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+  <footer>
+
+    <span>
+      MARTA VAZ © 2026
+    </span>
+
+    <a href="index.html">
+      HOME ↗
+    </a>
+
+    <a href="contact.html">
+      CONTACT ↗
+    </a>
+
+  </footer>
+
+
+  <script>
+
+
+    /* ======================================================
+       REVEAL
+    ======================================================= */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    const observer =
+      new IntersectionObserver(
+
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              entry.target
+                .classList
+                .add("visible");
+
+              observer
+                .unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+
+        {
+          threshold: 0.08
+        }
+
+      );
+
+
+    revealElements.forEach((element) => {
+
+      observer.observe(element);
+
+    });
+
+
+
+    /* ======================================================
+       CURSOR
+    ======================================================= */
+
+    const cursor =
+      document.querySelector(".cursor");
+
+
+    const finePointer =
+      window.matchMedia("(pointer: fine)");
+
+
+    if (finePointer.matches) {
+
+
+      document.addEventListener(
+
+        "mousemove",
+
+        (event) => {
+
+          cursor.style.left =
+            event.clientX + "px";
+
+          cursor.style.top =
+            event.clientY + "px";
+
+        }
+
+      );
+
+
+      const links =
+        document.querySelectorAll(
+          ".interactive-link"
+        );
+
+
+      links.forEach((link) => {
+
+
+        link.addEventListener(
+
+          "mouseenter",
+
+          () => {
+
+            cursor
+              .classList
+              .add("link-mode");
+
+          }
+
+        );
+
+
+        link.addEventListener(
+
+          "mouseleave",
+
+          () => {
+
+            cursor
+              .classList
+              .remove("link-mode");
+
+          }
+
+        );
+
+
+      });
+
+
+    }
+
+
+  </script>
+
+
+</body>
+
+</html>
